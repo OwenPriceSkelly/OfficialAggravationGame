@@ -1,0 +1,6 @@
+This is the log.txt file to hold resources used
+
+
+Nov 5
+
+Started with the PigGame as the basis
