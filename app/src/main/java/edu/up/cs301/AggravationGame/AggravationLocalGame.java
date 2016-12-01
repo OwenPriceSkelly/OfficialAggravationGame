@@ -516,7 +516,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
             else counts[i] = 0;
         }
 
-        return winMessage;
+        return null;
     }
 
 }// class AggravationLocalGame
