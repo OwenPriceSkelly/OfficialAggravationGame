@@ -466,6 +466,7 @@ public boolean Moves(String board, int pieceLoc, boolean enable) {
             markedButton = i;
 
             //CASE: roll val on the board //WILL NEED TO CHANGE FOR NETWORK PLAY>>>> address 56
+            int overLine = playerNum*14 - 2;
             if (((i + rollVal) > (55 - (playerNum * 14) + 4))) //if there is a viable button for player button + roll
             {
                 Log.i(".", "got inside :(....");
@@ -509,12 +510,17 @@ public boolean Moves(String board, int pieceLoc, boolean enable) {
 
             //CASE: Potential home array move
             //checks the Home Arrays
-
-                if ((i + rollVal) > 54 && (i + rollVal) < (54 + 5) && i != 56) {
+                int overLine = playerNum*14 -2;
+                if(overLine == -2)
+                {
+                    overLine = 54;
+                }
+                if ((i + rollVal) > overLine && (i + rollVal) < overLine+5 && i != 56) {
                     Log.i("trying to enable", "home");
-                    if (homeCopy[playerNum][(i+rollVal)-55] != playerNum) {
+                    int leftOver = (i+rollVal) - overLine - 1;
+                    if (homeCopy[playerNum][leftOver] != playerNum) {
                         boolean canDoThis = true;
-                        int iterator = i + rollVal - 55;
+                        int iterator = leftOver;
                         for (int j = 0; j < 4; j++) //checks to make sure it's not leapfrogging a piece already there
                         {
                             if (j < iterator) //only the spaces before the possible move space
