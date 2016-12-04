@@ -26,6 +26,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
         super(name);
     }
 
+    private int previousMoveFrom;
     /**
      * callback method--game's state has changed
      *
@@ -44,9 +45,9 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
             int toMoveFrom = -9;
             int toMoveTo = -9;
             String moveType = "Board";
-            int middleMove = playerNum*14 -9;
+            int middleMove = playerNum * 14 - 9;
             if (middleMove == -9) {
-                middleMove =47;
+                middleMove = 47;
             }
 
             if (gameStateInfo.getTurn() == this.playerNum) {
@@ -66,28 +67,27 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
 
                 //don't have to roll, so move a piece
                 else {
-                    if(boardCopy[56] == playerNum && officialRoll == 1)
-                    {
+                    if (boardCopy[56] == playerNum && officialRoll == 1) {
 
-                        if(boardCopy[middleMove] != playerNum)
-                        {
+                        if (boardCopy[middleMove] != playerNum) {
                             AggravationMovePieceAction movePieceGetOutTheWay;
                             movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", 56, middleMove);
                             game.sendAction(movePieceGetOutTheWay);
                             return;
                         }
                     }
-                    int specialCase = playerNum*14 - 23;
-                    if(specialCase < 0)
+                    if(officialRoll == 1 && boardCopy[middleMove+7] != playerNum)
                     {
-                        specialCase = 47;
+                        for (int k = 0; k < 4; k++) {
+                            if (startCopy[k] == this.playerNum && boardCopy[startIdx] != this.playerNum) {
+                                AggravationMovePieceAction startPiece = new AggravationMovePieceAction(this, "Start", k, startIdx);
+                                game.sendAction(startPiece);
+                                return;
+                            }
+                        }
                     }
-                    if(boardCopy[specialCase] == playerNum && officialRoll == 1 && boardCopy[middleMove] != playerNum)
-                    {
-                        AggravationMovePieceAction homeMove = new AggravationMovePieceAction(this, "Shortcut", specialCase, middleMove);
-                        game.sendAction(homeMove);
-                        return;
-                    }
+                    //check to see if there even is a piece on the board the CPU can look to move
+
                     if (homeCopy[3] != playerNum) {
                         if (officialRoll == 1 && homeCopy[2] == playerNum) {
                             AggravationMovePieceAction homeMove = new AggravationMovePieceAction(this, "Home", 2, 3);
@@ -120,14 +120,13 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                         }
                     }
                     int count = 0;
-                    for(int i = 0;i < 4;i++) //check to see if there is only one in home array
+                    for (int i = 0; i < 4; i++) //check to see if there is only one in home array
                     {
-                        if(homeCopy[i] == playerNum)
-                        {
+                        if (homeCopy[i] == playerNum) {
                             count++;
                         }
                     }
-                    if(count == 1) {
+                    if (count == 1) {
                         if (homeCopy[0] == playerNum) {
                             if (officialRoll == 1) {
                                 AggravationMovePieceAction homeMove = new AggravationMovePieceAction(this, "Home", 0, 1);
@@ -164,30 +163,32 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
 
                         }
                     }
-
-                    //check to see if there even is a piece on the board the CPU can look to move
                     for (int i = 0; i < 56; i++) {
+                        previousMoveFrom = toMoveFrom;
                         int j = i + startIdx;
-
                         if (j > 55) j -= 56;
-
                         if (boardCopy[j] == playerNum) {
-                            Random ran = new Random();
-                            int x = ran.nextInt(5);
-                            if(x < 4) {
-                                toMoveFrom = j;
-                                continue;
-                            }
-                            else
-                            {
+                            if (j == 5 || j == 19 || j == 33 || j == 47) {
                                 toMoveFrom = j;
                                 break;
+                            } else {
+                                toMoveFrom = j;
+                                if(toMoveFrom+officialRoll == 5 || toMoveFrom+officialRoll == 19 || toMoveFrom+officialRoll == 33 || toMoveFrom+officialRoll == 47)
+                                {
+                                    break;
+                                }
+                                continue;
                             }
-
                         }
                     }
-                    if(toMoveFrom <= playerNum*14-2 && toMoveFrom > playerNum*14-4 && officialRoll == 6)
-                    {
+
+
+                    int scaleComputer = playerNum * 14 - 2;
+                    if (playerNum == 0) {
+                        scaleComputer = 54;
+                    }
+
+                    if (toMoveFrom <= scaleComputer && toMoveFrom > scaleComputer -4 && officialRoll == 6) {
                         for (int k = 0; k < 4; k++) {
                             if (startCopy[k] == this.playerNum && boardCopy[startIdx] != this.playerNum) {
                                 AggravationMovePieceAction startPiece = new AggravationMovePieceAction(this, "Start", k, startIdx);
@@ -196,100 +197,83 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                             }
                         }
                     }
-
                     Log.i("toMoveFrom is", " " + toMoveFrom);
 
                     //find a piece "in the way" of toMoveFrom and reset the loop around that piece
                     //moves the first "in the way" piece it can, so it can start all of its pieces as fast as possible
                     //if toMoveFrom!=-9, that means the previous loop found a space with playerNum as a officialRoll and is trying to move it
                     /*This is where a Board move comes from*/
-                    if((toMoveFrom + officialRoll == 6 || toMoveFrom + officialRoll == 20 || toMoveFrom + officialRoll == 34
-                            || toMoveFrom + officialRoll == 48) && boardCopy[56] != playerNum && (toMoveFrom + officialRoll) != playerNum*14 -8)
-                    {
+                    if ((toMoveFrom + officialRoll == 6 || toMoveFrom + officialRoll == 20 || toMoveFrom + officialRoll == 34
+                            || toMoveFrom + officialRoll == 48) && boardCopy[56] != playerNum && (toMoveFrom + officialRoll) != playerNum * 14 - 8
+                            && officialRoll != 1) {
                         AggravationMovePieceAction movePieceGetOutTheWay;
                         movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, 56);
                         game.sendAction(movePieceGetOutTheWay);
                         return;
                     }
 
-                    if (toMoveFrom == 5 || toMoveFrom == 19 || toMoveFrom == 33 || toMoveFrom == 47 && (toMoveFrom+officialRoll) != (playerNum*14 - (9+officialRoll)))
-                    {
-                        if(officialRoll == 1)
-                        {
-                            int shortCutMove = toMoveFrom+14;
-                            if(shortCutMove > 55)
-                            {
+                    if (toMoveFrom == 5 || toMoveFrom == 19 || toMoveFrom == 33 || toMoveFrom == 47 && (toMoveFrom + officialRoll) != (middleMove + officialRoll)) {
+                        if (officialRoll == 1) {
+                            int shortCutMove = toMoveFrom + 14;
+                            if (shortCutMove > 55) {
                                 shortCutMove -= 56;
                             }
-                            if(boardCopy[shortCutMove] != playerNum && toMoveFrom != middleMove)
-                            {
+                            if (boardCopy[shortCutMove] != playerNum && toMoveFrom != middleMove) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
                                 movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, shortCutMove);
                                 game.sendAction(movePieceGetOutTheWay);
                                 return;
                             }
                         }
-                        if(officialRoll == 2)
-                        {
-                            int shortCutMove = toMoveFrom+(14*2);
+                        if (officialRoll == 2) {
+                            int shortCutMove = toMoveFrom + (14 * 2);
                             int cutBefore = toMoveFrom + 14;
-                            if(shortCutMove > 55)
-                            {
+                            if (shortCutMove > 55) {
                                 shortCutMove -= 56;
                             }
-                            if(cutBefore > 55)
-                            {
+                            if (cutBefore > 55) {
                                 cutBefore -= 56;
                             }
-                            if(cutBefore == playerNum*14-9 && boardCopy[cutBefore + 1] != playerNum)
-                        {
-                            AggravationMovePieceAction movePieceGetOutTheWay;
-                            movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore +1);
-                            game.sendAction(movePieceGetOutTheWay);
-                            return;
-                        }
-                            if(boardCopy[shortCutMove] != playerNum && toMoveFrom != playerNum*14-9 && (cutBefore) != playerNum*14-9)
-                            {
+                            if (cutBefore == middleMove && boardCopy[cutBefore + 1] != playerNum) {
+                                AggravationMovePieceAction movePieceGetOutTheWay;
+                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore + 1);
+                                game.sendAction(movePieceGetOutTheWay);
+                                return;
+                            }
+                            if (boardCopy[shortCutMove] != playerNum && toMoveFrom != playerNum * 14 - 9 && (cutBefore) != middleMove) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
                                 movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, shortCutMove);
                                 game.sendAction(movePieceGetOutTheWay);
                                 return;
                             }
                         }
-                        if(officialRoll == 3)
-                        {
-                            int shortCutMove = toMoveFrom+(14*3);
+                        if (officialRoll == 3) {
+                            int shortCutMove = toMoveFrom + (14 * 3);
                             int cutBefore = toMoveFrom + 14;
                             int cutBefore2 = toMoveFrom + 28;
-                            if(shortCutMove > 55)
-                            {
+                            if (shortCutMove > 55) {
                                 shortCutMove -= 56;
                             }
-                            if(cutBefore > 55)
-                            {
+                            if (cutBefore > 55) {
                                 cutBefore -= 56;
                             }
-                            if(cutBefore2 > 55)
-                            {
+                            if (cutBefore2 > 55) {
                                 cutBefore2 -= 56;
                             }
-                            if(cutBefore == playerNum*14-9  && boardCopy[cutBefore + 1] != playerNum  && boardCopy[cutBefore + 2] != playerNum)
-                            {
+                            if (cutBefore == middleMove && boardCopy[cutBefore + 1] != playerNum && boardCopy[cutBefore + 2] != playerNum) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
-                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore +2);
+                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore + 2);
                                 game.sendAction(movePieceGetOutTheWay);
                                 return;
                             }
-                            if(cutBefore2 == playerNum*14-9  && boardCopy[cutBefore] != playerNum  && boardCopy[cutBefore2 + 1] != playerNum)
-                            {
+                            if (cutBefore2 == middleMove && boardCopy[cutBefore] != playerNum && boardCopy[cutBefore2 + 1] != playerNum) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
-                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore2 +1);
+                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore2 + 1);
                                 game.sendAction(movePieceGetOutTheWay);
                                 return;
                             }
-                            if(boardCopy[shortCutMove] != playerNum && toMoveFrom != playerNum*14-9 && (cutBefore) != playerNum*14-9 &&
-                                    (cutBefore2) != playerNum*14 - 9)
-                            {
+                            if (boardCopy[shortCutMove] != playerNum && toMoveFrom != middleMove && (cutBefore) != middleMove &&
+                                    (cutBefore2) != middleMove) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
                                 movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, shortCutMove);
                                 game.sendAction(movePieceGetOutTheWay);
@@ -297,52 +281,43 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                             }
 
                         }
-                        if(officialRoll > 3)
-                        {
-                            int shortCutMove = toMoveFrom+(14*3) + (officialRoll-3);
+                        if (officialRoll > 3) {
+                            int shortCutMove = toMoveFrom + (14 * 3) + (officialRoll - 3);
                             int cutBefore = toMoveFrom + 14;
                             int cutBefore2 = toMoveFrom + 28;
                             int cutBefore3 = toMoveFrom + 42;
-                            if(cutBefore > 55)
-                            {
+                            if (cutBefore > 55) {
                                 cutBefore -= 56;
                             }
-                            if(cutBefore2 > 55)
-                            {
+                            if (cutBefore2 > 55) {
                                 cutBefore2 -= 56;
                             }
-                            if(shortCutMove > 55)
-                            {
+                            if (shortCutMove > 55) {
                                 shortCutMove -= 56;
                             }
-                            if(cutBefore3 > 55)
-                            {
-                                cutBefore3 -=56;
+                            if (cutBefore3 > 55) {
+                                cutBefore3 -= 56;
                             }
-                            if(cutBefore == playerNum*14-9 && boardCopy[cutBefore] != playerNum  && boardCopy[cutBefore + 1] != playerNum)
-                            {
+                            if (cutBefore == middleMove && boardCopy[cutBefore] != playerNum && boardCopy[cutBefore + 1] != playerNum) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
-                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore + (officialRoll -1));
+                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore + (officialRoll - 1));
                                 game.sendAction(movePieceGetOutTheWay);
                                 return;
                             }
-                            if(cutBefore2 == playerNum*14-9 && boardCopy[cutBefore2] != playerNum  && boardCopy[cutBefore2 + 1] != playerNum)
-                            {
+                            if (cutBefore2 == middleMove && boardCopy[cutBefore2] != playerNum && boardCopy[cutBefore2 + 1] != playerNum) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
-                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore2 + (officialRoll -2));
+                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore2 + (officialRoll - 2));
                                 game.sendAction(movePieceGetOutTheWay);
                                 return;
                             }
-                            if(cutBefore3 == playerNum*14-9 && boardCopy[cutBefore3] != playerNum  && boardCopy[cutBefore3 + 1] != playerNum)
-                            {
+                            if (cutBefore3 == middleMove && boardCopy[cutBefore3] != playerNum && boardCopy[cutBefore3 + 1] != playerNum) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
-                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore3 + (officialRoll -3));
+                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore3 + (officialRoll - 3));
                                 game.sendAction(movePieceGetOutTheWay);
                                 return;
                             }
-                            if(boardCopy[shortCutMove] != playerNum && toMoveFrom != playerNum*14-9 && (cutBefore) != playerNum*14-9 &&
-                                    (cutBefore2) != playerNum*14 - 9)
-                            {
+                            if (boardCopy[shortCutMove] != playerNum && toMoveFrom != middleMove && (cutBefore) != middleMove &&
+                                    (cutBefore2) != middleMove) {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
                                 movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, shortCutMove);
                                 game.sendAction(movePieceGetOutTheWay);
@@ -382,12 +357,15 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                         for (int i = toMoveFrom; i < toMoveFrom + officialRoll; i++) {
                             if (i == endOfTheLine) {
                                 moveType = "Home";
-                                toMoveTo = toMoveTo - endOfTheLine - 1;
+                                toMoveTo = toMoveTo - endOfTheLine-1;
                                 break;
                             }
                         }
                         if (moveType.equalsIgnoreCase("Home")) {
-                            if (toMoveTo > 3) moveType = "Skip";
+                            if (toMoveTo > 3)
+                            {
+                                moveType = "Skip";
+                            }
                             else {
                                 for (int i = 0; i <= toMoveTo; i++) {
                                     if (homeCopy[i] == playerNum) moveType = "Skip";
@@ -411,35 +389,35 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                     }
                       /*This is where a start move comes from*/
 
-                        if (officialRoll == 6 || officialRoll == 1) {
+                    if (officialRoll == 6 || officialRoll == 1) {
                     /*try to start whenever possible, so look through start array for a piece to move
                     and check the starting space to see if empty or an opponents piece to aggravate*/
-                            for (int k = 0; k < 4; k++) {
-                                if (startCopy[k] == this.playerNum && boardCopy[startIdx] != this.playerNum) {
-                                    AggravationMovePieceAction startPiece = new AggravationMovePieceAction(this, "Start", k, startIdx);
-                                    game.sendAction(startPiece);
-                                    return;
-                                }
+                        for (int k = 0; k < 4; k++) {
+                            if (startCopy[k] == this.playerNum && boardCopy[startIdx] != this.playerNum) {
+                                AggravationMovePieceAction startPiece = new AggravationMovePieceAction(this, "Start", k, startIdx);
+                                game.sendAction(startPiece);
+                                return;
                             }
                         }
                     }
-                        if (toMoveFrom == -9) {
-                            moveType = "Skip";
-                            AggravationMovePieceAction movePieceGetOutTheWay;
-                            movePieceGetOutTheWay = new AggravationMovePieceAction(this, moveType, toMoveFrom, toMoveTo);
-                            game.sendAction(movePieceGetOutTheWay);
-                            return;
-
-                        }
-
-
-
-                    //no pieces to move, so send a skip turn
-                    //move a piece
                 }
-            }//receiveInfo
-        }
+                if (toMoveFrom == -9) {
+                    moveType = "Skip";
+                    AggravationMovePieceAction movePieceGetOutTheWay;
+                    movePieceGetOutTheWay = new AggravationMovePieceAction(this, moveType, toMoveFrom, toMoveTo);
+                    game.sendAction(movePieceGetOutTheWay);
+                    return;
+
+                }
+
+
+                //no pieces to move, so send a skip turn
+                //move a piece
+            }
+        }//receiveInfo
     }
+}
+
 
 
 //class AggravationComputerPlayerSmart
