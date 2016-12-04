@@ -64,10 +64,14 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                 else {
                     if(boardCopy[56] == playerNum && officialRoll == 1)
                     {
-                        if(boardCopy[playerNum*14 - 9] != playerNum)
+                        int middleMove = playerNum*14 -9;
+                        if (middleMove == -9) {
+                            middleMove =47;
+                        }
+                        if(boardCopy[middleMove] != playerNum)
                         {
                             AggravationMovePieceAction movePieceGetOutTheWay;
-                            movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", 56, playerNum*14 -9);
+                            movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", 56, middleMove);
                             game.sendAction(movePieceGetOutTheWay);
                             return;
                         }

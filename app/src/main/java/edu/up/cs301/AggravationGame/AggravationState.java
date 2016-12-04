@@ -78,8 +78,6 @@ public class AggravationState extends GameState implements Serializable {
     public void setTurn(int playerNum)
     {
             playerTurn = playerNum;
-
-        Log.i("changed player num", Integer.toString(playerTurn));
     }
 
     public int getTurn()
