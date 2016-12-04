@@ -19,6 +19,7 @@ import java.util.Random;
  */
 public class AggravationLocalGame extends LocalGame implements Serializable {
 
+    private static final long serialVersionUID = -5109179064333136984L;
     /**
      * This ctor creates a new game state
      */
@@ -415,7 +416,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
 
             //(only)after any actual move is made, someone has to roll
             //increment the turn whenever the roll isn't a 6
-            if (actualRoll != 6)
+            if (actualRoll !=6)
             {
                 if(officialGameState.getTurn() == playerNames.length-1)
                 {

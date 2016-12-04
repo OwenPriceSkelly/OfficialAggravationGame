@@ -976,13 +976,13 @@
             android:id="@+id/newGameButton"
             android:layout_weight="1"
             android:layout_height="80dp"
-            android:layout_width="80dp"
-            android:background="#aaccee" />
+            android:background="#aaccee"
+            android:layout_width="100dp" />
 
         <Space
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_width="133dp" />
+            android:layout_width="105dp" />
 
         <TextView
             android:layout_width="wrap_content"

@@ -14,7 +14,7 @@ import edu.up.cs301.game.actionMsg.GameAction;
  */
 public class AggravationRollAction extends GameAction implements Serializable {
 
-
+    private static final long serialVersionUID = -5109179067533136954L;
     public AggravationRollAction(GamePlayer player)
     {
         super(player);

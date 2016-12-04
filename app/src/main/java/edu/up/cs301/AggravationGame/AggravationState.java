@@ -17,6 +17,7 @@ import edu.up.cs301.game.infoMsg.GameState;
  */
 public class AggravationState extends GameState implements Serializable {
 
+    private static final long serialVersionUID = -5109179065433136954L;
     private int playerTurn;
     private int dieValue;
     private boolean toRoll;

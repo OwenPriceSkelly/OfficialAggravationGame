@@ -44,7 +44,10 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
             int toMoveFrom = -9;
             int toMoveTo = -9;
             String moveType = "Board";
-
+            int middleMove = playerNum*14 -9;
+            if (middleMove == -9) {
+                middleMove =47;
+            }
 
             if (gameStateInfo.getTurn() == this.playerNum) {
                 sleep(500); //CHANGED FROM 2550
@@ -60,14 +63,12 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                     return;
                 }
 
+
                 //don't have to roll, so move a piece
                 else {
                     if(boardCopy[56] == playerNum && officialRoll == 1)
                     {
-                        int middleMove = playerNum*14 -9;
-                        if (middleMove == -9) {
-                            middleMove =47;
-                        }
+
                         if(boardCopy[middleMove] != playerNum)
                         {
                             AggravationMovePieceAction movePieceGetOutTheWay;
@@ -81,9 +82,9 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                     {
                         specialCase = 47;
                     }
-                    if(boardCopy[specialCase] == playerNum && officialRoll == 1 && boardCopy[playerNum*14 - 9] != playerNum)
+                    if(boardCopy[specialCase] == playerNum && officialRoll == 1 && boardCopy[middleMove] != playerNum)
                     {
-                        AggravationMovePieceAction homeMove = new AggravationMovePieceAction(this, "Shortcut", specialCase, playerNum*14-9);
+                        AggravationMovePieceAction homeMove = new AggravationMovePieceAction(this, "Shortcut", specialCase, middleMove);
                         game.sendAction(homeMove);
                         return;
                     }
@@ -220,7 +221,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                             {
                                 shortCutMove -= 56;
                             }
-                            if(boardCopy[shortCutMove] != playerNum && toMoveFrom != playerNum*14 -9)
+                            if(boardCopy[shortCutMove] != playerNum && toMoveFrom != middleMove)
                             {
                                 AggravationMovePieceAction movePieceGetOutTheWay;
                                 movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, shortCutMove);

@@ -15,6 +15,7 @@ import edu.up.cs301.game.actionMsg.GameAction;
  */
 public class AggravationMovePieceAction extends GameAction implements Serializable {
 
+    private static final long serialVersionUID = -5109179064390136954L;
     int oldIdx;
     int newIdx;
     String type;//Start, Board, or Home

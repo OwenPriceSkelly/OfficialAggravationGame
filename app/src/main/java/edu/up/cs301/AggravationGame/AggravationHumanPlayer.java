@@ -14,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
+import java.io.Serializable;
+
 /**
  * A GUI for a human to play Aggravation.
  *
@@ -21,9 +23,10 @@ import android.view.View.OnClickListener;
  * @author Emily Peterson, Andrew Ripple & Owen Price
  * @version November 2016
  */
-public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickListener {
+public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickListener,Serializable {
 
-   /* instance variables */
+    private static final long serialVersionUID = -5109179124333136954L;
+    /* instance variables */
 
     // These variables will reference widgets that will be modified during play
     private ImageButton dieImageButton = null;
@@ -494,6 +497,10 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         String boardType = "board";
         boolean possibleMove = false;
 
+        int topSpace = playerNum*14-2;
+        if (playerNum == 0){
+            topSpace = 54;}
+
         //if it is start value piece, checks or enables the possible move spot 0
         if (board.equals("start")) {
             if (rollVal == 1 || rollVal == 6){ //if a one or a 6 & there are pieces to move from start array, enable space
@@ -507,7 +514,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 boardType = "start";}}
 
         //if checking a value in the home area, checks or enables possible move spot(s)
-        if (board.equals("home")) {
+        if (board.equals("home")) { //ADD IN CHECK FOR overlapping home array
             int i = pieceLoc;
             if (i + rollVal < 4 && homeCopy[playerNum][i + rollVal] != playerNum) {
                 if(rollVal == 1) {
@@ -541,12 +548,48 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         //if checking a value in the board area, checks or enables possible move spot(s)
         if (board.equals("board")) {
             int i = pieceLoc;
+
             if (gameBoardCopy[i] == playerNum) { //if the player clicked on its own button
                 markedButton = i;
+                //===================CASE: moving from middle==========================
+                if (i == 56 )
+                { if (rollVal != 1){
+                    return possibleMove;}
+                    //if the player is in the middle space
+                if (gameBoardCopy[5] != playerNum) {
+                    if (enable) {
+                        this.gameBoard[5].setEnabled(true);
+                        if (gameBoardCopy[5] == -1) {
+                            this.gameBoard[5].setBackgroundResource(R.mipmap.whitesquare);
+                            gameBoardCopy[5] = -2;}}
+                    possibleMove = true;}
+                    if (gameBoardCopy[19] != playerNum) {
+                        if (enable) {
+                            this.gameBoard[19].setEnabled(true);
+                            if (gameBoardCopy[19] == -1) {
+                                this.gameBoard[19].setBackgroundResource(R.mipmap.whitesquare);
+                                gameBoardCopy[19] = -2;}}
+                        possibleMove = true;}
+                    if (gameBoardCopy[33] != playerNum) {
+                        if (enable) {
+                            this.gameBoard[33].setEnabled(true);
+                            if (gameBoardCopy[33] == -1) {
+                                this.gameBoard[33].setBackgroundResource(R.mipmap.whitesquare);
+                                gameBoardCopy[33] = -2;}}
+                        possibleMove = true;}
+                    if (gameBoardCopy[47] != playerNum) {
+                        if (enable) {
+                            this.gameBoard[47].setEnabled(true);
+                            if (gameBoardCopy[47] == -1) {
+                                this.gameBoard[47].setBackgroundResource(R.mipmap.whitesquare);
+                                gameBoardCopy[47] = -2;}}
+                        possibleMove = true;
+                        return possibleMove;}}
+
                 //==================CASE: roll val "Over the Top" for player 1,2,3=====================
 
                 if ((i + rollVal) > 55 && ((rollVal + i) - 14 * playerNum) < 54) { //player (other than 0) is moving "over the top" legally
-                    int correctedSpace = rollVal + i - 55; //"over the top space"
+                    int correctedSpace = rollVal + i - 56; //"over the top space"
                     if (gameBoardCopy[correctedSpace] != playerNum) {//"over the top"
                         if (checkPieceOrder(currentPieceLocations, playerNum, i, correctedSpace)) {
                             possibleMove = true;
@@ -562,7 +605,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 }
 
                 //==================CASE: valid move for board value i + roll val (most basic move)==========
-                else if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal)) && i > playerNum * 14 - 2 & gameBoardCopy[i + rollVal] != playerNum) {
+
+                else if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal)))  {
                     possibleMove = true;
                     if (enable) {
                         this.gameBoard[i + rollVal].setEnabled(true); //enables that button
@@ -571,43 +615,32 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                             gameBoardCopy[i + rollVal] = -2;
                         }
                     }
-                    Log.i("e", "possible move");
                 }
 
-
-
-
-            //CASE: Potential home array move
+            //===============CASE: Potential home array move=====
             //checks the Home Arrays
                 int overLine = playerNum*14 -2;
-                if(overLine == -2)
-                {
-                    overLine = 54;
-                }
-                if ((i + rollVal) > overLine && (i + rollVal) < overLine+5 && i != 56) {
-                    Log.i("trying to enable", "home");
+                if(overLine == -2) {
+                    overLine = 54;}
+                if ( i != playerNum*14 && i != playerNum*14+1 && i != playerNum*14+2 && i != playerNum*14+3 ){
+                if ((i + rollVal) > overLine && (i + rollVal) < overLine+5 && i != 56 && i<= overLine) {
                     int leftOver = (i+rollVal) - overLine - 1;
                     if (homeCopy[playerNum][leftOver] != playerNum) {
                         boolean canDoThis = true;
                         int iterator = leftOver;
-                        for (int j = 0; j < 4; j++) //checks to make sure it's not leapfrogging a piece already there
-                        {
-                            if (j < iterator) //only the spaces before the possible move space
-                            {
-                                if (homeCopy[playerNum][j] == playerNum) {
-                                    canDoThis = false;
-                                    Log.i("not enable", "can't skip ownpiece");
-                                }
-                            }
-
-                        }
+                        for (int j = 0; j < 4; j++){ //checks to make sure it's not leapfrogging a piece already there
+                        if (j < iterator){ //only the spaces before the possible move space
+                            if (homeCopy[playerNum][j] == playerNum) {
+                                    canDoThis = false;}}}
+                          if (!checkPieceOrder(currentPieceLocations, playerNum, i, topSpace) && gameBoardCopy[topSpace] == playerNum)  {
+                              canDoThis = false;}
                         if (canDoThis) {
                             if (enable) {
                                 playerHome[playerNum][iterator].setEnabled(true);
                                 if (homeCopy[playerNum][iterator] == -1) {
                                     playerHome[playerNum][iterator].setBackgroundResource(R.mipmap.whitesquare);
                                     homeCopy[playerNum][iterator] = -2;}}
-                            possibleMove = true;}}}
+                            possibleMove = true;}}}}
 
             //===================CASE: Shortcut move==========================
                 if ((i + rollVal) == 6 || (i + rollVal) == 20 || (i + rollVal) == 34 || (i + rollVal) == 48){ //if the player can directly land on middle shortcut
@@ -874,36 +907,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                             gameBoardCopy[moveSpace4] = -2;}}
                                     possibleMove = true;}}}}
 
-                //===================CASE: moving from middle==========================
-                    if (i == 56 && rollVal == 1) //if the player is in the middle space
-                    {if (gameBoardCopy[5] != playerNum) {
-                            if (enable) {
-                                this.gameBoard[5].setEnabled(true);
-                                if (gameBoardCopy[5] == -1) {
-                                    this.gameBoard[5].setBackgroundResource(R.mipmap.whitesquare);
-                                    gameBoardCopy[5] = -2;}}
-                            possibleMove = true;}
-                        if (gameBoardCopy[19] != playerNum) {
-                            if (enable) {
-                                this.gameBoard[19].setEnabled(true);
-                                if (gameBoardCopy[19] == -1) {
-                                    this.gameBoard[19].setBackgroundResource(R.mipmap.whitesquare);
-                                    gameBoardCopy[19] = -2;}}
-                            possibleMove = true;}
-                        if (gameBoardCopy[33] != playerNum) {
-                            if (enable) {
-                                this.gameBoard[33].setEnabled(true);
-                                if (gameBoardCopy[33] == -1) {
-                                    this.gameBoard[33].setBackgroundResource(R.mipmap.whitesquare);
-                                    gameBoardCopy[33] = -2;}}
-                            possibleMove = true;}
-                        if (gameBoardCopy[47] != playerNum) {
-                            if (enable) {
-                                this.gameBoard[47].setEnabled(true);
-                                if (gameBoardCopy[47] == -1) {
-                                    this.gameBoard[47].setBackgroundResource(R.mipmap.whitesquare);
-                                    gameBoardCopy[47] = -2;}}
-                            possibleMove = true;}}}}
+                }}
 
         return possibleMove;
     }
@@ -921,20 +925,28 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
      */
     public boolean checkPieceOrder(int[] pieceLocations, int playerNum, int startMove, int endMove)
     {
+
         int startMoveNew = startMove;
         int endMoveNew = endMove;
+
         int pieceLocNew[] = new int[4];
         //if any pieces are "over the top" for a specific player, resets them to 55 + piece location in order to check for leapfrogging
         for (int i = 0; i<4;i++) {
             if (playerNum != 0 && pieceLocations[i] <playerNum*14) {
-              pieceLocNew[i] = pieceLocations[i] + 55;}}
+              pieceLocNew[i] = pieceLocations[i] + 56;}
+            else{
+            pieceLocNew[i] = pieceLocations[i];}
+        }
         if (startMove < playerNum*14) { //resets startMove to scaled value
-            startMoveNew = startMove +55;}
+            startMoveNew = startMove +56;}
         if (endMove < playerNum*14){
-            endMoveNew = endMove + 55;}
+            endMoveNew = endMove + 56;}
+        if (startMoveNew > (playerNum*14 +54)-(endMove - startMove)){
+            return false;}
         for (int j = 0; j<4; j++) { //checks leapfrogging
             if (pieceLocNew[j]!= startMoveNew && pieceLocNew[j] > startMoveNew && pieceLocNew[j] <endMoveNew) {
                 return false;}}
+
         return true;
     }
 /**
@@ -955,26 +967,29 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     pieceLocations[i] == 33 || pieceLocations[i] == 47) {
                 if (pieceLocations[i] != startMove) {
                     if (startMove < pieceLocations[i] && endMove > pieceLocations[i]) {
-                        return false;}}}}
+                        return false;}}}
 
-        if (endMove >5 && endMove <11) //end move on straightaway from 5 to 11
+        //add cases for over the top stuff and overlapping
+        }
+
+        if (endMove >4 && endMove <11) //end move on straightaway from 5 to 11
         {for (int i = 0; i<4; i++){
-            if (pieceLocations[i] >5 && pieceLocations[i] <11){ //there is a piece on that straigtaway
+            if (pieceLocations[i] >4 && pieceLocations[i] <11){ //there is a piece on that straigtaway
         if (pieceLocations[i] < endMove){return false;
             }}}}
-        if (endMove >19 && endMove <25) //end move on straightaway from 19 to 25
+        if (endMove >18 && endMove <25) //end move on straightaway from 19 to 25
         {for (int i = 0; i<4; i++){
-            if (pieceLocations[i] >19 && pieceLocations[i] <25){ //there is a piece on that straigtaway
+            if (pieceLocations[i] >18 && pieceLocations[i] <25){ //there is a piece on that straigtaway
                 if (pieceLocations[i] < endMove){return false;
                 }}}}
-        if (endMove >33 && endMove <39) //end move on straightaway from 5 to 11
+        if (endMove >32 && endMove <39) //end move on straightaway from 5 to 11
         {for (int i = 0; i<4; i++){
-            if (pieceLocations[i] >33 && pieceLocations[i] <39){ //there is a piece on that straigtaway
+            if (pieceLocations[i] >32 && pieceLocations[i] <39){ //there is a piece on that straigtaway
                 if (pieceLocations[i] < endMove){return false;
                 }}}}
-        if (endMove >47 && endMove <53) //end move on straightaway from 5 to 11
+        if (endMove >46 && endMove <53) //end move on straightaway from 5 to 11
         {for (int i = 0; i<4; i++){
-            if (pieceLocations[i] >47 && pieceLocations[i] <53){ //there is a piece on that straigtaway
+            if (pieceLocations[i] >46 && pieceLocations[i] <53){ //there is a piece on that straigtaway
                 if (pieceLocations[i] < endMove){return false;
                 }}}}
         return true;

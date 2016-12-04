@@ -1,5 +1,6 @@
 package edu.up.cs301.AggravationGame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import edu.up.cs301.game.GameMainActivity;
@@ -16,7 +17,9 @@ import edu.up.cs301.game.config.GamePlayerType;
  *
  * @version November 2016
  */
-public class AggravationMainActivity extends GameMainActivity {
+public class AggravationMainActivity extends GameMainActivity implements Serializable {
+
+    private static final long serialVersionUID = -5109179064433136954L;
 
     // the port number that this game will use when playing over the network
     private static final int PORT_NUMBER = 2278;
