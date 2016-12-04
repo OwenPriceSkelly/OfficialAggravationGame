@@ -1,4 +1,4 @@
-#Sat Dec 03 18:01:09 PST 2016
+#Sun Dec 04 13:46:18 PST 2016
 base.0=C\:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_26f97187edebeecf5b8261d5ab29859ebee7a1c2
 renamed.1=classes2.dex
 renamed.0=classes.dex
