@@ -26,6 +26,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
         super(name);
     }
 
+    private int previousMoveFrom;
     /**
      * callback method--game's state has changed
      *
@@ -162,17 +163,19 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
 
                         }
                     }
+
                     for (int i = 0; i < 56; i++) {
                         int j = i + startIdx;
                         if (j > 55) j -= 56;
                         if (boardCopy[j] == playerNum) {
-
+                                previousMoveFrom = toMoveFrom;
                                 toMoveFrom = j;
                                 if(toMoveFrom+officialRoll == 5 || toMoveFrom+officialRoll == 19 || toMoveFrom+officialRoll == 33 || toMoveFrom+officialRoll == 47)
                                 {
                                     break;
                                 }
                                 continue;
+
                             }
                         }
                     if(boardCopy[5] == playerNum)
@@ -191,6 +194,12 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                     {
                         toMoveFrom = 47;
                     }
+
+
+
+
+
+
 
                     int scaleComputer = playerNum * 14 - 2;
                     if (playerNum == 0) {
@@ -376,38 +385,34 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                                 break;
                             }
                         }
-                        boolean yes = true;
                         if (moveType.equalsIgnoreCase("Home")) {
-                            if (toMoveTo > 3 && (officialRoll != 6 || officialRoll != 1))
+                            if (toMoveTo > 3)
                             {
                                 moveType = "Skip";
+                                AggravationMovePieceAction movePieceGetOutTheWay;
+                                movePieceGetOutTheWay = new AggravationMovePieceAction(this, "board", previousMoveFrom, toMoveTo+officialRoll);
+                                game.sendAction(movePieceGetOutTheWay);
 
-                            }
-                            else if(toMoveTo>3 && (officialRoll == 6 || officialRoll == 1))
-                            {
-                                yes = false;
                             }
                             else {
                                 for (int i = 0; i <= toMoveTo; i++) {
-                                    if (homeCopy[i] == playerNum) {
-                                        if(officialRoll != 6 || officialRoll != 1)
-                                        {moveType = "Skip";}
-                                        else
-                                        {
-                                            yes = false;
-                                        }
-
+                                    if (homeCopy[i] == playerNum)
+                                    {
+                                        moveType = "Skip";
+                                        AggravationMovePieceAction movePieceGetOutTheWay;
+                                        movePieceGetOutTheWay = new AggravationMovePieceAction(this, "board", previousMoveFrom, toMoveTo+officialRoll);
+                                        game.sendAction(movePieceGetOutTheWay);
                                     }
                                 }
                             }
 
                         }
-                        if(yes) {
+
                             AggravationMovePieceAction movePieceGetOutTheWay;
                             movePieceGetOutTheWay = new AggravationMovePieceAction(this, moveType, toMoveFrom, toMoveTo);
                             game.sendAction(movePieceGetOutTheWay);
                             return;
-                        }
+
                         //THIS IS WHERE THE PROBLEMS LIVE - Owen
                         //if your move takes you over theEndOfTheLine, and from a point before/= to it,
                         //you're making a move into your home array
