@@ -32,7 +32,7 @@ public class AggravationState extends GameState implements Serializable {
         super();
         //initializes values
         playerTurn = 0;
-        toRoll = true; //is this right????
+        toRoll = true;
 
         //i is player number
         for (int i = 0; i<4; i++) //assuming 4 players right now
@@ -61,6 +61,8 @@ public class AggravationState extends GameState implements Serializable {
         this.setGameBoard(toCopy.getGameBoard());
         this.setHomeArray(toCopy.getHomeArray());
         this.setStartArray(toCopy.getStartArray());
+
+
 
 
 
@@ -103,6 +105,7 @@ public class AggravationState extends GameState implements Serializable {
     //for specific player
     public int[] getStartArray(int playerNum)
     {
+
         return (playerStart[playerNum]);
 
     }
@@ -114,15 +117,19 @@ public class AggravationState extends GameState implements Serializable {
     }
 
     //for specific player
-    public void setStartArray (int playerNum, int[] newHomeArray)
+    public void setStartArray (int playerNum, int[] newStartArray)
     {
-        playerStart[playerNum] = newHomeArray;
+        for (int i = 0; i<4; i++){
+            playerStart[playerNum][i] = newStartArray[i];}
+
     }
 
     //for all players
     public void setStartArray(int[][] newStartArray)
     {
-        playerStart = newStartArray;
+        for (int i = 0; i<4; i++){
+            for (int j = 0; j<4; j++){
+                playerStart[i][j] = newStartArray[i][j];}}
     }
 
 
@@ -138,13 +145,18 @@ public class AggravationState extends GameState implements Serializable {
 
     public void setHomeArray (int playerNum, int[] newHomeArray)
     {
-        playerHome[playerNum] = newHomeArray;
+
+        for (int i = 0; i<4; i++){
+            playerHome[playerNum][i] = newHomeArray[i];}
+
 
     }
 
     public void setHomeArray (int[][] newHomeArray)
     {
-        playerHome = newHomeArray;
+        for (int i = 0; i<4; i++){
+            for (int j = 0; j<4; j++){
+            playerHome[i][j] = newHomeArray[i][j];}}
 
     }
 
@@ -156,7 +168,9 @@ public class AggravationState extends GameState implements Serializable {
 
     public void setGameBoard(int[] newGameBoard)
     {
-        gameBoard = newGameBoard;
+        for (int i = 0; i<57; i++){
+            gameBoard[i] = newGameBoard[i];
+        }
     }
 
 }

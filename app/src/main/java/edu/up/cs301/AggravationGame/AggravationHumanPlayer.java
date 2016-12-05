@@ -515,7 +515,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 boardType = "start";}}
 
         //if checking a value in the home area, checks or enables possible move spot(s)
-        if (board.equals("home")) { //ADD IN CHECK FOR overlapping home array
+        if (board.equals("home")) {
             int i = pieceLoc;
             if (i + rollVal < 4 && homeCopy[playerNum][i + rollVal] != playerNum) {
                 if(rollVal == 1) {
@@ -639,14 +639,15 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
             //===================CASE: Shortcut move==========================
                 if ((i + rollVal) == 6 || (i + rollVal) == 20 || (i + rollVal) == 34 || (i + rollVal) == 48){ //if the player can directly land on middle shortcut
-                        if (gameBoardCopy[56] != playerNum && ((i+ rollVal -1) != playerNum)) {
+                        if (gameBoardCopy[56] != playerNum)  {
                             if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal -1)))  {
+                                if ((i+ rollVal -1) != playerNum){
                             if (enable) {
                                 this.gameBoard[56].setEnabled(true); //enable middle
                                 if (gameBoardCopy[56] == -1) {
                                     this.gameBoard[56].setBackgroundResource(R.mipmap.whitesquare);
                                     gameBoardCopy[56] = -2;}}
-                            possibleMove = true;}}}
+                            possibleMove = true;}}}}
 
                 //===================CASE: moving from a shortcut==========================
                 if (i == 5 || i == 19 || i == 33 || i == 47){ //if the player is on a corner shortcut
@@ -965,24 +966,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 if (pieceLocations[i] == 47 && (startMove == 19 || startMove == 33) && endMove > 5 && endMove <5+6 ){return false;}
                 if (pieceLocations[i] == 47 && startMove == 33 && endMove >19 && endMove < 19+6){return false;}}}
 
-        if (endMove >4 && endMove <11) //end move on straightaway from 4 to 11
+        if (endMove >4 && endMove <12) //end move on straightaway from 4 to 11
         {for (int i = 0; i<4; i++){
-            if (pieceLocations[i] >4 && pieceLocations[i] <11){ //there is a piece on that straigtaway
+            if (pieceLocations[i] >4 && pieceLocations[i] <12){ //there is a piece on that straigtaway
         if (pieceLocations[i] < endMove){return false;
             }}}}
-        if (endMove >18 && endMove <25) //end move on straightaway from 18 to 25
+        if (endMove >18 && endMove <26) //end move on straightaway from 18 to 25
         {for (int i = 0; i<4; i++){
-            if (pieceLocations[i] >18 && pieceLocations[i] <25){ //there is a piece on that straigtaway
+            if (pieceLocations[i] >18 && pieceLocations[i] <26){ //there is a piece on that straigtaway
                 if (pieceLocations[i] < endMove){return false;
                 }}}}
-        if (endMove >32 && endMove <39) //end move on straightaway from 32 to 39
+        if (endMove >32 && endMove <40) //end move on straightaway from 32 to 39
         {for (int i = 0; i<4; i++){
-            if (pieceLocations[i] >32 && pieceLocations[i] <39){ //there is a piece on that straigtaway
+            if (pieceLocations[i] >32 && pieceLocations[i] <40){ //there is a piece on that straigtaway
                 if (pieceLocations[i] < endMove){return false;
                 }}}}
-        if (endMove >46 && endMove <53) //end move on straightaway from 46 to 53
+        if (endMove >46 && endMove <54) //end move on straightaway from 46 to 53
         {for (int i = 0; i<4; i++){
-            if (pieceLocations[i] >46 && pieceLocations[i] <53){ //there is a piece on that straigtaway
+            if (pieceLocations[i] >46 && pieceLocations[i] <54){ //there is a piece on that straigtaway
                 if (pieceLocations[i] < endMove){return false;
                 }}}}
         Log.i("pieceChecker","return true");
@@ -1019,7 +1020,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         Log.i("die image button", "created");
         //Initialize the widget reference member variables
 
-        //ALL THOSE BUTTONS GO HERE
         for (int i = 0; i<57; i++) {
             this.gameBoard[i] = (ImageButton) activity.findViewById(gameBoardIDS[i]);
             this.gameBoard[i].setOnClickListener(this);

@@ -5,19 +5,19 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="44919531048343"
+    timestamp="50748963477110"
     token="3159538257384012301"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="166" />
+        duration="71" />
     <task
         name="instant-run-dex"
-        duration="624" />
+        duration="614" />
     <task
         name="instant-run-transform"
-        duration="9" />
+        duration="7" />
     <task
         name="verifier"
         duration="2" />
@@ -27,56 +27,42 @@
         type="RELOAD_DEX" />
 
     <build
-        timestamp="40481555382733"
+        timestamp="48223873216154"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="40662575541389"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="41538499075031"
+        timestamp="49016660818898"
         verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\41538499075031\classes.dex"
+            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\49016660818898\classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="42824401769196"
+        timestamp="49176596608531"
         verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\42824401769196\classes.dex"
+            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\49176596608531\classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="43314286524133"
+        timestamp="49615936942577"
         verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\43314286524133\classes.dex"
+            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\49615936942577\classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="43707744501816"
+        timestamp="50239016403109"
         verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\43707744501816\classes.dex"
+            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\50239016403109\classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="43985583081408"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\43985583081408\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="44919531048343"
+        timestamp="50748963477110"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\reload-dex\debug\classes.dex"

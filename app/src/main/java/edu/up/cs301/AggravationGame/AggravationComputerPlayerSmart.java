@@ -26,7 +26,6 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
         super(name);
     }
 
-    private int previousMoveFrom;
     /**
      * callback method--game's state has changed
      *
@@ -164,14 +163,10 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                         }
                     }
                     for (int i = 0; i < 56; i++) {
-                        previousMoveFrom = toMoveFrom;
                         int j = i + startIdx;
                         if (j > 55) j -= 56;
                         if (boardCopy[j] == playerNum) {
-                            if (j == 5 || j == 19 || j == 33 || j == 47) {
-                                toMoveFrom = j;
-                                break;
-                            } else {
+
                                 toMoveFrom = j;
                                 if(toMoveFrom+officialRoll == 5 || toMoveFrom+officialRoll == 19 || toMoveFrom+officialRoll == 33 || toMoveFrom+officialRoll == 47)
                                 {
@@ -180,15 +175,29 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                                 continue;
                             }
                         }
+                    if(boardCopy[5] == playerNum)
+                    {
+                        toMoveFrom = 5;
                     }
-
+                    if(boardCopy[19] == playerNum)
+                    {
+                        toMoveFrom = 19;
+                    }
+                    if(boardCopy[33] == playerNum)
+                    {
+                        toMoveFrom = 33;
+                    }
+                    if(boardCopy[47] == playerNum)
+                    {
+                        toMoveFrom = 47;
+                    }
 
                     int scaleComputer = playerNum * 14 - 2;
                     if (playerNum == 0) {
                         scaleComputer = 54;
                     }
 
-                    if (toMoveFrom <= scaleComputer && toMoveFrom > scaleComputer -4 && officialRoll == 6) {
+                    if (toMoveFrom <= scaleComputer && toMoveFrom > scaleComputer -3 && officialRoll == 6) {
                         for (int k = 0; k < 4; k++) {
                             if (startCopy[k] == this.playerNum && boardCopy[startIdx] != this.playerNum) {
                                 AggravationMovePieceAction startPiece = new AggravationMovePieceAction(this, "Start", k, startIdx);
@@ -348,6 +357,8 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                         toMoveTo = toMoveFrom + officialRoll;
                         int endOfTheLine = startIdx - 2;
                         if (toMoveTo > 55) toMoveTo -= 56;
+                        if (playerNum == 0 && toMoveTo >54){
+                            toMoveTo -=55;}
                         if (this.playerNum == 0) endOfTheLine = 54;
                         Log.i("endOfTheLine is", " " + endOfTheLine);
 
@@ -357,26 +368,46 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                         for (int i = toMoveFrom; i < toMoveFrom + officialRoll; i++) {
                             if (i == endOfTheLine) {
                                 moveType = "Home";
-                                toMoveTo = toMoveTo - endOfTheLine-1;
+                                if (playerNum == 0) {
+                                    toMoveTo = toMoveTo +1;}
+                                else{
+                                    toMoveTo = toMoveTo - endOfTheLine - 1; //PROBLEM HERE
+                                }
                                 break;
                             }
                         }
+                        boolean yes = true;
                         if (moveType.equalsIgnoreCase("Home")) {
-                            if (toMoveTo > 3)
+                            if (toMoveTo > 3 && (officialRoll != 6 || officialRoll != 1))
                             {
                                 moveType = "Skip";
+
+                            }
+                            else if(toMoveTo>3 && (officialRoll == 6 || officialRoll == 1))
+                            {
+                                yes = false;
                             }
                             else {
                                 for (int i = 0; i <= toMoveTo; i++) {
-                                    if (homeCopy[i] == playerNum) moveType = "Skip";
+                                    if (homeCopy[i] == playerNum) {
+                                        if(officialRoll != 6 || officialRoll != 1)
+                                        {moveType = "Skip";}
+                                        else
+                                        {
+                                            yes = false;
+                                        }
+
+                                    }
                                 }
                             }
 
                         }
-                        AggravationMovePieceAction movePieceGetOutTheWay;
-                        movePieceGetOutTheWay = new AggravationMovePieceAction(this, moveType, toMoveFrom, toMoveTo);
-                        game.sendAction(movePieceGetOutTheWay);
-                        return;
+                        if(yes) {
+                            AggravationMovePieceAction movePieceGetOutTheWay;
+                            movePieceGetOutTheWay = new AggravationMovePieceAction(this, moveType, toMoveFrom, toMoveTo);
+                            game.sendAction(movePieceGetOutTheWay);
+                            return;
+                        }
                         //THIS IS WHERE THE PROBLEMS LIVE - Owen
                         //if your move takes you over theEndOfTheLine, and from a point before/= to it,
                         //you're making a move into your home array
