@@ -407,7 +407,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
             /*Label a move "skip" if you want to make a move,
             * but you're afraid of the commitment */
             else if (type.equalsIgnoreCase("Skip")){
-                actualRoll=0;
+
             }
 
             //setStart and setGameBoard were redundant, being the same in every case so I moved them here

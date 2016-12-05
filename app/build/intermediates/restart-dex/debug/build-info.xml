@@ -1,87 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="21"
+    api-level="23"
     density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="52292724922276"
-    token="3159538257384012301"
-    verifier="COLD_SWAP_REQUESTED" >
+    timestamp="33344037577096"
+    token="-7299523659523298607"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="73" />
+        duration="106" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="383" />
     <task
         name="instant-run-transform"
-        duration="16" />
+        duration="83" />
     <task
         name="verifier"
         duration="1" />
 
     <artifact
-        location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-        type="DEX" />
+        location="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
-        timestamp="48223873216154"
+        timestamp="31789257252938"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\outputs\apk\app-debug.apk"
+            location="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="51764561715689"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="32890631175234"
+        verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4194ccb3b815ff947ec164bb9f6965b61292db89\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_26f97187edebeecf5b8261d5ab29859ebee7a1c2\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_9dbd5083a214f729a19b739197611203326f5cd3\classes.dex"
-            type="DEX" />
+            location="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\32890631175234\classes.dex"
+            type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="52292724922276"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="33344037577096"
+        verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
+            location="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

@@ -3,30 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="22.0.1"
-        sha1="2a2052b719dee7baa4683ffa2fdb7adcac13e5c2">
-        <dex dex="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_26f97187edebeecf5b8261d5ab29859ebee7a1c2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Public\Documents\Android\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="22.0.1"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_9dbd5083a214f729a19b739197611203326f5cd3\classes.dex" />
+        <dex dex="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_9dbd5083a214f729a19b739197611203326f5cd3\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="22.0.1"
-        sha1="84a2de85ffcf83d3863781f9e40d59cb520adfd1">
-        <dex dex="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4194ccb3b815ff947ec164bb9f6965b61292db89\classes.dex" />
+        sha1="62d8fe542b3f517719f683e292887220e73e118d">
+        <dex dex="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e4a619f50a86a91dfb82e21b90d499fc5ce2e258\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="89439346b87fc405550c9da57b81293dd6872427">
+        <dex dex="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b5886fa1a5a9ed43fe919dc78e476f7d2b6ae1cc\classes.dex" />
     </item>
 
 </items>

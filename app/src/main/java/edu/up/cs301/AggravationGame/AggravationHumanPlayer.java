@@ -100,187 +100,204 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         }
 
 
-            if (info instanceof AggravationState) {
-                illegalMove.setText("");
-                gameStateInfo = (AggravationState) info;
-                Log.i("rollVal Receive Info", Integer.toString(gameStateInfo.getDieValue()));
-                int[] temp = gameStateInfo.getGameBoard();
+        if (info instanceof AggravationState || info instanceof IllegalMoveInfo) {
+            illegalMove.setText("");
+            gameStateInfo = (AggravationState) info;
+            Log.i("rollVal Receive Info", Integer.toString(gameStateInfo.getDieValue()));
+            int[] temp = gameStateInfo.getGameBoard();
 
 
-                    if(gameStateInfo.getRoll() == true || gameStateInfo.getRoll() == false)
-                    {
-                        this.newGameButton.setEnabled(true);
+            if(gameStateInfo.getRoll() == true || gameStateInfo.getRoll() == false)
+            {
+                this.newGameButton.setEnabled(true);
+            }
+            for (int i = 0; i < 57; i++) //setting game board to the pictures
+            {
+
+                if (temp[i] == -1) {
+                    if (i == 5 || i == 19 || i == 33 || i == 47 || i == 56) {
+                        this.gameBoard[i].setBackgroundResource(R.mipmap.shortcut);
+                        continue;
                     }
-                    for (int i = 0; i < 57; i++) //setting game board to the pictures
-                    {
-
-                        if (temp[i] == -1) {
-                            if (i == 5 || i == 19 || i == 33 || i == 47 || i == 56) {
-                                this.gameBoard[i].setBackgroundResource(R.mipmap.shortcut);
-                                continue;
-                            }
-                            this.gameBoard[i].setBackgroundResource(R.mipmap.gamesquare);
-                        } else if (temp[i] == 0) {
-                            this.gameBoard[i].setBackgroundResource(R.mipmap.playerzeropiece);
-                        } else if (temp[i] == 1) {
-                            this.gameBoard[i].setBackgroundResource(R.mipmap.playeronepiece);
-                        } else if (temp[i] == 2) {
-                            this.gameBoard[i].setBackgroundResource(R.mipmap.playertwopiece);
-                        } else if (temp[i] == 3) {
-                            this.gameBoard[i].setBackgroundResource(R.mipmap.playerthreepiece);
-                        }
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.gamesquare);
+                } else if (temp[i] == 0) {
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.playerzeropiece);
+                } else if (temp[i] == 1) {
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.playeronepiece);
+                } else if (temp[i] == 2) {
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.playertwopiece);
+                } else if (temp[i] == 3) {
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.playerthreepiece);
+                }
+            }
+            int tempStart[][] = gameStateInfo.getStartArray(); //temporary array that holds the start array integers of the game state
+            for (int i = 0; i < allPlayerNames.length; i++) { //this runs through and looks at the integers in the game state array and changes the image buttons to reflect them
+                for (int j = 0; j < 4; j++) {
+                    if (tempStart[i][j] == -1) {
+                        this.playerStart[i][j].setBackgroundResource(R.mipmap.gamesquare);
                     }
-                    int tempStart[][] = gameStateInfo.getStartArray(); //temporary array that holds the start array integers of the game state
-                    for (int i = 0; i < allPlayerNames.length; i++) { //this runs through and looks at the integers in the game state array and changes the image buttons to reflect them
-                        for (int j = 0; j < 4; j++) {
-                            if (tempStart[i][j] == -1) {
-                                this.playerStart[i][j].setBackgroundResource(R.mipmap.gamesquare);
-                            }
-                            else if (tempStart[i][j] == 0) {
-                                this.playerStart[i][j].setBackgroundResource(R.mipmap.playerzeropiece);
-                            } else if (tempStart[i][j] == 1) {
-                                this.playerStart[i][j].setBackgroundResource(R.mipmap.playeronepiece);
-                            } else if (tempStart[i][j] == 2) {
-                                this.playerStart[i][j].setBackgroundResource(R.mipmap.playertwopiece);
-                            } else if (tempStart[i][j] == 3) {
-                                this.playerStart[i][j].setBackgroundResource(R.mipmap.playerthreepiece);
-                            }
-                        }
-                    }
-                    int tempHome[][] = gameStateInfo.getHomeArray();//temporary array that holds the home array integers of the game state
-                    for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
-                    {
-                        for (int j = 0; j < 4; j++) {
-                            if (tempHome[i][j] == -1) {
-                                if(i == 0)
-                                {
-                                    this.playerHome[i][j].setBackgroundResource(R.mipmap.greensquarehome);
-                                }
-                                if(i == 1)
-                                {
-                                    this.playerHome[i][j].setBackgroundResource(R.mipmap.pinksquarehome);
-                                }
-                                if(i == 2)
-                                {
-                                    this.playerHome[i][j].setBackgroundResource(R.mipmap.redsquarehome);
-                                }
-                                if(i == 3)
-                                {
-                                    this.playerHome[i][j].setBackgroundResource(R.mipmap.greysquarehome);
-                                }
-                            } else if (tempHome[i][j] == 0) {
-                                this.playerHome[i][j].setBackgroundResource(R.mipmap.playerzeropiece);
-                            } else if (tempHome[i][j] == 1) {
-                                this.playerHome[i][j].setBackgroundResource(R.mipmap.playeronepiece);
-                            } else if (tempHome[i][j] == 2) {
-                                this.playerHome[i][j].setBackgroundResource(R.mipmap.playertwopiece);
-                            } else if (tempHome[i][j] == 3) {
-                                this.playerHome[i][j].setBackgroundResource(R.mipmap.playerthreepiece);
-                            }
-
-                        }
+                    else if (tempStart[i][j] == 0) {
+                        this.playerStart[i][j].setBackgroundResource(R.mipmap.playerzeropiece);
+                    } else if (tempStart[i][j] == 1) {
+                        this.playerStart[i][j].setBackgroundResource(R.mipmap.playeronepiece);
+                    } else if (tempStart[i][j] == 2) {
+                        this.playerStart[i][j].setBackgroundResource(R.mipmap.playertwopiece);
+                    } else if (tempStart[i][j] == 3) {
+                        this.playerStart[i][j].setBackgroundResource(R.mipmap.playerthreepiece);
                     }
                 }
-                if(allPlayerNames.length == 3)
-                {
-                    for (int i = 0; i < 4; i++)
-                    {
-                        this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
-                    }
-                }
-                if(allPlayerNames.length == 2)
-                {
-                    for (int i = 0; i < 4; i++)
-                {
-                     this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
-                     this.playerStart[2][i].setBackgroundResource(R.mipmap.gamesquare);
-                    }
-                }
-                if(allPlayerNames.length == 1)
-                {
-                    for (int i = 0; i < 4; i++)
-                    {
-                        this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
-                        this.playerStart[2][i].setBackgroundResource(R.mipmap.gamesquare);
-                        this.playerStart[1][i].setBackgroundResource(R.mipmap.gamesquare);
-                }
-                }
-
-
-                int whoseTurn = gameStateInfo.getTurn();
-                if (whoseTurn == playerNum) {
-                    if (gameStateInfo.getRoll()) {
-                        for (int i = 0; i < 57; i++) {
-                            this.gameBoard[i].setEnabled(false);
-                        }
-                        for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+            }
+            int tempHome[][] = gameStateInfo.getHomeArray();//temporary array that holds the home array integers of the game state
+            for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+            {
+                for (int j = 0; j < 4; j++) {
+                    if (tempHome[i][j] == -1) {
+                        if(i == 0)
                         {
-                            for (int j = 0; j < 4; j++) {
-                                this.playerStart[i][j].setEnabled(false);
-                            }
+                            this.playerHome[i][j].setBackgroundResource(R.mipmap.greensquarehome);
                         }
-                        for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+                        if(i == 1)
                         {
-                            for (int j = 0; j < 4; j++) {
-                                this.playerHome[i][j].setEnabled(false);
-
-
-                                                            }
+                            this.playerHome[i][j].setBackgroundResource(R.mipmap.pinksquarehome);
                         }
-                        this.dieImageButton.setEnabled(true);
+                        if(i == 2)
+                        {
+                            this.playerHome[i][j].setBackgroundResource(R.mipmap.redsquarehome);
+                        }
+                        if(i == 3)
+                        {
+                            this.playerHome[i][j].setBackgroundResource(R.mipmap.greysquarehome);
+                        }
+                    } else if (tempHome[i][j] == 0) {
+                        this.playerHome[i][j].setBackgroundResource(R.mipmap.playerzeropiece);
+                    } else if (tempHome[i][j] == 1) {
+                        this.playerHome[i][j].setBackgroundResource(R.mipmap.playeronepiece);
+                    } else if (tempHome[i][j] == 2) {
+                        this.playerHome[i][j].setBackgroundResource(R.mipmap.playertwopiece);
+                    } else if (tempHome[i][j] == 3) {
+                        this.playerHome[i][j].setBackgroundResource(R.mipmap.playerthreepiece);
+                    }
 
-                    } else {
+                }
+            }
+        }
+        if(allPlayerNames.length == 3)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
+            }
+        }
+        if(allPlayerNames.length == 2)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
+                this.playerStart[2][i].setBackgroundResource(R.mipmap.gamesquare);
+            }
+        }
+        if(allPlayerNames.length == 1)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
+                this.playerStart[2][i].setBackgroundResource(R.mipmap.gamesquare);
+                this.playerStart[1][i].setBackgroundResource(R.mipmap.gamesquare);
+            }
+        }
 
-                        this.dieImageButton.setEnabled(false);
+
+        int whoseTurn = gameStateInfo.getTurn();
+        if (whoseTurn == playerNum) {
+            if (gameStateInfo.getRoll()) {
+                for (int i = 0; i < 57; i++) {
+                    this.gameBoard[i].setEnabled(false);
+                }
+                for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+                {
+                    for (int j = 0; j < 4; j++) {
+                        this.playerStart[i][j].setEnabled(false);
                     }
                 }
+                for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+                {
+                    for (int j = 0; j < 4; j++) {
+                        this.playerHome[i][j].setEnabled(false);
 
 
-                yourTurn.setText("PLAYER " + Integer.toString(whoseTurn) + "!");
-
-
-                if (whoseTurn != playerNum) {
-                    rollView.setText("Not Your Turn To Roll.");
+                    }
                 }
-                if (gameStateInfo.getRoll() == true && whoseTurn == playerNum) {
-                    rollView.setText("Roll!");
+                this.dieImageButton.setEnabled(true);
+
+            } else {
+
+                this.dieImageButton.setEnabled(false);
+                for (int i = 0; i < 57; i++) {
+                    this.gameBoard[i].setEnabled(false);
                 }
-                if (whoseTurn == playerNum && gameStateInfo.getRoll() == false) {
-                    rollView.setText("You Just Rolled! \n Move a Piece!");
+                for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+                {
+                    for (int j = 0; j < 4; j++) {
+                        this.playerStart[i][j].setEnabled(false);
+                    }
                 }
+                for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+                {
+                    for (int j = 0; j < 4; j++) {
+                        this.playerHome[i][j].setEnabled(false);
+
+
+                    }
+                }
+            }
+        }
+
+
+        yourTurn.setText("PLAYER " + Integer.toString(whoseTurn) + "!");
+
+
+        if (whoseTurn != playerNum) {
+            rollView.setText("Not Your Turn To Roll.");
+        }
+        if (gameStateInfo.getRoll() == true && whoseTurn == playerNum) {
+            rollView.setText("Roll!");
+        }
+        if (whoseTurn == playerNum && gameStateInfo.getRoll() == false) {
+            rollView.setText("You Just Rolled! \n Move a Piece!");
+        }
 
 
 
-            // else
-            // {
-            // flash(Color.RED,100);
-            //}
-            if (gameStateInfo.getDieValue() == 0) {
-                dieImageButton.setImageResource(R.mipmap.zeroroll);
-             }
-            if (gameStateInfo.getDieValue() == 1) {
-                dieImageButton.setImageResource(R.mipmap.face1);
-            }
-            if (gameStateInfo.getDieValue() == 2) {
-                dieImageButton.setImageResource(R.drawable.face2);
-            }
-            if (gameStateInfo.getDieValue() == 3) {
-                dieImageButton.setImageResource(R.drawable.face3);
-            }
-            if (gameStateInfo.getDieValue() == 4) {
-                dieImageButton.setImageResource(R.drawable.face4);
-            }
-            if (gameStateInfo.getDieValue() == 5) {
-                dieImageButton.setImageResource(R.drawable.face5);
-            }
-            if (gameStateInfo.getDieValue() == 6) {
-                dieImageButton.setImageResource(R.drawable.face6);
-            }
+        // else
+        // {
+        // flash(Color.RED,100);
+        //}
+        if (gameStateInfo.getDieValue() == 0) {
+            dieImageButton.setImageResource(R.mipmap.zeroroll);
+        }
+        if (gameStateInfo.getDieValue() == 1) {
+            dieImageButton.setImageResource(R.mipmap.face1);
+        }
+        if (gameStateInfo.getDieValue() == 2) {
+            dieImageButton.setImageResource(R.drawable.face2);
+        }
+        if (gameStateInfo.getDieValue() == 3) {
+            dieImageButton.setImageResource(R.drawable.face3);
+        }
+        if (gameStateInfo.getDieValue() == 4) {
+            dieImageButton.setImageResource(R.drawable.face4);
+        }
+        if (gameStateInfo.getDieValue() == 5) {
+            dieImageButton.setImageResource(R.drawable.face5);
+        }
+        if (gameStateInfo.getDieValue() == 6) {
+            dieImageButton.setImageResource(R.drawable.face6);
+        }
 
-            if (checkPieces) {
-                possibleMoveChecker(); //sends blank move if no moves are possible
-                checkPieces = false;
-            }
+        if (checkPieces) {
+            possibleMoveChecker(); //sends blank move if no moves are possible
+            checkPieces = false;
+        }
     }//receiveInfo
 
 
@@ -308,10 +325,10 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
      *        the button that was clicked
      */
     public void onClick(View button) {
-         if (gameStateInfo == null) //if there is nothing to do
-         {
-             return;
-         }
+        if (gameStateInfo == null) //if there is nothing to do
+        {
+            return;
+        }
 
         //holds values for the state of the game board arrays & die value
         int rollVal = gameStateInfo.getDieValue();
@@ -320,36 +337,60 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         int[][] startCopy = gameStateInfo.getStartArray();
         String boardType = "board"; //default board type
 
-            for (int i = 0; i < 57; i++) { //goes through all pieces & sets highlighted squares back to normal squares
-                if (gameBoardCopy[i] == -2) {
-                    gameBoard[i].setBackgroundResource(R.mipmap.gamesquare);
-                    if(i == 5 || i == 19 || i == 33 || i == 47 || i == 56) {
-                        gameBoard[i].setBackgroundResource(R.mipmap.shortcut);}
-                        gameBoardCopy[i] = -1;}}
+        for (int i = 0; i < 57; i++) { //goes through all pieces & sets highlighted squares back to normal squares
+            if (gameBoardCopy[i] == -2) {
+                gameBoard[i].setBackgroundResource(R.mipmap.gamesquare);
+                if(i == 5 || i == 19 || i == 33 || i == 47 || i == 56) {
+                    gameBoard[i].setBackgroundResource(R.mipmap.shortcut);}
+                gameBoardCopy[i] = -1;}
+            else if(gameBoardCopy[i] == 10)
+            {
+                gameBoard[i].setBackgroundResource(R.mipmap.playerzeropiece);
+                gameBoardCopy[i] = 0;
+            }
+            else if(gameBoardCopy[i] == 11)
+            {
+                gameBoard[i].setBackgroundResource(R.mipmap.playeronepiece);
+                gameBoardCopy[i] = 1;
+            }
+            else if(gameBoardCopy[i] == 12)
+            {
+                gameBoard[i].setBackgroundResource(R.mipmap.playertwopiece);
+                gameBoardCopy[i] = 2;
+            }
+            else if(gameBoardCopy[i] == 13)
+            {
+                gameBoard[i].setBackgroundResource(R.mipmap.playerthreepiece);
+                gameBoardCopy[i] = 3;
+            }
 
-         //sets home arrays previously highlighted to  correct piece squares
+
+        }
+
+        //sets home arrays previously highlighted to  correct piece squares
         for (int i = 0; i < allPlayerNames.length; i++) {
-                for (int j = 0; j < 4; j++) {
-                    if (homeCopy[i][j] == -2) {
-                        if (playerNum == 0) {
-                            playerHome[i][j].setBackgroundResource(R.mipmap.greensquarehome);
-                            homeCopy[i][j] = -1;
-                        }
-                        if (playerNum == 1) {
-                            playerHome[i][j].setBackgroundResource(R.mipmap.pinksquarehome);
-                            homeCopy[i][j] = -1;
-                        }
-                        if (playerNum == 2) {
-                            playerHome[i][j].setBackgroundResource(R.mipmap.redsquarehome);
-                            homeCopy[i][j] = -1;
-                        }
-                        if (playerNum == 3) {
-                            playerHome[i][j].setBackgroundResource(R.mipmap.greysquarehome);
-                            homeCopy[i][j] = -1;
-                        }
+            for (int j = 0; j < 4; j++) {
+                if (homeCopy[i][j] == -2) {
+                    if (playerNum == 0) {
+                        playerHome[i][j].setBackgroundResource(R.mipmap.greensquarehome);
+                        homeCopy[i][j] = -1;
+                    }
+                    if (playerNum == 1) {
+                        playerHome[i][j].setBackgroundResource(R.mipmap.pinksquarehome);
+                        homeCopy[i][j] = -1;
+                    }
+                    if (playerNum == 2) {
+                        playerHome[i][j].setBackgroundResource(R.mipmap.redsquarehome);
+                        homeCopy[i][j] = -1;
+                    }
+                    if (playerNum == 3) {
+                        playerHome[i][j].setBackgroundResource(R.mipmap.greysquarehome);
+                        homeCopy[i][j] = -1;
                     }
                 }
             }
+        }
+
 
 
         if(button == newGameButton){ //option to start a new game
@@ -414,9 +455,9 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             //searches start array for clicked button and disables all non piece buttons
             for (int m = 0; m < 4; m++) {
                 if (button == playerStart[playerNum][m] ) {
-                        if (startCopy[playerNum][m] == playerNum) {
-                            clickedIdx = m;
-                            boardTypeCheck = "start";}}
+                    if (startCopy[playerNum][m] == playerNum) {
+                        clickedIdx = m;
+                        boardTypeCheck = "start";}}
                 else if (startCopy[playerNum][m] != playerNum){ //disable if it's not the player's piece
                     playerStart[playerNum][m].setEnabled(false);}}
 
@@ -430,7 +471,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     playerHome[playerNum][m].setEnabled(false);}}
 
             Moves(boardTypeCheck, clickedIdx, true); //enables possible move spaces
-                }
+        }
     }
 
 
@@ -438,8 +479,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
     /**
      * possibleMoveChecker --  checks if there are possible moves. Code would be in onClick but the die value needs to be updated first
-    * Purpose: to automatically end the player's turn if there are no moves he or she can make
-    * */
+     * Purpose: to automatically end the player's turn if there are no moves he or she can make
+     * */
     public void possibleMoveChecker()
     {
         int[] gameBoardCopy = gameStateInfo.getGameBoard();
@@ -452,7 +493,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         for (int i = 0; i < 57; i++) {
             if (gameBoardCopy[i] == playerNum) {
                 cpLi++; //increments index holder in cPL array
-                currentPieceLocations[cpLi] = i; //adds that piece to the array
+                currentPieceLocations[cpLi] = i; //adds that piece to the array{
                 this.gameBoard[i].setEnabled(true); //enables player's buttons in game board
                 if ( i == 56) { //if it is the middle space, prevents it from interfereing with order checking
                     currentPieceLocations[cpLi] = -999;}}}
@@ -465,14 +506,15 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         //GAME BOARD
         for (int i = 0; i < 57; i++) {
             if (gameBoardCopy[i] == playerNum) {
-            if (!canImove) { //if no possible moves have been recorded yet
-                canImove = Moves("board", i, false); //looks for possible moves (without enabling board)
-                //^^makes canImove true if there are possible options and false otherwise
-            }}}
+                if (!canImove) { //if no possible moves have been recorded yet
+                    canImove = Moves("board", i, false); //looks for possible moves (without enabling board)
+                    //^^makes canImove true if there are possible options and false otherwise
+                }}}
         //START & HOME ARRAYS
         for (int i = 0; i < 4; i++) {//checks buttons in start and home array
             if (startCopy[playerNum][i] == playerNum) {
                 this.playerStart[playerNum][i].setEnabled(true);
+
                 if (!canImove) {
                     canImove = Moves("start", i, false);}}
             if (homeCopy[playerNum][i] == playerNum) {
@@ -509,7 +551,36 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     this.gameBoard[playerNum * 14].setEnabled(true);
                     if(gameBoardCopy[playerNum*14] == -1) {
                         this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.whitesquare);
-                        gameBoardCopy[playerNum*14] = -2;}}
+                        gameBoardCopy[playerNum*14] = -2;}
+                    else
+                    {
+                        for(int iter = 0; iter < 4;iter++)
+                        {
+                            if(gameBoardCopy[playerNum*14] == iter)
+                            {
+                                if(iter == 0&& iter != playerNum)
+                                {
+                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.greensquarehome);
+                                    gameBoardCopy[playerNum*14] = 10;
+                                }
+                                else if(iter == 1&& iter != playerNum)
+                                {
+                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.pinksquarehome);
+                                    gameBoardCopy[playerNum*14] = 11;
+                                }
+                                else if(iter == 2&& iter != playerNum)
+                                {
+                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.redsquarehome);
+                                    gameBoardCopy[playerNum*14] = 12;
+                                }
+                                else if(iter == 3&& iter != playerNum)
+                                {
+                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.greysquarehome);
+                                    gameBoardCopy[playerNum*14] = 13;
+                                }
+                            }
+                        }
+                    }}
                 possibleMove = true;
                 markedButton = pieceLoc; //button the move will be send from
                 boardType = "start";}}
@@ -524,14 +595,14 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         this.playerHome[playerNum][rollVal + i].setEnabled(true);
                         if(homeCopy[playerNum][rollVal + i] == -1) {
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
-                            homeCopy[playerNum][rollVal + i] = -2;}}}
+                            homeCopy[playerNum][rollVal + i] = -2;} }}
                 if(rollVal == 2 && i < 2 && homeCopy[playerNum][i + rollVal-1] != playerNum) {
                     possibleMove = true;
                     if (enable) {
                         this.playerHome[playerNum][rollVal + i].setEnabled(true);
                         if(homeCopy[playerNum][rollVal + i] == -1) {
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
-                            homeCopy[playerNum][rollVal + i] = -2;}}}
+                            homeCopy[playerNum][rollVal + i] = -2;} }}
                 if(rollVal == 3 && i < 1 && homeCopy[playerNum][i + rollVal-1] != playerNum && homeCopy[playerNum][i + rollVal-2] != playerNum) {
                     possibleMove = true;
                     if (enable) {
@@ -540,7 +611,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
                             homeCopy[playerNum][rollVal + i] = -2;
                         }}}
-                }
+            }
             markedButton = pieceLoc;
             return possibleMove; //returning here because if it's in the home array that is all we need to check
         }
@@ -559,33 +630,151 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     possibleMove = false;
                     return possibleMove;}
                     //if the player is in the middle space
-                if (gameBoardCopy[5] != playerNum) {
-                    if (enable) {
-                        this.gameBoard[5].setEnabled(true);
-                        if (gameBoardCopy[5] == -1) {
-                            this.gameBoard[5].setBackgroundResource(R.mipmap.whitesquare);
-                            gameBoardCopy[5] = -2;}}
-                    possibleMove = true;}
+                    if (gameBoardCopy[5] != playerNum) {
+                        if (enable) {
+                            this.gameBoard[5].setEnabled(true);
+                            if (gameBoardCopy[5] == -1) {
+                                this.gameBoard[5].setBackgroundResource(R.mipmap.whitesquare);
+                                gameBoardCopy[5] = -2;} else
+                            {
+                                for(int iter = 0; iter < 4;iter++)
+                                {
+                                    if(gameBoardCopy[5] == iter)
+                                    {
+                                        if(iter == 0&& iter != playerNum)
+                                        {
+                                            this.gameBoard[5].setBackgroundResource(R.mipmap.greensquarehome);
+                                            gameBoardCopy[5] = 10;
+                                        }
+                                        else if(iter == 1&& iter != playerNum)
+                                        {
+                                            this.gameBoard[5].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            gameBoardCopy[5] = 11;
+                                        }
+                                        else if(iter == 2&& iter != playerNum)
+                                        {
+                                            this.gameBoard[5].setBackgroundResource(R.mipmap.redsquarehome);
+                                            gameBoardCopy[5] = 12;
+                                        }
+                                        else if(iter == 3&& iter != playerNum)
+                                        {
+                                            this.gameBoard[5].setBackgroundResource(R.mipmap.greysquarehome);
+                                            gameBoardCopy[5] = 13;
+                                        }
+                                    }
+                                }
+                            }}
+                        possibleMove = true;}
                     if (gameBoardCopy[19] != playerNum) {
                         if (enable) {
                             this.gameBoard[19].setEnabled(true);
                             if (gameBoardCopy[19] == -1) {
                                 this.gameBoard[19].setBackgroundResource(R.mipmap.whitesquare);
-                                gameBoardCopy[19] = -2;}}
+                                gameBoardCopy[19] = -2;} else
+                            {
+                                for(int iter = 0; iter < 4;iter++)
+                                {
+                                    if(gameBoardCopy[19] == iter)
+                                    {
+                                        if(iter == 0&& iter != playerNum)
+                                        {
+                                            this.gameBoard[19].setBackgroundResource(R.mipmap.greensquarehome);
+                                            gameBoardCopy[19] = 10;
+                                        }
+                                        else if(iter == 1&& iter != playerNum)
+                                        {
+                                            this.gameBoard[19].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            gameBoardCopy[19] = 11;
+                                        }
+                                        else if(iter == 2&& iter != playerNum)
+                                        {
+                                            this.gameBoard[19].setBackgroundResource(R.mipmap.redsquarehome);
+                                            gameBoardCopy[19] = 12;
+                                        }
+                                        else if(iter == 3&& iter != playerNum)
+                                        {
+                                            this.gameBoard[19].setBackgroundResource(R.mipmap.greysquarehome);
+                                            gameBoardCopy[19] = 13;
+                                        }
+                                    }
+                                }
+                            }}
                         possibleMove = true;}
                     if (gameBoardCopy[33] != playerNum) {
                         if (enable) {
                             this.gameBoard[33].setEnabled(true);
                             if (gameBoardCopy[33] == -1) {
                                 this.gameBoard[33].setBackgroundResource(R.mipmap.whitesquare);
-                                gameBoardCopy[33] = -2;}}
+                                gameBoardCopy[33] = -2;}
+                            else
+                            {
+                                for(int iter = 0; iter < 4;iter++)
+                                {
+                                    if(gameBoardCopy[33] == iter)
+                                    {
+                                        if(iter == 0&& iter != playerNum)
+                                        {
+                                            this.gameBoard[33].setBackgroundResource(R.mipmap.greensquarehome);
+                                            gameBoardCopy[33] = 10;
+                                        }
+                                        else if(iter == 1&& iter != playerNum)
+                                        {
+                                            this.gameBoard[33].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            gameBoardCopy[33] = 11;
+                                        }
+                                        else if(iter == 2&& iter != playerNum)
+                                        {
+                                            this.gameBoard[33].setBackgroundResource(R.mipmap.redsquarehome);
+                                            gameBoardCopy[33] = 12;
+                                        }
+                                        else if(iter == 3&& iter != playerNum)
+                                        {
+                                            this.gameBoard[33].setBackgroundResource(R.mipmap.greysquarehome);
+                                            gameBoardCopy[33] = 13;
+                                        }
+                                    }
+                                }
+                            }}
                         possibleMove = true;}
                     if (gameBoardCopy[47] != playerNum) {
-                        if (enable) {
+                        if (enable)
+                        {
                             this.gameBoard[47].setEnabled(true);
-                            if (gameBoardCopy[47] == -1) {
+                            if (gameBoardCopy[47] == -1)
+                            {
                                 this.gameBoard[47].setBackgroundResource(R.mipmap.whitesquare);
-                                gameBoardCopy[47] = -2;}}
+                                gameBoardCopy[47] = -2;
+                            }
+                            else
+                            {
+                                for(int iter = 0; iter < 4;iter++)
+                                {
+                                    if(gameBoardCopy[47] == iter)
+                                    {
+                                        if(iter == 0&& iter != playerNum)
+                                        {
+                                            this.gameBoard[47].setBackgroundResource(R.mipmap.greensquarehome);
+                                            gameBoardCopy[47] = 10;
+                                        }
+                                        else if(iter == 1&& iter != playerNum)
+                                        {
+                                            this.gameBoard[47].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            gameBoardCopy[47] = 11;
+                                        }
+                                        else if(iter == 2&& iter != playerNum)
+                                        {
+                                            this.gameBoard[47].setBackgroundResource(R.mipmap.redsquarehome);
+                                            gameBoardCopy[47] = 12;
+                                        }
+                                        else if(iter == 3&& iter != playerNum)
+                                        {
+                                            this.gameBoard[47].setBackgroundResource(R.mipmap.greysquarehome);
+                                            gameBoardCopy[47] = 13;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         possibleMove = true;
                         return possibleMove;}}
 
@@ -600,7 +789,35 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                 this.gameBoard[correctedSpace].setEnabled(true);
                                 if (gameBoardCopy[correctedSpace] == -1) {
                                     gameBoard[correctedSpace].setBackgroundResource(R.mipmap.whitesquare);
-                                    gameBoardCopy[correctedSpace] = -2;}}}}}
+                                    gameBoardCopy[correctedSpace] = -2;} else
+                                {
+                                    for(int iter = 0; iter < 4;iter++)
+                                    {
+                                        if(gameBoardCopy[correctedSpace] == iter)
+                                        {
+                                            if(iter == 0&& iter != playerNum)
+                                            {
+                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                gameBoardCopy[correctedSpace] = 10;
+                                            }
+                                            else if(iter == 1&& iter != playerNum)
+                                            {
+                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                gameBoardCopy[correctedSpace] = 11;
+                                            }
+                                            else if(iter == 2&& iter != playerNum)
+                                            {
+                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                gameBoardCopy[correctedSpace] = 12;
+                                            }
+                                            else if(iter == 3&& iter != playerNum)
+                                            {
+                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                gameBoardCopy[correctedSpace] = 13;
+                                            }
+                                        }
+                                    }
+                                }}}}}
 
                 //==================CASE: valid move for board value i + roll val (most basic move)==========
 
@@ -610,44 +827,136 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         this.gameBoard[i + rollVal].setEnabled(true); //enables that button
                         if (gameBoardCopy[i + rollVal] == -1) {
                             gameBoard[i + rollVal].setBackgroundResource(R.mipmap.whitesquare);
-                            gameBoardCopy[i + rollVal] = -2;}}}
+                            gameBoardCopy[i + rollVal] = -2;} else
+                        {
+                            for(int iter = 0; iter < 4;iter++)
+                            {
+                                if(gameBoardCopy[i + rollVal] == iter)
+                                {
+                                    if(iter == 0&& iter != playerNum)
+                                    {
+                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.greensquarehome);
+                                        gameBoardCopy[i + rollVal] = 10;
+                                    }
+                                    else if(iter == 1&& iter != playerNum)
+                                    {
+                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.pinksquarehome);
+                                        gameBoardCopy[i + rollVal] = 11;
+                                    }
+                                    else if(iter == 2&& iter != playerNum)
+                                    {
+                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.redsquarehome);
+                                        gameBoardCopy[i + rollVal] = 12;
+                                    }
+                                    else if(iter == 3&& iter != playerNum)
+                                    {
+                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.greysquarehome);
+                                        gameBoardCopy[i + rollVal] = 13;
+                                    }
+                                }
+                            }
+                        }}}
 
-            //===============CASE: Potential home array move=====
-            //checks the Home Arrays
+                //===============CASE: Potential home array move=====
+                //checks the Home Arrays
                 int overLine = playerNum*14 -2;
                 if(overLine == -2) {
                     overLine = 54;}
                 if ( i != playerNum*14 && i != playerNum*14+1 && i != playerNum*14+2 && i != playerNum*14+3 ){
-                if ((i + rollVal) > overLine && (i + rollVal) < overLine+5 && i != 56 && i<= overLine) {
-                    int leftOver = (i+rollVal) - overLine - 1;
-                    if (homeCopy[playerNum][leftOver] != playerNum) {
+                    if ((i + rollVal) > overLine && (i + rollVal) < overLine+5 && i != 56 && i<= overLine) {
                         boolean canDoThis = true;
-                        int iterator = leftOver;
-                        for (int j = 0; j < 4; j++){ //checks to make sure it's not leapfrogging a piece already there
-                        if (j < iterator){ //only the spaces before the possible move space
-                            if (homeCopy[playerNum][j] == playerNum) {
-                                    canDoThis = false;}}}
-                          if (!checkPieceOrder(currentPieceLocations, playerNum, i, topSpace) && gameBoardCopy[topSpace] == playerNum)  {
-                              canDoThis = false;}
-                        if (canDoThis) {
-                            if (enable) {
-                                playerHome[playerNum][iterator].setEnabled(true);
-                                if (homeCopy[playerNum][iterator] == -1) {
-                                    playerHome[playerNum][iterator].setBackgroundResource(R.mipmap.whitesquare);
-                                    homeCopy[playerNum][iterator] = -2;}}
-                            possibleMove = true;}}}}
+                        int prev = overLine;
+                        for (int z = prev; z > i; z--) {
+                            if (gameBoardCopy[z] == playerNum) {
+                                canDoThis = false;
+                                break;
+                            }
+                        }
+                        //checkhere
+                        int leftOver = (i+rollVal) - overLine - 1;
+                        if (homeCopy[playerNum][leftOver] != playerNum) {
+                            int iterator = leftOver;
+                            for (int j = 0; j < 4; j++){ //checks to make sure it's not leapfrogging a piece already there
+                                if (j < iterator){ //only the spaces before the possible move space
+                                    if (homeCopy[playerNum][j] == playerNum) {
+                                        canDoThis = false;}}}
+                            if (!checkPieceOrder(currentPieceLocations, playerNum, i, topSpace) && gameBoardCopy[topSpace] == playerNum)  {
+                                canDoThis = false;}
+                            if (canDoThis) {
+                                if (enable) {
+                                    playerHome[playerNum][iterator].setEnabled(true);
+                                    if (homeCopy[playerNum][iterator] == -1) {
+                                        playerHome[playerNum][iterator].setBackgroundResource(R.mipmap.whitesquare);
+                                        homeCopy[playerNum][iterator] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[iterator] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[iterator] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[iterator] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[iterator] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[iterator] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}}}
 
-            //===================CASE: Shortcut move==========================
+                //===================CASE: Shortcut move==========================
                 if ((i + rollVal) == 6 || (i + rollVal) == 20 || (i + rollVal) == 34 || (i + rollVal) == 48){ //if the player can directly land on middle shortcut
-                        if (gameBoardCopy[56] != playerNum)  {
-                            if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal -1)))  {
-                                if (gameBoardCopy[i+ rollVal -1] != playerNum || rollVal == 1){
-                            if (enable) {
-                                this.gameBoard[56].setEnabled(true); //enable middle
-                                if (gameBoardCopy[56] == -1) {
-                                    this.gameBoard[56].setBackgroundResource(R.mipmap.whitesquare);
-                                    gameBoardCopy[56] = -2;}}
-                            possibleMove = true;}}}}
+                    if (gameBoardCopy[56] != playerNum)  {
+                        if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal -1)))  {
+                            if (gameBoardCopy[i+ rollVal -1] != playerNum || rollVal == 1){
+                                if (enable) {
+                                    this.gameBoard[56].setEnabled(true); //enable middle
+                                    if (gameBoardCopy[56] == -1) {
+                                        this.gameBoard[56].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[56] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[56] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[56] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[56] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[56] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[56] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}}}
 
                 //===================CASE: moving from a shortcut==========================
                 if (i == 5 || i == 19 || i == 33 || i == 47){ //if the player is on a corner shortcut
@@ -655,256 +964,844 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     int moveSpace2;
                     int moveSpace3;
                     int moveSpace4;
-                            if (rollVal == 1){ //1 shortcut
-                            moveSpace = i + 1;
-                            moveSpace2 = i + 14;
-                            if (moveSpace > 55) {
-                                moveSpace = moveSpace - 56;}
-                            if (moveSpace2 > 55) {
-                                moveSpace2 = moveSpace2 - 56;}
-                            if (gameBoardCopy[moveSpace] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace] == -1) {
-                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace2] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace2].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace2] == -1) {
-                                            this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace2] = -2;}}
-                                    possibleMove = true;}}}
-                        if (rollVal == 2){ //1 shortcut
-                            moveSpace = i + 2;
-                            moveSpace2 = i + 14 + 1;
-                            moveSpace3 = i + 14 * rollVal;
-                            if (moveSpace > 55) {
-                                moveSpace = moveSpace - 56;}
-                            if (moveSpace2 > 55) {
-                                moveSpace2 = moveSpace2 - 56;}
-                            if (moveSpace3 > 55) {
-                                moveSpace3 = moveSpace3 - 56;}
-                            if (gameBoardCopy[moveSpace] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace] == -1) {
-                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace2] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace2].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace2] == -1) {
-                                            this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace2] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace3] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace3].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace3] == -1) {
-                                            this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace3] = -2;}}
-                                    possibleMove = true;}}}
-                        if (rollVal == 3){ //1 shortcut
-                            moveSpace = i + 3;
-                            moveSpace2 = i + 14 + 2;
-                            moveSpace3 = i + 14 * 2 + 1;
-                            moveSpace4 = i + 14 * rollVal;
+                    if (rollVal == 1){ //1 shortcut
+                        moveSpace = i + 1;
+                        moveSpace2 = i + 14;
+                        if (moveSpace > 55) {
+                            moveSpace = moveSpace - 56;}
+                        if (moveSpace2 > 55) {
+                            moveSpace2 = moveSpace2 - 56;}
+                        if (gameBoardCopy[moveSpace] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace] == -1) {
+                                        this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace2] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace2] == -1) {
+                                        this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace2] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace2] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace2] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace2] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace2] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace2] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}}
+                    if (rollVal == 2){ //1 shortcut
+                        moveSpace = i + 2;
+                        moveSpace2 = i + 14 + 1;
+                        moveSpace3 = i + 14 * rollVal;
+                        if (moveSpace > 55) {
+                            moveSpace = moveSpace - 56;}
+                        if (moveSpace2 > 55) {
+                            moveSpace2 = moveSpace2 - 56;}
+                        if (moveSpace3 > 55) {
+                            moveSpace3 = moveSpace3 - 56;}
+                        if (gameBoardCopy[moveSpace] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace] == -1) {
+                                        this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace2] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace2] == -1) {
+                                        this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace2] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace2] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace2] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace2] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace2] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace2] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace3] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace3] == -1) {
+                                        this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace3] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace3] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace3] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace3] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace3] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace3] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}}
+                    if (rollVal == 3){ //1 shortcut
+                        moveSpace = i + 3;
+                        moveSpace2 = i + 14 + 2;
+                        moveSpace3 = i + 14 * 2 + 1;
+                        moveSpace4 = i + 14 * rollVal;
 
-                            if (moveSpace > 55) {
-                                moveSpace = moveSpace - 56;}
-                            if (moveSpace2 > 55) {
-                                moveSpace2 = moveSpace2 - 56;}
-                            if (moveSpace3 > 55) {
-                                moveSpace3 = moveSpace3 - 56;}
-                            if (moveSpace4 > 55) {
-                                moveSpace4 = moveSpace4 - 56;}
+                        if (moveSpace > 55) {
+                            moveSpace = moveSpace - 56;}
+                        if (moveSpace2 > 55) {
+                            moveSpace2 = moveSpace2 - 56;}
+                        if (moveSpace3 > 55) {
+                            moveSpace3 = moveSpace3 - 56;}
+                        if (moveSpace4 > 55) {
+                            moveSpace4 = moveSpace4 - 56;}
 
-                            if (gameBoardCopy[moveSpace] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace] == -1) {
-                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace2] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace2].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace2] == -1) {
-                                            this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace2] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace3] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace3].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace3] == -1) {
-                                            this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace3] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace4] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
-                                    if (enable) {
-                                        Log.i("enablingMS4", Integer.toString(moveSpace4));
-                                        this.gameBoard[moveSpace4].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace4] == -1) {
-                                            this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace4] = -2;}}
-                                    possibleMove = true;}}}
-                        if (rollVal == 4) {
-                            moveSpace = i + 4;
-                            moveSpace2 = i + 14 + 3;
-                            moveSpace3 = i + 14 * 2 + 2;
-                            moveSpace4 = i + 14 * 3 + 1;
+                        if (gameBoardCopy[moveSpace] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace] == -1) {
+                                        this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace2] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace2] == -1) {
+                                        this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace2] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace2] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace2] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace2] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace2] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace2] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace3] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace3] == -1) {
+                                        this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace3] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace3] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace3] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace3] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace3] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace3] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace4] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
+                                if (enable) {
+                                    Log.i("enablingMS4", Integer.toString(moveSpace4));
+                                    this.gameBoard[moveSpace4].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace4] == -1) {
+                                        this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace4] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace4] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace4] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace4] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace4] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace4] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}}
+                    if (rollVal == 4) {
+                        moveSpace = i + 4;
+                        moveSpace2 = i + 14 + 3;
+                        moveSpace3 = i + 14 * 2 + 2;
+                        moveSpace4 = i + 14 * 3 + 1;
 
-                            if (moveSpace > 55) {
-                                moveSpace = moveSpace - 56;}
-                            if (moveSpace2 > 55) {
-                                moveSpace2 = moveSpace2 - 56;}
-                            if (moveSpace3 > 55) {
-                                moveSpace3 = moveSpace3 - 56;}
-                            if (moveSpace4 > 55) {
-                                moveSpace4 = moveSpace4 - 56;}
+                        if (moveSpace > 55) {
+                            moveSpace = moveSpace - 56;}
+                        if (moveSpace2 > 55) {
+                            moveSpace2 = moveSpace2 - 56;}
+                        if (moveSpace3 > 55) {
+                            moveSpace3 = moveSpace3 - 56;}
+                        if (moveSpace4 > 55) {
+                            moveSpace4 = moveSpace4 - 56;}
 
-                            if (gameBoardCopy[moveSpace] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace] == -1) {
-                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace2] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
+                        if (gameBoardCopy[moveSpace] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace] == -1) {
+                                        this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace2] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
 
-                                    if (enable) {
-                                        this.gameBoard[moveSpace2].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace2] == -1) {
-                                            this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace2] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace3] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace3].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace3] == -1) {
-                                            this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace3] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace4] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace4].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace4] == -1) {
-                                            this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace4] = -2;}}
-                                    possibleMove = true;}}}
-                        if (rollVal == 5) //1 shortcut
-                        {
-                            moveSpace = i + 5;
-                            moveSpace2 = i + 14 + 4;
-                            moveSpace3 = i + 14 * 2 + 3;
-                            moveSpace4 = i + 14 * 3 + 2;
-                            if (moveSpace > 55) {
-                                moveSpace = moveSpace - 56;}
-                            if (moveSpace2 > 55) {
-                                moveSpace2 = moveSpace2 - 56;}
-                            if (moveSpace3 > 55) {
-                                moveSpace3 = moveSpace3 - 56;}
-                            if (moveSpace4 > 55) {
-                                moveSpace4 = moveSpace4 - 56;}
+                                if (enable) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace2] == -1) {
+                                        this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace2] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace2] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace2] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace2] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace2] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace2] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace3] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace3] == -1) {
+                                        this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace3] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace3] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace3] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace3] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace3] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace3] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace4] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace4].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace4] == -1) {
+                                        this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace4] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace4] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace4] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace4] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace4] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace4] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}}
+                    if (rollVal == 5) //1 shortcut
+                    {
+                        moveSpace = i + 5;
+                        moveSpace2 = i + 14 + 4;
+                        moveSpace3 = i + 14 * 2 + 3;
+                        moveSpace4 = i + 14 * 3 + 2;
+                        if (moveSpace > 55) {
+                            moveSpace = moveSpace - 56;}
+                        if (moveSpace2 > 55) {
+                            moveSpace2 = moveSpace2 - 56;}
+                        if (moveSpace3 > 55) {
+                            moveSpace3 = moveSpace3 - 56;}
+                        if (moveSpace4 > 55) {
+                            moveSpace4 = moveSpace4 - 56;}
 
-                            if (gameBoardCopy[moveSpace] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace] == -1) {
-                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace2] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace2].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace2] == -1) {
-                                            this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace2] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace3] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace3].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace3] == -1) {
-                                            this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace3] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace4] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace4].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace4] == -1) {
-                                            this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace4] = -2;}}
-                                    possibleMove = true;}}}
-                        if (rollVal == 6) //1 shortcut
-                        {
-                            moveSpace = i + 6;
-                            moveSpace2 = i + 14 + 5;
-                            moveSpace3 = i + 14 * 2 + 4;
-                            moveSpace4 = i + 14 * 3 + 3;
+                        if (gameBoardCopy[moveSpace] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace] == -1) {
+                                        this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace2] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace2] == -1) {
+                                        this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace2] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace2] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace2] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace2] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace2] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace2] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace3] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace3] == -1) {
+                                        this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace3] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace3] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace3] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace3] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace3] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace3] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace4] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace4].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace4] == -1) {
+                                        this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace4] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace4] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace4] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace4] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace4] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace4] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}}
+                    if (rollVal == 6) //1 shortcut
+                    {
+                        moveSpace = i + 6;
+                        moveSpace2 = i + 14 + 5;
+                        moveSpace3 = i + 14 * 2 + 4;
+                        moveSpace4 = i + 14 * 3 + 3;
 
-                            if (moveSpace > 55) {
-                                moveSpace = moveSpace - 56;}
-                            if (moveSpace2 > 55) {
-                                moveSpace2 = moveSpace2 - 56;}
-                            if (moveSpace3 > 55) {
-                                moveSpace3 = moveSpace3 - 56;}
-                            if (moveSpace4 > 55) {
-                                moveSpace4 = moveSpace4 - 56;}
+                        if (moveSpace > 55) {
+                            moveSpace = moveSpace - 56;}
+                        if (moveSpace2 > 55) {
+                            moveSpace2 = moveSpace2 - 56;}
+                        if (moveSpace3 > 55) {
+                            moveSpace3 = moveSpace3 - 56;}
+                        if (moveSpace4 > 55) {
+                            moveSpace4 = moveSpace4 - 56;}
 
-                            if (gameBoardCopy[moveSpace] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace] == -1) {
-                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace2] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace2].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace2] == -1) {
-                                            this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace2] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace3] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace3].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace3] == -1) {
-                                            this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace3] = -2;}}
-                                    possibleMove = true;}}
-                            if (gameBoardCopy[moveSpace4] != playerNum) {
-                                if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
-                                    if (enable) {
-                                        this.gameBoard[moveSpace4].setEnabled(true);
-                                        if (gameBoardCopy[moveSpace4] == -1) {
-                                            this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
-                                            gameBoardCopy[moveSpace4] = -2;}}
-                                    possibleMove = true;}}}}
+                        if (gameBoardCopy[moveSpace] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace] == -1) {
+                                        this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace2] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace2] == -1) {
+                                        this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace2] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace2] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace2] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace2] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace2] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace2] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace3] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace3] == -1) {
+                                        this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace3] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace3] == iter)
+                                            {
+                                                if(iter == 0&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace3] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace3] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace3] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace3] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}
+                        if (gameBoardCopy[moveSpace4] != playerNum) {
+                            if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
+                                if (enable) {
+                                    this.gameBoard[moveSpace4].setEnabled(true);
+                                    if (gameBoardCopy[moveSpace4] == -1) {
+                                        this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
+                                        gameBoardCopy[moveSpace4] = -2;} else
+                                    {
+                                        for(int iter = 0; iter < 4;iter++)
+                                        {
+                                            if(gameBoardCopy[moveSpace4] == iter)
+                                            {
+                                                if(iter == 0 && iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    gameBoardCopy[moveSpace4] = 10;
+                                                }
+                                                else if(iter == 1&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    gameBoardCopy[moveSpace4] = 11;
+                                                }
+                                                else if(iter == 2&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    gameBoardCopy[moveSpace4] = 12;
+                                                }
+                                                else if(iter == 3&& iter != playerNum)
+                                                {
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    gameBoardCopy[moveSpace4] = 13;
+                                                }
+                                            }
+                                        }
+                                    }}
+                                possibleMove = true;}}}}
 
-                }}
+            }}
 
         return possibleMove;
     }
@@ -927,9 +1824,9 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         //if any pieces are "over the top" for a specific player, resets them to 55 + piece location in order to check for leapfrogging
         for (int i = 0; i<4;i++) {
             if (playerNum != 0 && pieceLocations[i] <playerNum*14) {
-              pieceLocNew[i] = pieceLocations[i] + 56;}
+                pieceLocNew[i] = pieceLocations[i] + 56;}
             else{
-            pieceLocNew[i] = pieceLocations[i];}}
+                pieceLocNew[i] = pieceLocations[i];}}
         if (startMove < playerNum*14) { //resets startMove to scaled value
             startMoveNew = startMove +56;}
         if (endMove < playerNum*14){
@@ -940,18 +1837,18 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             if (pieceLocNew[j]!= startMoveNew && pieceLocNew[j] > startMoveNew && pieceLocNew[j] <endMoveNew) {
                 return false;}}
         return true;}
-/**
- * checkPieceOrderShortcut
- * this helper method checks whether a possible move would move one player's piece ahead of one of his/her
- * pieces. If it would, returns false (illegal move). Otherwise returns true.
- *
- * for a startMove on a shorcut space
- * @param pieceLocations locations of the player's pieces
- * @param playerNum player number
- * @param startMove space on board the piece currently is
- * @param endMove space of the proposed move
- * @return true is move is legal. False otherwise
- */
+    /**
+     * checkPieceOrderShortcut
+     * this helper method checks whether a possible move would move one player's piece ahead of one of his/her
+     * pieces. If it would, returns false (illegal move). Otherwise returns true.
+     *
+     * for a startMove on a shorcut space
+     * @param pieceLocations locations of the player's pieces
+     * @param playerNum player number
+     * @param startMove space on board the piece currently is
+     * @param endMove space of the proposed move
+     * @return true is move is legal. False otherwise
+     */
     public boolean checkPieceOrderShortcut(int []pieceLocations, int playerNum, int startMove, int endMove) {
         for (int i = 0; i<4; i++) { //checks to make sure you are not leapfrogging your own piece in a shortcut
             if (pieceLocations[i] != startMove && (pieceLocations[i] == 5 || pieceLocations[i] == 19 || pieceLocations[i] ==33 || pieceLocations[i] ==47)){
@@ -969,8 +1866,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         if (endMove >4 && endMove <12) //end move on straightaway from 4 to 11
         {for (int i = 0; i<4; i++){
             if (pieceLocations[i] >4 && pieceLocations[i] <12){ //there is a piece on that straigtaway
-        if (pieceLocations[i] < endMove){return false;
-            }}}}
+                if (pieceLocations[i] < endMove){return false;
+                }}}}
         if (endMove >18 && endMove <26) //end move on straightaway from 18 to 25
         {for (int i = 0; i<4; i++){
             if (pieceLocations[i] >18 && pieceLocations[i] <26){ //there is a piece on that straigtaway
@@ -994,12 +1891,12 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
 
     /**
- * callback method--our game has been chosen/rechosen to be the GUI,
- * called from the GUI thread
- *
- * @param activity
- *        the activity under which we are running
- */
+     * callback method--our game has been chosen/rechosen to be the GUI,
+     * called from the GUI thread
+     *
+     * @param activity
+     *        the activity under which we are running
+     */
     public void setAsGui(GameMainActivity activity) {
 
         // remember the activity
