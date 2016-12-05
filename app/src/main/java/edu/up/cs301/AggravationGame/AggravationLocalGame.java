@@ -224,6 +224,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
 
                             officialGameState.setStartArray(otherPlayerNum,otherStart);
                             Log.i("at "+newIdx,"Player "+playerNum+" aggravated"+otherPlayerNum);
+                            //^^WE GOT "PLAYER 3 ARRAGATED 3" UH OH
                             break;
                         }
                     }
@@ -420,8 +421,8 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                 {
                     officialGameState.setTurn(0);
                 }
-                else {
-                    officialGameState.setTurn(officialGameState.getTurn() + 1);
+               else {
+                  officialGameState.setTurn(officialGameState.getTurn() + 1);
                 }
                // Random ran = new Random();
                 //int x = ran.nextInt(2);

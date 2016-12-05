@@ -519,23 +519,23 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             int i = pieceLoc;
             if (i + rollVal < 4 && homeCopy[playerNum][i + rollVal] != playerNum) {
                 if(rollVal == 1) {
+                    possibleMove = true;
                     if (enable) {
                         this.playerHome[playerNum][rollVal + i].setEnabled(true);
-                        possibleMove = true;
                         if(homeCopy[playerNum][rollVal + i] == -1) {
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
                             homeCopy[playerNum][rollVal + i] = -2;}}}
                 if(rollVal == 2 && i < 2 && homeCopy[playerNum][i + rollVal-1] != playerNum) {
+                    possibleMove = true;
                     if (enable) {
                         this.playerHome[playerNum][rollVal + i].setEnabled(true);
-                        possibleMove = true;
                         if(homeCopy[playerNum][rollVal + i] == -1) {
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
                             homeCopy[playerNum][rollVal + i] = -2;}}}
                 if(rollVal == 3 && i < 1 && homeCopy[playerNum][i + rollVal-1] != playerNum && homeCopy[playerNum][i + rollVal-2] != playerNum) {
+                    possibleMove = true;
                     if (enable) {
                         this.playerHome[playerNum][rollVal + i].setEnabled(true);
-                        possibleMove = true;
                         if(homeCopy[playerNum][rollVal + i] == -1) {
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
                             homeCopy[playerNum][rollVal + i] = -2;
@@ -641,7 +641,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 if ((i + rollVal) == 6 || (i + rollVal) == 20 || (i + rollVal) == 34 || (i + rollVal) == 48){ //if the player can directly land on middle shortcut
                         if (gameBoardCopy[56] != playerNum)  {
                             if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal -1)))  {
-                                if ((i+ rollVal -1) != playerNum){
+                                if (gameBoardCopy[i+ rollVal -1] != playerNum || rollVal == 1){
                             if (enable) {
                                 this.gameBoard[56].setEnabled(true); //enable middle
                                 if (gameBoardCopy[56] == -1) {

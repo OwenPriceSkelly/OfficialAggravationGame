@@ -168,7 +168,8 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                         int j = i + startIdx;
                         if (j > 55) j -= 56;
                         if (boardCopy[j] == playerNum) {
-                                previousMoveFrom = toMoveFrom;
+                                if (toMoveFrom != -9) {
+                                    previousMoveFrom = toMoveFrom;}
                                 toMoveFrom = j;
                                 if(toMoveFrom+officialRoll == 5 || toMoveFrom+officialRoll == 19 || toMoveFrom+officialRoll == 33 || toMoveFrom+officialRoll == 47)
                                 {
