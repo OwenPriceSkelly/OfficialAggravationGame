@@ -65,21 +65,12 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
         long x = 50;
 
         if(action instanceof AggravationRollAction) {
-            if(officialGameState.getTurn()!=playerNum) return false; //safety net
+            if (officialGameState.getTurn() != playerNum) return false; //safety net
             Random dieValue = new Random();//dieValue outside of the conditionals
             int value = dieValue.nextInt(6) + 1;
             officialGameState.setDieValue(value);
             actualRoll = value;
 
-//        for (int i = 0; i < 11; i++) { /possible die animation code
-//            int value = dieValue.nextInt(6) + 1;
-//            officialGameState.setDieValue(value);
-//            actualRoll = value;
-//            try {
-//                Thread.sleep(x);
-//            } catch (InterruptedException e) {
-//
-//            }
             //Log.i("dieVal is ", Integer.toString(value));
             //System.out.println("Roll = " + value);
             //Log.i("set value LocalGame", Integer.toString(officialGameState.getDieValue()));
@@ -415,7 +406,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
 
             //(only)after any actual move is made, someone has to roll
             //increment the turn whenever the roll isn't a 6
-            if (actualRoll !=6)
+            if (actualRoll != 6)
             {
                 if(officialGameState.getTurn() == playerNames.length-1)
                 {

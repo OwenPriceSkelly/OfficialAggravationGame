@@ -1883,14 +1883,14 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             if (pieceLocations[i] != startMove && (pieceLocations[i] == 5 || pieceLocations[i] == 19 || pieceLocations[i] ==33 || pieceLocations[i] ==47)){
                 if (endMove> pieceLocations[i] && endMove < pieceLocations[i] +6){ //end piece location on straighaway after another piece
                     return false;}
-                if (pieceLocations[i] == 5 && (startMove ==33 ||startMove == 47) && endMove >19 && endMove < 19+6) {return false;}
-                if (pieceLocations[i] == 5 &&  startMove == 47 && endMove>33 && endMove <33+6) {return false;}
-                if (pieceLocations[i] == 19 && (startMove == 47|| startMove == 5) && endMove >33 && endMove < 33+6){ return false;}
-                if (pieceLocations[i] == 19 && startMove == 5 && endMove>47 && endMove < 47+6){return false;}
-                if (pieceLocations[i] == 33 && (startMove == 5 || startMove == 19) && endMove >47 && endMove < 47 +6){ return false;}
-                if (pieceLocations[i] == 33 && startMove == 19 && endMove >5 && endMove <5+6){return false;}
-                if (pieceLocations[i] == 47 && (startMove == 19 || startMove == 33) && endMove > 5 && endMove <5+6 ){return false;}
-                if (pieceLocations[i] == 47 && startMove == 33 && endMove >19 && endMove < 19+6){return false;}}}
+                if (pieceLocations[i] == 5 && (startMove ==33 ||startMove == 47) && endMove >=19 && endMove < 19+6) {return false;}
+                if (pieceLocations[i] == 5 &&  startMove == 47 && endMove>=33 && endMove <33+6) {return false;}
+                if (pieceLocations[i] == 19 && (startMove == 47|| startMove == 5) && endMove >=33 && endMove < 33+6){ return false;}
+                if (pieceLocations[i] == 19 && startMove == 5 && endMove>=47 && endMove < 47+6){return false;}
+                if (pieceLocations[i] == 33 && (startMove == 5 || startMove == 19) && endMove >=47 && endMove < 47 +6){ return false;}
+                if (pieceLocations[i] == 33 && startMove == 19 && endMove >=5 && endMove <5+6){return false;}
+                if (pieceLocations[i] == 47 && (startMove == 19 || startMove == 33) && endMove >= 5 && endMove <5+6 ){return false;}
+                if (pieceLocations[i] == 47 && startMove == 33 && endMove >=19 && endMove < 19+6){return false;}}}
 
         if (endMove >4 && endMove <12) //end move on straightaway from 4 to 11
         {for (int i = 0; i<4; i++){
