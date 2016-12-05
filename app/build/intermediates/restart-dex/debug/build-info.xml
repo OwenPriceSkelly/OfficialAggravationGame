@@ -5,19 +5,19 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="33344037577096"
+    timestamp="35407685391301"
     token="-7299523659523298607"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="106" />
+        duration="96" />
     <task
         name="instant-run-dex"
-        duration="383" />
+        duration="664" />
     <task
         name="instant-run-transform"
-        duration="83" />
+        duration="23" />
     <task
         name="verifier"
         duration="1" />
@@ -42,6 +42,13 @@
     </build>
     <build
         timestamp="33344037577096"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\builds\debug\33344037577096\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="35407685391301"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\reload-dex\debug\classes.dex"

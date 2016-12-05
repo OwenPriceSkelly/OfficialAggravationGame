@@ -201,7 +201,12 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                             {
                                 break;
                             }
+
                         }
+                    }
+                    if(startIdx-2 == playerNum)
+                    {
+                        toMoveFrom = startIdx-2;
                     }
                     if(boardCopy[5] == playerNum)
                     {
@@ -219,9 +224,6 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                     {
                         toMoveFrom = 47;
                     }
-
-
-
 
 
 
