@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="22.0.1"
-        sha1="62d8fe542b3f517719f683e292887220e73e118d">
+        sha1="bab292cfcba482685c98955540928a1a574de19e">
         <dex dex="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e4a619f50a86a91dfb82e21b90d499fc5ce2e258\classes.dex" />
     </item>
     <item
@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="22.0.1"
-        sha1="89439346b87fc405550c9da57b81293dd6872427">
+        sha1="a7e0f25a6bca9cf9402dd5a6f3baa88b4c724e9c">
         <dex dex="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b5886fa1a5a9ed43fe919dc78e476f7d2b6ae1cc\classes.dex" />
     </item>
 

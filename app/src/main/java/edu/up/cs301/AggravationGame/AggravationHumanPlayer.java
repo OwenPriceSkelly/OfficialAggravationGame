@@ -257,10 +257,10 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
 
         if (whoseTurn != playerNum) {
-            rollView.setText("Not Your Turn To Roll.");
+            rollView.setText("Not Your Turn!");
         }
         if (gameStateInfo.getRoll() == true && whoseTurn == playerNum) {
-            rollView.setText("Roll!");
+            rollView.setText("Your Turn! \nRoll!");
         }
         if (whoseTurn == playerNum && gameStateInfo.getRoll() == false) {
             rollView.setText("You Just Rolled! \n Move a Piece!");
@@ -494,7 +494,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             if (gameBoardCopy[i] == playerNum) {
                 cpLi++; //increments index holder in cPL array
                 currentPieceLocations[cpLi] = i; //adds that piece to the array{
-                this.gameBoard[i].setEnabled(true); //enables player's buttons in game board
+                if(gameStateInfo.getTurn() == playerNum) {
+                this.gameBoard[i].setEnabled(true); }//enables player's buttons in game board
                 if ( i == 56) { //if it is the middle space, prevents it from interfereing with order checking
                     currentPieceLocations[cpLi] = -999;}}}
         if (cpLi <3){ //if the array of player pieces is not full, it means there are pieces in the home and start arrays
@@ -513,12 +514,14 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         //START & HOME ARRAYS
         for (int i = 0; i < 4; i++) {//checks buttons in start and home array
             if (startCopy[playerNum][i] == playerNum) {
-                this.playerStart[playerNum][i].setEnabled(true);
+                if(gameStateInfo.getTurn() == playerNum) {
+                this.playerStart[playerNum][i].setEnabled(true);}
 
                 if (!canImove) {
                     canImove = Moves("start", i, false);}}
             if (homeCopy[playerNum][i] == playerNum) {
-                this.playerHome[playerNum][i].setEnabled(true);
+                if(gameStateInfo.getTurn() == playerNum) {
+                this.playerHome[playerNum][i].setEnabled(true);}
                 if (!canImove) {
                     canImove = Moves("home", i, false);}}}
         //==================no moves are possible===============================
@@ -548,7 +551,9 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         if (board.equals("start")) {
             if (rollVal == 1 || rollVal == 6){ //if a one or a 6 & there are pieces to move from start array, enable space
                 if (enable) {
-                    this.gameBoard[playerNum * 14].setEnabled(true);
+                    if(gameStateInfo.getTurn() == playerNum) {
+                        this.gameBoard[playerNum * 14].setEnabled(true);
+                    }
                     if(gameBoardCopy[playerNum*14] == -1) {
                         this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.whitesquare);
                         gameBoardCopy[playerNum*14] = -2;}
@@ -592,21 +597,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 if(rollVal == 1) {
                     possibleMove = true;
                     if (enable) {
-                        this.playerHome[playerNum][rollVal + i].setEnabled(true);
+                        if(gameStateInfo.getTurn() == playerNum) {
+                        this.playerHome[playerNum][rollVal + i].setEnabled(true);}
                         if(homeCopy[playerNum][rollVal + i] == -1) {
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
                             homeCopy[playerNum][rollVal + i] = -2;} }}
                 if(rollVal == 2 && i < 2 && homeCopy[playerNum][i + rollVal-1] != playerNum) {
                     possibleMove = true;
                     if (enable) {
-                        this.playerHome[playerNum][rollVal + i].setEnabled(true);
+                        if(gameStateInfo.getTurn() == playerNum) {
+                        this.playerHome[playerNum][rollVal + i].setEnabled(true);}
                         if(homeCopy[playerNum][rollVal + i] == -1) {
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
                             homeCopy[playerNum][rollVal + i] = -2;} }}
                 if(rollVal == 3 && i < 1 && homeCopy[playerNum][i + rollVal-1] != playerNum && homeCopy[playerNum][i + rollVal-2] != playerNum) {
                     possibleMove = true;
                     if (enable) {
-                        this.playerHome[playerNum][rollVal + i].setEnabled(true);
+                        if(gameStateInfo.getTurn() == playerNum) {
+                        this.playerHome[playerNum][rollVal + i].setEnabled(true);}
                         if(homeCopy[playerNum][rollVal + i] == -1) {
                             playerHome[playerNum][rollVal + i].setBackgroundResource(R.mipmap.whitesquare);
                             homeCopy[playerNum][rollVal + i] = -2;
@@ -632,7 +640,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     //if the player is in the middle space
                     if (gameBoardCopy[5] != playerNum) {
                         if (enable) {
-                            this.gameBoard[5].setEnabled(true);
+                            if(gameStateInfo.getTurn() == playerNum) {
+                            this.gameBoard[5].setEnabled(true);}
                             if (gameBoardCopy[5] == -1) {
                                 this.gameBoard[5].setBackgroundResource(R.mipmap.whitesquare);
                                 gameBoardCopy[5] = -2;} else
@@ -667,7 +676,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         possibleMove = true;}
                     if (gameBoardCopy[19] != playerNum) {
                         if (enable) {
-                            this.gameBoard[19].setEnabled(true);
+                            if(gameStateInfo.getTurn() == playerNum) {
+                            this.gameBoard[19].setEnabled(true);}
                             if (gameBoardCopy[19] == -1) {
                                 this.gameBoard[19].setBackgroundResource(R.mipmap.whitesquare);
                                 gameBoardCopy[19] = -2;} else
@@ -702,7 +712,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         possibleMove = true;}
                     if (gameBoardCopy[33] != playerNum) {
                         if (enable) {
-                            this.gameBoard[33].setEnabled(true);
+                            if(gameStateInfo.getTurn() == playerNum) {
+                            this.gameBoard[33].setEnabled(true);}
                             if (gameBoardCopy[33] == -1) {
                                 this.gameBoard[33].setBackgroundResource(R.mipmap.whitesquare);
                                 gameBoardCopy[33] = -2;}
@@ -739,7 +750,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     if (gameBoardCopy[47] != playerNum) {
                         if (enable)
                         {
-                            this.gameBoard[47].setEnabled(true);
+                            if(gameStateInfo.getTurn() == playerNum) {
+                            this.gameBoard[47].setEnabled(true);}
                             if (gameBoardCopy[47] == -1)
                             {
                                 this.gameBoard[47].setBackgroundResource(R.mipmap.whitesquare);
@@ -786,7 +798,9 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (checkPieceOrder(currentPieceLocations, playerNum, i, correctedSpace)) {
                             possibleMove = true;
                             if (enable) {
-                                this.gameBoard[correctedSpace].setEnabled(true);
+                                if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[correctedSpace].setEnabled(true);
+                                }
                                 if (gameBoardCopy[correctedSpace] == -1) {
                                     gameBoard[correctedSpace].setBackgroundResource(R.mipmap.whitesquare);
                                     gameBoardCopy[correctedSpace] = -2;} else
@@ -824,7 +838,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 else if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal)))  {
                     possibleMove = true;
                     if (enable) {
-                        this.gameBoard[i + rollVal].setEnabled(true); //enables that button
+                        if(gameStateInfo.getTurn() == playerNum) {
+                        this.gameBoard[i + rollVal].setEnabled(true);} //enables that button
                         if (gameBoardCopy[i + rollVal] == -1) {
                             gameBoard[i + rollVal].setBackgroundResource(R.mipmap.whitesquare);
                             gameBoardCopy[i + rollVal] = -2;} else
@@ -884,7 +899,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                 canDoThis = false;}
                             if (canDoThis) {
                                 if (enable) {
-                                    playerHome[playerNum][iterator].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    playerHome[playerNum][iterator].setEnabled(true);}
                                     if (homeCopy[playerNum][iterator] == -1) {
                                         playerHome[playerNum][iterator].setBackgroundResource(R.mipmap.whitesquare);
                                         homeCopy[playerNum][iterator] = -2;} else
@@ -924,7 +940,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal -1)))  {
                             if (gameBoardCopy[i+ rollVal -1] != playerNum || rollVal == 1){
                                 if (enable) {
-                                    this.gameBoard[56].setEnabled(true); //enable middle
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[56].setEnabled(true);} //enable middle
                                     if (gameBoardCopy[56] == -1) {
                                         this.gameBoard[56].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[56] = -2;} else
@@ -974,43 +991,36 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace] == -1) {
                                         this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace] = -2;} else
                                     {
                                         for(int iter = 0; iter < 4;iter++)
-                                        {
-                                            if(gameBoardCopy[moveSpace] == iter)
-                                            {
-                                                if(iter == 0&& iter != playerNum)
-                                                {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
-                                                    gameBoardCopy[moveSpace] = 10;
-                                                }
-                                                else if(iter == 1&& iter != playerNum)
-                                                {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
-                                                    gameBoardCopy[moveSpace] = 11;
-                                                }
-                                                else if(iter == 2&& iter != playerNum)
-                                                {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
-                                                    gameBoardCopy[moveSpace] = 12;
-                                                }
-                                                else if(iter == 3&& iter != playerNum)
-                                                {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
-                                                    gameBoardCopy[moveSpace] = 13;
-                                                }
-                                            }
+                                        {if(gameBoardCopy[moveSpace] == iter)
+                                        {if(iter == 0&& iter != playerNum)
+                                        {this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                            gameBoardCopy[moveSpace] = 10;
+                                        } else if(iter == 1&& iter != playerNum)
+                                        {this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            gameBoardCopy[moveSpace] = 11;
+                                        } else if(iter == 2&& iter != playerNum)
+                                        {this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                            gameBoardCopy[moveSpace] = 12;
+                                        } else if(iter == 3&& iter != playerNum)
+                                        {this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                            gameBoardCopy[moveSpace] = 13;
                                         }
+                                        }}
                                     }}
                                 possibleMove = true;}}
                         if (gameBoardCopy[moveSpace2] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                        this.gameBoard[moveSpace2].setEnabled(true);
+                                    }
                                     if (gameBoardCopy[moveSpace2] == -1) {
                                         this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace2] = -2;} else
@@ -1056,7 +1066,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace] == -1) {
                                         this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace] = -2;} else
@@ -1092,7 +1103,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace2] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace2] == -1) {
                                         this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace2] = -2;} else
@@ -1128,7 +1140,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace3] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace3] == -1) {
                                         this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace3] = -2;} else
@@ -1179,7 +1192,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace] == -1) {
                                         this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace] = -2;} else
@@ -1215,7 +1229,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace2] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace2] == -1) {
                                         this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace2] = -2;} else
@@ -1251,7 +1266,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace3] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace3] == -1) {
                                         this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace3] = -2;} else
@@ -1288,7 +1304,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
                                 if (enable) {
                                     Log.i("enablingMS4", Integer.toString(moveSpace4));
-                                    this.gameBoard[moveSpace4].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace4].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace4] == -1) {
                                         this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace4] = -2;} else
@@ -1339,7 +1356,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace] == -1) {
                                         this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace] = -2;} else
@@ -1376,7 +1394,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
 
                                 if (enable) {
-                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace2] == -1) {
                                         this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace2] = -2;} else
@@ -1412,7 +1431,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace3] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace3] == -1) {
                                         this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace3] = -2;} else
@@ -1448,7 +1468,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace4] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace4].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace4].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace4] == -1) {
                                         this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace4] = -2;} else
@@ -1499,7 +1520,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace] == -1) {
                                         this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace] = -2;} else
@@ -1535,7 +1557,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace2] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace2] == -1) {
                                         this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace2] = -2;} else
@@ -1571,7 +1594,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace3] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace3] == -1) {
                                         this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace3] = -2;} else
@@ -1607,7 +1631,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace4] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace4].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace4].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace4] == -1) {
                                         this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace4] = -2;} else
@@ -1659,7 +1684,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace] == -1) {
                                         this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace] = -2;} else
@@ -1695,7 +1721,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace2] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace2)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace2].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace2].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace2] == -1) {
                                         this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace2] = -2;} else
@@ -1731,7 +1758,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace3] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace3)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace3].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace3].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace3] == -1) {
                                         this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace3] = -2;} else
@@ -1767,7 +1795,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace4] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
                                 if (enable) {
-                                    this.gameBoard[moveSpace4].setEnabled(true);
+                                    if(gameStateInfo.getTurn() == playerNum) {
+                                    this.gameBoard[moveSpace4].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace4] == -1) {
                                         this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.whitesquare);
                                         gameBoardCopy[moveSpace4] = -2;} else
