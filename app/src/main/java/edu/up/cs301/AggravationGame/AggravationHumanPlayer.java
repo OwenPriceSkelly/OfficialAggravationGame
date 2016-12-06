@@ -259,12 +259,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         if (whoseTurn != playerNum) {
             rollView.setText("Not Your Turn!");
         }
-        if (gameStateInfo.getRoll() == true && whoseTurn == playerNum) {
-            rollView.setText("Your Turn! \nRoll!");
-        }
-        if (whoseTurn == playerNum && gameStateInfo.getRoll() == false) {
-            rollView.setText("You Just Rolled! \n Move a Piece!");
-        }
 
 
 
@@ -293,6 +287,21 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         if (gameStateInfo.getDieValue() == 6) {
             dieImageButton.setImageResource(R.drawable.face6);
         }
+
+        if (gameStateInfo.getRoll() == true && whoseTurn == playerNum) {
+            rollView.setText("Your Turn! \nRoll!");
+            if (gameStateInfo.getDieValue() == 0) {dieImageButton.setImageResource(R.mipmap.zeroroll);}
+            if (gameStateInfo.getDieValue() == 1) {dieImageButton.setImageResource(R.mipmap.face1);}
+            if (gameStateInfo.getDieValue() == 2) {dieImageButton.setImageResource(R.drawable.face2);}
+            if (gameStateInfo.getDieValue() == 3) {dieImageButton.setImageResource(R.drawable.face3);}
+            if (gameStateInfo.getDieValue() == 4) {dieImageButton.setImageResource(R.drawable.face4);}
+            if (gameStateInfo.getDieValue() == 5) {dieImageButton.setImageResource(R.drawable.face5);}
+            if (gameStateInfo.getDieValue() == 6) {dieImageButton.setImageResource(R.drawable.face6);}}
+
+        if (whoseTurn == playerNum && gameStateInfo.getRoll() == false) {
+            rollView.setText("You Just Rolled! \n Move a Piece!");
+        }
+
 
         if (checkPieces) {
             possibleMoveChecker(); //sends blank move if no moves are possible
