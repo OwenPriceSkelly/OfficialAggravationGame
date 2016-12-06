@@ -8,25 +8,25 @@
         optimize="true"
         revision="22.0.1"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_9dbd5083a214f729a19b739197611203326f5cd3\classes.dex" />
+        <dex dex="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame2\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_9dbd5083a214f729a19b739197611203326f5cd3\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame2\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="22.0.1"
-        sha1="bab292cfcba482685c98955540928a1a574de19e">
-        <dex dex="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e4a619f50a86a91dfb82e21b90d499fc5ce2e258\classes.dex" />
+        sha1="f00c13a301be92e1d3ceb17f32841037f2cb2961">
+        <dex dex="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2e20b4d176fd2dc9f541da46346792237b891449\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame2\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="22.0.1"
-        sha1="a7e0f25a6bca9cf9402dd5a6f3baa88b4c724e9c">
-        <dex dex="C:\Users\ripple19\AndroidStudioProjects\OfficialAggravationGame\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b5886fa1a5a9ed43fe919dc78e476f7d2b6ae1cc\classes.dex" />
+        sha1="19d070c02d442e5aa4351766b568bc2e1b790f69">
+        <dex dex="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame2\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9eeba1cd2f4d041b0b86a16bb97c38abc952166c\classes.dex" />
     </item>
 
 </items>
