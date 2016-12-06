@@ -5,30 +5,30 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="51105596536903"
+    timestamp="52232189511745"
     token="-7299523659523298607"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="BINARY_MANIFEST_FILE_CHANGE" >
 
     <task
         name="javac"
-        duration="5061" />
+        duration="243" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="472" />
+        duration="138" />
     <task
         name="verifier"
-        duration="637" />
+        duration="2" />
 
     <artifact
         location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame2\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="51105596536903"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="52232189511745"
+        verifier="BINARY_MANIFEST_FILE_CHANGE" >
         <artifact
             location="C:\Users\petersoe19\AndroidStudioProjects\OfficialAggravationGame2\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

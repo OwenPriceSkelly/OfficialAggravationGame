@@ -1046,10 +1046,11 @@
                 <ImageButton
                     android:layout_width="90dp"
                     android:layout_height="90dp"
-                    android:scaleType="fitCenter"
                     android:adjustViewBounds="true"
                     android:id="@+id/RollButton"
-                    android:background="#ffffff" />
+                    android:background="#ffffff"
+                    android:cropToPadding="false"
+                    android:scaleType="fitCenter" />
             </LinearLayout>
 
             <TextView

@@ -48,6 +48,10 @@
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\greensquarehome.png"
     },
     {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\diefivevalue.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\diefivevalue.png"
+    },
+    {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\face1.png",
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\face1.png"
     },
@@ -100,6 +104,10 @@
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\greenface4.png"
     },
     {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\dievaluefour.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\dievaluefour.png"
+    },
+    {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\greenface2.png",
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\greenface2.png"
     },
@@ -120,12 +128,20 @@
         "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-xhdpi\\greysquarehome.png"
     },
     {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\diesixvalue.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\diesixvalue.png"
+    },
+    {
         "merged": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\whitesquare.png",
         "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-xhdpi\\whitesquare.png"
     },
     {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\greensquare.png",
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\greensquare.png"
+    },
+    {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\dietwovalue.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\dietwovalue.png"
     },
     {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\shortcut.png",
@@ -154,6 +170,10 @@
     {
         "merged": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\greensquare.png",
         "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-xhdpi\\greensquare.png"
+    },
+    {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\divevaluethree.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-xhdpi\\divevaluethree.png"
     },
     {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\playerthreepiece.png",

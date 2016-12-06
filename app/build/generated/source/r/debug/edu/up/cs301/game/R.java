@@ -193,29 +193,34 @@ public final class R {
         public static final int game_main=0x7f090000;
     }
     public static final class mipmap {
-        public static final int face1=0x7f030000;
-        public static final int faceone=0x7f030001;
-        public static final int gamesquare=0x7f030002;
-        public static final int greenface1=0x7f030003;
-        public static final int greenface2=0x7f030004;
-        public static final int greenface3=0x7f030005;
-        public static final int greenface4=0x7f030006;
-        public static final int greenface5=0x7f030007;
-        public static final int greenface6=0x7f030008;
-        public static final int greensquare=0x7f030009;
-        public static final int greensquarehome=0x7f03000a;
-        public static final int greysquarehome=0x7f03000b;
-        public static final int homesquare=0x7f03000c;
-        public static final int logoimage=0x7f03000d;
-        public static final int pinksquarehome=0x7f03000e;
-        public static final int playeronepiece=0x7f03000f;
-        public static final int playerthreepiece=0x7f030010;
-        public static final int playertwopiece=0x7f030011;
-        public static final int playerzeropiece=0x7f030012;
-        public static final int redsquarehome=0x7f030013;
-        public static final int shortcut=0x7f030014;
-        public static final int whitesquare=0x7f030015;
-        public static final int zeroroll=0x7f030016;
+        public static final int diefivevalue=0x7f030000;
+        public static final int diesixvalue=0x7f030001;
+        public static final int dietwovalue=0x7f030002;
+        public static final int dievaluefour=0x7f030003;
+        public static final int divevaluethree=0x7f030004;
+        public static final int face1=0x7f030005;
+        public static final int faceone=0x7f030006;
+        public static final int gamesquare=0x7f030007;
+        public static final int greenface1=0x7f030008;
+        public static final int greenface2=0x7f030009;
+        public static final int greenface3=0x7f03000a;
+        public static final int greenface4=0x7f03000b;
+        public static final int greenface5=0x7f03000c;
+        public static final int greenface6=0x7f03000d;
+        public static final int greensquare=0x7f03000e;
+        public static final int greensquarehome=0x7f03000f;
+        public static final int greysquarehome=0x7f030010;
+        public static final int homesquare=0x7f030011;
+        public static final int logoimage=0x7f030012;
+        public static final int pinksquarehome=0x7f030013;
+        public static final int playeronepiece=0x7f030014;
+        public static final int playerthreepiece=0x7f030015;
+        public static final int playertwopiece=0x7f030016;
+        public static final int playerzeropiece=0x7f030017;
+        public static final int redsquarehome=0x7f030018;
+        public static final int shortcut=0x7f030019;
+        public static final int whitesquare=0x7f03001a;
+        public static final int zeroroll=0x7f03001b;
     }
     public static final class string {
         public static final int add_player=0x7f080000;

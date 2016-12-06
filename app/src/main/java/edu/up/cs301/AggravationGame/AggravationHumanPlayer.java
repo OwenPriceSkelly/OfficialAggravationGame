@@ -273,19 +273,19 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             dieImageButton.setImageResource(R.mipmap.face1);
         }
         if (gameStateInfo.getDieValue() == 2) {
-            dieImageButton.setImageResource(R.drawable.face2);
+            dieImageButton.setImageResource(R.mipmap.dietwovalue);//drawable.face2);
         }
         if (gameStateInfo.getDieValue() == 3) {
-            dieImageButton.setImageResource(R.drawable.face3);
+            dieImageButton.setImageResource(R.mipmap.divevaluethree);//drawable.face3);
         }
         if (gameStateInfo.getDieValue() == 4) {
-            dieImageButton.setImageResource(R.drawable.face4);
+            dieImageButton.setImageResource(R.mipmap.dievaluefour);//drawable.face4);
         }
         if (gameStateInfo.getDieValue() == 5) {
-            dieImageButton.setImageResource(R.drawable.face5);
+            dieImageButton.setImageResource(R.mipmap.diefivevalue);//drawable.face5);
         }
         if (gameStateInfo.getDieValue() == 6) {
-            dieImageButton.setImageResource(R.drawable.face6);
+            dieImageButton.setImageResource(R.mipmap.diesixvalue);//drawable.face6);
         }
 
         if (gameStateInfo.getRoll() == true && whoseTurn == playerNum) {

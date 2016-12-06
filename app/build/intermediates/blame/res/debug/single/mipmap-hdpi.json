@@ -32,6 +32,14 @@
         "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-hdpi\\logoimage.png"
     },
     {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\dievaluefour.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\dievaluefour.png"
+    },
+    {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\divevaluethree.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\divevaluethree.png"
+    },
+    {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\logoimage.png",
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\logoimage.png"
     },
@@ -108,8 +116,16 @@
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\redsquarehome.png"
     },
     {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\diesixvalue.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\diesixvalue.png"
+    },
+    {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\greensquare.png",
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\greensquare.png"
+    },
+    {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\dietwovalue.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\dietwovalue.png"
     },
     {
         "merged": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\playerzeropiece.png",
@@ -158,5 +174,9 @@
     {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\gamesquare.png",
         "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\gamesquare.png"
+    },
+    {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\diefivevalue.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame2\\app\\src\\main\\res\\mipmap-hdpi\\diefivevalue.png"
     }
 ]
