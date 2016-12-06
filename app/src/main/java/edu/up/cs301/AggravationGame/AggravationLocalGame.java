@@ -415,6 +415,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                else {
                   officialGameState.setTurn(officialGameState.getTurn() + 1);
                 }
+                Log.i("here", "changed turn");
                // Random ran = new Random();
                 //int x = ran.nextInt(2);
                 //if(x == 0) {
@@ -425,6 +426,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                  //   officialGameState.setTurn(2);
                 //}
             }
+            Log.i("still go", "player");
             officialGameState.setRoll(true);
             officialGameState.setGameBoard(boardCopy);
         }

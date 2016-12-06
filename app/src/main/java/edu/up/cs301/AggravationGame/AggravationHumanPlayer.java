@@ -574,22 +574,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                             {
                                 if(iter == 0&& iter != playerNum)
                                 {
-                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.greensquarehome);
+                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                     gameBoardCopy[playerNum*14] = 10;
                                 }
                                 else if(iter == 1&& iter != playerNum)
                                 {
-                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.pinksquarehome);
+                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                     gameBoardCopy[playerNum*14] = 11;
                                 }
                                 else if(iter == 2&& iter != playerNum)
                                 {
-                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.redsquarehome);
+                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                     gameBoardCopy[playerNum*14] = 12;
                                 }
                                 else if(iter == 3&& iter != playerNum)
                                 {
-                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.greysquarehome);
+                                    this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                     gameBoardCopy[playerNum*14] = 13;
                                 }
                             }
@@ -661,22 +661,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                     {
                                         if(iter == 0&& iter != playerNum)
                                         {
-                                            this.gameBoard[5].setBackgroundResource(R.mipmap.greensquarehome);
+                                            this.gameBoard[5].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                             gameBoardCopy[5] = 10;
                                         }
                                         else if(iter == 1&& iter != playerNum)
                                         {
-                                            this.gameBoard[5].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            this.gameBoard[5].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                             gameBoardCopy[5] = 11;
                                         }
                                         else if(iter == 2&& iter != playerNum)
                                         {
-                                            this.gameBoard[5].setBackgroundResource(R.mipmap.redsquarehome);
+                                            this.gameBoard[5].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                             gameBoardCopy[5] = 12;
                                         }
                                         else if(iter == 3&& iter != playerNum)
                                         {
-                                            this.gameBoard[5].setBackgroundResource(R.mipmap.greysquarehome);
+                                            this.gameBoard[5].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                             gameBoardCopy[5] = 13;
                                         }
                                     }
@@ -697,22 +697,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                     {
                                         if(iter == 0&& iter != playerNum)
                                         {
-                                            this.gameBoard[19].setBackgroundResource(R.mipmap.greensquarehome);
+                                            this.gameBoard[19].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                             gameBoardCopy[19] = 10;
                                         }
                                         else if(iter == 1&& iter != playerNum)
                                         {
-                                            this.gameBoard[19].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            this.gameBoard[19].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                             gameBoardCopy[19] = 11;
                                         }
                                         else if(iter == 2&& iter != playerNum)
                                         {
-                                            this.gameBoard[19].setBackgroundResource(R.mipmap.redsquarehome);
+                                            this.gameBoard[19].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                             gameBoardCopy[19] = 12;
                                         }
                                         else if(iter == 3&& iter != playerNum)
                                         {
-                                            this.gameBoard[19].setBackgroundResource(R.mipmap.greysquarehome);
+                                            this.gameBoard[19].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                             gameBoardCopy[19] = 13;
                                         }
                                     }
@@ -734,22 +734,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                     {
                                         if(iter == 0&& iter != playerNum)
                                         {
-                                            this.gameBoard[33].setBackgroundResource(R.mipmap.greensquarehome);
+                                            this.gameBoard[33].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                             gameBoardCopy[33] = 10;
                                         }
                                         else if(iter == 1&& iter != playerNum)
                                         {
-                                            this.gameBoard[33].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            this.gameBoard[33].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                             gameBoardCopy[33] = 11;
                                         }
                                         else if(iter == 2&& iter != playerNum)
                                         {
-                                            this.gameBoard[33].setBackgroundResource(R.mipmap.redsquarehome);
+                                            this.gameBoard[33].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                             gameBoardCopy[33] = 12;
                                         }
                                         else if(iter == 3&& iter != playerNum)
                                         {
-                                            this.gameBoard[33].setBackgroundResource(R.mipmap.greysquarehome);
+                                            this.gameBoard[33].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                             gameBoardCopy[33] = 13;
                                         }
                                     }
@@ -774,22 +774,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                     {
                                         if(iter == 0&& iter != playerNum)
                                         {
-                                            this.gameBoard[47].setBackgroundResource(R.mipmap.greensquarehome);
+                                            this.gameBoard[47].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                             gameBoardCopy[47] = 10;
                                         }
                                         else if(iter == 1&& iter != playerNum)
                                         {
-                                            this.gameBoard[47].setBackgroundResource(R.mipmap.pinksquarehome);
+                                            this.gameBoard[47].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                             gameBoardCopy[47] = 11;
                                         }
                                         else if(iter == 2&& iter != playerNum)
                                         {
-                                            this.gameBoard[47].setBackgroundResource(R.mipmap.redsquarehome);
+                                            this.gameBoard[47].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                             gameBoardCopy[47] = 12;
                                         }
                                         else if(iter == 3&& iter != playerNum)
                                         {
-                                            this.gameBoard[47].setBackgroundResource(R.mipmap.greysquarehome);
+                                            this.gameBoard[47].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                             gameBoardCopy[47] = 13;
                                         }
                                     }
@@ -820,22 +820,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(iter == 0&& iter != playerNum)
                                             {
-                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                 gameBoardCopy[correctedSpace] = 10;
                                             }
                                             else if(iter == 1&& iter != playerNum)
                                             {
-                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.aggravate1);//inksquarehome);
                                                 gameBoardCopy[correctedSpace] = 11;
                                             }
                                             else if(iter == 2&& iter != playerNum)
                                             {
-                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                 gameBoardCopy[correctedSpace] = 12;
                                             }
                                             else if(iter == 3&& iter != playerNum)
                                             {
-                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                this.gameBoard[correctedSpace].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                 gameBoardCopy[correctedSpace] = 13;
                                             }
                                         }
@@ -859,22 +859,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                 {
                                     if(iter == 0&& iter != playerNum)
                                     {
-                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.greensquarehome);
+                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                         gameBoardCopy[i + rollVal] = 10;
                                     }
                                     else if(iter == 1&& iter != playerNum)
                                     {
-                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.pinksquarehome);
+                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                         gameBoardCopy[i + rollVal] = 11;
                                     }
                                     else if(iter == 2&& iter != playerNum)
                                     {
-                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.redsquarehome);
+                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                         gameBoardCopy[i + rollVal] = 12;
                                     }
                                     else if(iter == 3&& iter != playerNum)
                                     {
-                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.greysquarehome);
+                                        this.gameBoard[i + rollVal].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                         gameBoardCopy[i + rollVal] = 13;
                                     }
                                 }
@@ -920,22 +920,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                             {
                                                 if(iter == 0&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.aggravate0);//reensquarehome);
                                                     gameBoardCopy[iterator] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[iterator] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[iterator] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[iterator].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[iterator] = 13;
                                                 }
                                             }
@@ -961,22 +961,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                             {
                                                 if(iter == 0&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[56] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[56] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[56] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[56].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[56] = 13;
                                                 }
                                             }
@@ -1007,21 +1007,27 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         gameBoardCopy[moveSpace] = -2;} else
                                     {
                                         for(int iter = 0; iter < 4;iter++)
-                                        {if(gameBoardCopy[moveSpace] == iter)
-                                        {if(iter == 0&& iter != playerNum)
-                                        {this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                        {if(iter == 0 && iter != playerNum)
+                                        {
+                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                             gameBoardCopy[moveSpace] = 10;
-                                        } else if(iter == 1&& iter != playerNum)
-                                        {this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                        }
+                                        else if(iter == 1&& iter != playerNum)
+                                        {
+                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                             gameBoardCopy[moveSpace] = 11;
-                                        } else if(iter == 2&& iter != playerNum)
-                                        {this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                        }
+                                        else if(iter == 2&& iter != playerNum)
+                                        {
+                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                             gameBoardCopy[moveSpace] = 12;
-                                        } else if(iter == 3&& iter != playerNum)
-                                        {this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                        }
+                                        else if(iter == 3&& iter != playerNum)
+                                        {
+                                            this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                             gameBoardCopy[moveSpace] = 13;
                                         }
-                                        }}
+                                        }
                                     }}
                                 possibleMove = true;}}
                         if (gameBoardCopy[moveSpace2] != playerNum) {
@@ -1038,24 +1044,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace2] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace2] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace2] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace2] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace2] = 13;
                                                 }
                                             }
@@ -1085,24 +1091,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace] = 13;
                                                 }
                                             }
@@ -1122,24 +1128,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace2] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace2] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace2] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace2] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace2] = 13;
                                                 }
                                             }
@@ -1159,24 +1165,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace3] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace3] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace3] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace3] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace3] = 13;
                                                 }
                                             }
@@ -1211,24 +1217,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace] = 13;
                                                 }
                                             }
@@ -1248,24 +1254,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace2] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace2] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace2] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace2] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace2] = 13;
                                                 }
                                             }
@@ -1285,24 +1291,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace3] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace3] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace3] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace3] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace3] = 13;
                                                 }
                                             }
@@ -1323,24 +1329,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace4] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace4] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace4] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace4] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace4] = 13;
                                                 }
                                             }
@@ -1375,24 +1381,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace] = 13;
                                                 }
                                             }
@@ -1413,24 +1419,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace2] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace2] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace2] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace2] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace2] = 13;
                                                 }
                                             }
@@ -1450,24 +1456,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace3] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace3] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace3] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace3] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace3] = 13;
                                                 }
                                             }
@@ -1487,24 +1493,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace4] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace4] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace4] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace4] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace4] = 13;
                                                 }
                                             }
@@ -1539,24 +1545,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace] = 13;
                                                 }
                                             }
@@ -1576,24 +1582,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace2] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace2] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace2] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace2] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace2] = 13;
                                                 }
                                             }
@@ -1613,24 +1619,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace3] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace3] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace3] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace3] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace3] = 13;
                                                 }
                                             }
@@ -1650,24 +1656,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace4] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace4] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace4] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace4] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace4] = 13;
                                                 }
                                             }
@@ -1703,24 +1709,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace] = 13;
                                                 }
                                             }
@@ -1740,24 +1746,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace2] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace2] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace2] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace2] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace2].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace2] = 13;
                                                 }
                                             }
@@ -1777,24 +1783,24 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         {
                                             if(gameBoardCopy[moveSpace3] == iter)
                                             {
-                                                if(iter == 0&& iter != playerNum)
+                                                if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace3] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace3] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace3] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace3].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace3] = 13;
                                                 }
                                             }
@@ -1816,22 +1822,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                             {
                                                 if(iter == 0 && iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greensquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
                                                     gameBoardCopy[moveSpace4] = 10;
                                                 }
                                                 else if(iter == 1&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.pinksquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
                                                     gameBoardCopy[moveSpace4] = 11;
                                                 }
                                                 else if(iter == 2&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.redsquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
                                                     gameBoardCopy[moveSpace4] = 12;
                                                 }
                                                 else if(iter == 3&& iter != playerNum)
                                                 {
-                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.greysquarehome);
+                                                    this.gameBoard[moveSpace4].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
                                                     gameBoardCopy[moveSpace4] = 13;
                                                 }
                                             }
