@@ -33,6 +33,7 @@ public class AggravationState extends GameState implements Serializable {
         //initializes values
         playerTurn = 0;
         toRoll = true;
+        dieValue = 6;
 
         //i is player number
         for (int i = 0; i<4; i++) //assuming 4 players right now

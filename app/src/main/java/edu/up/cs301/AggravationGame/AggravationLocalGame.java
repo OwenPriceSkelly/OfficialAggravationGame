@@ -23,10 +23,9 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
     /**
      * This ctor creates a new game state
      */
-    private int restart = 0;
     private AggravationState officialGameState;
     private AggravationState copyGameState;
-    private int actualRoll = 0;
+    private int actualRoll = 1;
     public AggravationLocalGame()
     {
         super();
@@ -39,14 +38,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
     @Override
     protected boolean canMove(int playerNum)
     {
-        for(int i = 0;i < players.length; i++)
-        {
-            if(players[i] instanceof AggravationHumanPlayer && restart == 1)
-            {
-                return true;
-            }
 
-        }
         return officialGameState.getTurn() == playerNum;
     }
 
@@ -62,7 +54,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
         int boardCopy[] = officialGameState.getGameBoard();
         int startCopy[]= officialGameState.getStartArray(playerNum);
         int homeCopy[] = officialGameState.getHomeArray(playerNum);
-        long x = 50;
+
 
         if(action instanceof AggravationRollAction) {
             if (officialGameState.getTurn() != playerNum) return false; //safety net
@@ -70,10 +62,6 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
             int value = dieValue.nextInt(6) + 1;
             officialGameState.setDieValue(value);
             actualRoll = value;
-
-            //Log.i("dieVal is ", Integer.toString(value));
-            //System.out.println("Roll = " + value);
-            //Log.i("set value LocalGame", Integer.toString(officialGameState.getDieValue()));
             officialGameState.setRoll(false);
             return true;
         }
@@ -412,18 +400,18 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                 {
                     officialGameState.setTurn(0);
                 }
-               else {
-                  officialGameState.setTurn(officialGameState.getTurn() + 1);
+                else {
+                    officialGameState.setTurn(officialGameState.getTurn() + 1);
                 }
                 Log.i("here", "changed turn");
-               // Random ran = new Random();
+                // Random ran = new Random();
                 //int x = ran.nextInt(2);
                 //if(x == 0) {
-                  //  officialGameState.setTurn(3);
+                //  officialGameState.setTurn(3);
                 //}
                 //else if(x == 1)
                 //{
-                 //   officialGameState.setTurn(2);
+                //   officialGameState.setTurn(2);
                 //}
             }
             Log.i("still go", "player");
@@ -496,13 +484,11 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
     protected String checkIfGameOver() {
         int[] counts = new int[4];
         int[][] homeCopy = officialGameState.getHomeArray();
-        String winMessage=null;
+        String winMessage= "";
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++)
                 if (homeCopy[i][j]==i) counts[i]++;
             if (counts[i]==4) {
-                restart = 1;
-                officialGameState.setTurn(0);
                 winMessage = "Player " + i + " Wins!";
                 return winMessage;
             }

@@ -393,7 +393,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                             if (cutBefore == middleMove && boardCopy[cutBefore] != playerNum) {
                                 for (int k = cutBefore + (officialRoll - 1); k > cutBefore; k--) {
                                     if (boardCopy[k] == playerNum) {
-                                       go = false;
+                                        go = false;
                                     }
                                 }
                                 if (go)
@@ -402,7 +402,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                                     movePieceGetOutTheWay = new AggravationMovePieceAction(this, "shortcut", toMoveFrom, cutBefore + (officialRoll - 1));
                                     game.sendAction(movePieceGetOutTheWay);
                                     return;
-                            }
+                                }
                             }
                             if (cutBefore2 == middleMove && boardCopy[cutBefore] != playerNum && boardCopy[cutBefore2] != playerNum) {
                                 for (int k = cutBefore2 + (officialRoll - 2); k > cutBefore2; k--) {
@@ -418,7 +418,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                                 }
                             }
                             if (cutBefore3 == middleMove && boardCopy[cutBefore3] != playerNum && boardCopy[cutBefore2] != playerNum
-                            && boardCopy[cutBefore] != playerNum){
+                                    && boardCopy[cutBefore] != playerNum){
                                 for (int k = cutBefore3 + (officialRoll - 3); k > cutBefore3; k--) {
                                     if (boardCopy[k] == playerNum) {
                                         go = false;

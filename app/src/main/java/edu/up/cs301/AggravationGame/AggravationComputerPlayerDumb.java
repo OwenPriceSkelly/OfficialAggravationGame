@@ -205,10 +205,8 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                     movePieceGetOutTheWay = new AggravationMovePieceAction(this, moveType, toMoveFrom, toMoveTo);
                     game.sendAction(movePieceGetOutTheWay);
                 }//move a piece
-                }
             }
-        }//receiveInfo
-    }
-
-
+        }
+    }//receiveInfo
+}
 
