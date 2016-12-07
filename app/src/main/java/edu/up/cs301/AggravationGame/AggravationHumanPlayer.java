@@ -34,13 +34,14 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
     private ImageButton dieImageButton = null;
     private TextView yourTurn;
     private TextView rollView;
-    private TextView illegalMove;
-    private Button newGameButton;
+    private TextView illegalMove; //say move was illegal if done
+    private Button newGameButton; //for a new game
+    private MediaPlayer yourTurnSound; //sound when it is your turn
     private AggravationState gameStateInfo;  // holds copy of the game state
 
-    private ImageButton[] gameBoard = new ImageButton[57];
-    private ImageButton[][] playerStart = new ImageButton[4][4];
-    private ImageButton[][] playerHome = new ImageButton[4][4];
+    private ImageButton[] gameBoard = new ImageButton[57]; //array of image buttons that is the game board
+    private ImageButton[][] playerStart = new ImageButton[4][4];//array of IB but for all start arrays
+    private ImageButton[][] playerHome = new ImageButton[4][4];//home arrays
     private int[] gameBoardIDS = {R.id.GameBoard0,
             R.id.GameBoard1, R.id.GameBoard2, R.id.GameBoard3, R.id.GameBoard4,
             R.id.GameBoard5, R.id.GameBoard6, R.id.GameBoard7, R.id.GameBoard8,
@@ -294,8 +295,28 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
         if (gameStateInfo.getRoll() == true && whoseTurn == playerNum) {
             rollView.setText("Your Turn! \nRoll!");
-            dieImageButton.setBackgroundColor(Color.GREEN);
-            yourTurn.setTextColor(Color.GREEN);
+            if(playerNum == 0) {
+                dieImageButton.setBackgroundColor(Color.GREEN);
+                yourTurn.setTextColor(Color.GREEN);
+                playSound();
+            }
+            if(playerNum == 1) {
+                int color = Color.rgb(255,192,203);
+                dieImageButton.setBackgroundColor(color);
+                yourTurn.setTextColor(color);
+                playSound();
+            }
+            if(playerNum == 2) {
+                dieImageButton.setBackgroundColor(Color.RED);
+                yourTurn.setTextColor(Color.RED);
+                playSound();
+            }
+            if(playerNum == 3) {
+                dieImageButton.setBackgroundColor(Color.GRAY);
+                yourTurn.setTextColor(Color.GRAY);
+                playSound();
+            }
+
             if (gameStateInfo.getDieValue() == 0) {dieImageButton.setImageResource(R.mipmap.zeroroll);}
             if (gameStateInfo.getDieValue() == 1) {dieImageButton.setImageResource(R.mipmap.greenface1);}
             if (gameStateInfo.getDieValue() == 2) {dieImageButton.setImageResource(R.mipmap.greenface2);}
@@ -1938,6 +1959,11 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
     }
 
 
+    public void playSound()
+    {
+        yourTurnSound.start();
+    }
+
 
 
     /**
@@ -1951,10 +1977,9 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
         // remember the activity
         myActivity = activity;
-
         // Load the layout resource for our GUI
         activity.setContentView(R.layout.pig_layout);
-
+        yourTurnSound = MediaPlayer.create(myActivity,R.raw.song);
         //Listen for button presses
         this.yourTurn = (TextView)activity.findViewById(R.id.yourTurn);
         this.rollView = (TextView)activity.findViewById(R.id.rollView);

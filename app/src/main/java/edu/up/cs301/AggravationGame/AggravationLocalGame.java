@@ -396,13 +396,13 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
             //increment the turn whenever the roll isn't a 6
             if (actualRoll >0)//!= 6)
             {
-                //if(officialGameState.getTurn() == playerNames.length-1)
-                //{
-                    officialGameState.setTurn(2);
-               // }
-               // else {
-               //     officialGameState.setTurn(officialGameState.getTurn() + 1);
-               // }
+                if(officialGameState.getTurn() == playerNames.length-1)
+                {
+                    officialGameState.setTurn(0);
+                }
+                else {
+                    officialGameState.setTurn(officialGameState.getTurn() + 1);
+               }
                 Log.i("here", "changed turn");
                 // Random ran = new Random();
                 //int x = ran.nextInt(2);
