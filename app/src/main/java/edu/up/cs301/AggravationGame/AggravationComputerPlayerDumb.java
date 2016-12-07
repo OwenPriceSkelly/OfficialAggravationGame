@@ -49,7 +49,7 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
 
 
             if(gameStateInfo.getTurn()==this.playerNum) {
-                sleep(500); //CHANGED FROM 2550
+               // sleep(500); //CHANGED FROM 2550
                 Log.i("my turn player", Integer.toString(this.playerNum));
 
                 //getRoll returns whether or there is a roll to be made - either the start of a turn or
@@ -57,7 +57,7 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                 if (gameStateInfo.getRoll()) {
                     AggravationRollAction rollAct = new AggravationRollAction(this);
                     game.sendAction(rollAct);
-                    sleep(500); //CHANGED FROM 500
+                    //sleep(500); //CHANGED FROM 500
                     System.out.println("I rolled!");
                     return;
                 }
@@ -155,9 +155,14 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                         Log.i("toMoveFrom is", " " + toMoveFrom);
                         toMoveTo = toMoveFrom + officialRoll;
                         int endOfTheLine = startIdx - 2;
-                        if (toMoveTo > 55) toMoveTo -= 56;
+                        if(playerNum !=0) {
+                            if (toMoveTo > 55) toMoveTo -= 56;
+                        }
+                        if (playerNum == 0 && toMoveTo >54){
+                            toMoveTo -=55;}
                         if (this.playerNum == 0) endOfTheLine = 54;
                         Log.i("endOfTheLine is", " " + endOfTheLine);
+                        Log.i("toMoveto", " " + toMoveTo);
 
 
                         //if the move from would roll across the end of the line, chance toMoveTo to reflect that
@@ -166,7 +171,9 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                         for (int i = toMoveFrom; i < toMoveFrom + officialRoll; i++) {
                             if (i == endOfTheLine) {
                                 moveType = "Home";
-                                toMoveTo = toMoveTo - endOfTheLine - 1;
+                                if (playerNum != 0) {
+                                    toMoveTo = toMoveTo - endOfTheLine - 1; //PROBLEM HERE
+                                }
                                 break;
                             }
                         }

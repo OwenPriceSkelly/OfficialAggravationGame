@@ -51,7 +51,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
             }
 
             if (gameStateInfo.getTurn() == this.playerNum) {
-                sleep(500); //CHANGED FROM 2550
+                //sleep(500);
                 Log.i("my turn player", Integer.toString(this.playerNum));
 
                 //getRoll returns whether or there is a roll to be made - either the start of a turn or
@@ -59,7 +59,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                 if (gameStateInfo.getRoll()) {
                     AggravationRollAction rollAct = new AggravationRollAction(this);
                     game.sendAction(rollAct);
-                    sleep(500); //CHANGED FROM 500
+                    //sleep(500);
                     System.out.println("I rolled!");
                     return;
                 }
@@ -208,21 +208,61 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                     {
                         toMoveFrom = middleMove+7;
                     }
-                    if(boardCopy[5] == playerNum)
-                    {
-                        toMoveFrom = 5;
+                    if(playerNum == 0) {
+                        if (boardCopy[5] == playerNum) {
+                            toMoveFrom = 5;
+                        }
+                        if (boardCopy[19] == playerNum) {
+                            toMoveFrom = 19;
+                        }
+                        if (boardCopy[33] == playerNum) {
+                            toMoveFrom = 33;
+                        }
+                        if (boardCopy[47] == playerNum) {
+                            toMoveFrom = 47;
+                        }
                     }
-                    if(boardCopy[19] == playerNum)
-                    {
-                        toMoveFrom = 19;
+                    if(playerNum == 1) {
+                        if (boardCopy[19] == playerNum) {
+                            toMoveFrom = 19;
+                        }
+                        if (boardCopy[33] == playerNum) {
+                            toMoveFrom = 33;
+                        }
+                        if (boardCopy[47] == playerNum) {
+                            toMoveFrom = 47;
+                        }
+                        if (boardCopy[5] == playerNum) {
+                            toMoveFrom = 5;
+                        }
                     }
-                    if(boardCopy[33] == playerNum)
-                    {
-                        toMoveFrom = 33;
+                    if(playerNum == 2) {
+                        if (boardCopy[33] == playerNum) {
+                            toMoveFrom = 33;
+                        }
+                        if (boardCopy[47] == playerNum) {
+                            toMoveFrom = 47;
+                        }
+                        if (boardCopy[19] == playerNum) {
+                            toMoveFrom = 19;
+                        }
+                        if (boardCopy[5] == playerNum) {
+                            toMoveFrom = 5;
+                        }
                     }
-                    if(boardCopy[47] == playerNum)
-                    {
-                        toMoveFrom = 47;
+                    if(playerNum == 3) {
+                        if (boardCopy[47] == playerNum) {
+                            toMoveFrom = 47;
+                        }
+                        if (boardCopy[5] == playerNum) {
+                            toMoveFrom = 5;
+                        }
+                        if (boardCopy[19] == playerNum) {
+                            toMoveFrom = 19;
+                        }
+                        if (boardCopy[33] == playerNum) {
+                            toMoveFrom = 33;
+                        }
                     }
 
 

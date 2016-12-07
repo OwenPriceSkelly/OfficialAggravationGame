@@ -1,7 +1,4 @@
-#Tue Dec 06 13:32:19 PST 2016
-base.0=C\:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_b5886fa1a5a9ed43fe919dc78e476f7d2b6ae1cc
-renamed.1=classes2.dex
+#Wed Dec 07 08:54:56 PST 2016
+base.0=C\:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.1=C\:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_e4a619f50a86a91dfb82e21b90d499fc5ce2e258\\classes.dex
-base.1=C\:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_e4a619f50a86a91dfb82e21b90d499fc5ce2e258
-file.0=C\:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_b5886fa1a5a9ed43fe919dc78e476f7d2b6ae1cc\\classes.dex
+file.0=C\:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
