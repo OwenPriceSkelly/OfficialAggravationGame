@@ -202,8 +202,6 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                             otherStart[i]=otherPlayerNum;
 
                             officialGameState.setStartArray(otherPlayerNum,otherStart);
-                            Log.i("at "+newIdx,"Player "+playerNum+" aggravated"+otherPlayerNum);
-                            //^^WE GOT "PLAYER 3 ARRAGATED 3" UH OH
                             break;
                         }
                     }
@@ -383,41 +381,23 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                 }//shortcut
             }
 
-            /*Label a move "skip" if you want to make a move,
-            * but you're afraid of the commitment */
-            else if (type.equalsIgnoreCase("Skip")){
-
-            }
+            /*Label a move "skip" */
+            else if (type.equalsIgnoreCase("Skip")){}
 
             //setStart and setGameBoard were redundant, being the same in every case so I moved them here
             //makeMove doesn't set anything official before this point, it just modifies copies
 
             //(only)after any actual move is made, someone has to roll
             //increment the turn whenever the roll isn't a 6
-            if (actualRoll >0)//!= 6)
-            {
-                if(officialGameState.getTurn() == playerNames.length-1)
-                {
-                    officialGameState.setTurn(0);
-                }
+            if (actualRoll != 6) {
+
+                if(officialGameState.getTurn() == playerNames.length-1) {
+                    officialGameState.setTurn(0);}
                 else {
-                    officialGameState.setTurn(officialGameState.getTurn() + 1);
-               }
-                Log.i("here", "changed turn");
-                // Random ran = new Random();
-                //int x = ran.nextInt(2);
-                //if(x == 0) {
-                //  officialGameState.setTurn(3);
-                //}
-                //else if(x == 1)
-                //{
-                //   officialGameState.setTurn(2);
-                //}
-            }
-            Log.i("still go", "player");
+                    officialGameState.setTurn(officialGameState.getTurn() + 1);}}
             officialGameState.setRoll(true);
-            officialGameState.setGameBoard(boardCopy);
-        }
+            officialGameState.setGameBoard(boardCopy);}
+
         else if(action instanceof AggravationNewGameAction)
         {
             officialGameState.setTurn(0);
