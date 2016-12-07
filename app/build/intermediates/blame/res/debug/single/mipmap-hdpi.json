@@ -4,12 +4,12 @@
         "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-hdpi\\playerthreepiece.png"
     },
     {
-        "merged": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\playertwopiece.png",
-        "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-hdpi\\playertwopiece.png"
-    },
-    {
         "merged": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\greenface3.png",
         "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-hdpi\\greenface3.png"
+    },
+    {
+        "merged": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\playertwopiece.png",
+        "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-hdpi\\playertwopiece.png"
     },
     {
         "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\aggravate3.png",

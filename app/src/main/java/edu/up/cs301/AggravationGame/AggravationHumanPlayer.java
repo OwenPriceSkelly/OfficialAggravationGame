@@ -42,7 +42,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
     private ImageButton[] gameBoard = new ImageButton[57]; //array of image buttons that is the game board
     private ImageButton[][] playerStart = new ImageButton[4][4];//array of IB but for all start arrays
     private ImageButton[][] playerHome = new ImageButton[4][4];//home arrays
-    private int[] gameBoardIDS = {R.id.GameBoard0,
+    private int[] gameBoardIDS = {R.id.GameBoard0,    //array of all of the IDs of the gameboard
             R.id.GameBoard1, R.id.GameBoard2, R.id.GameBoard3, R.id.GameBoard4,
             R.id.GameBoard5, R.id.GameBoard6, R.id.GameBoard7, R.id.GameBoard8,
             R.id.GameBoard9, R.id.GameBoard10,R.id.GameBoard11,R.id.GameBoard12,
@@ -58,10 +58,10 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             R.id.GameBoard49,R.id.GameBoard50,R.id.GameBoard51,R.id.GameBoard52,
             R.id.GameBoard53,R.id.GameBoard54,R.id.GameBoard55,R.id.GameBoard56
     };
-    private int[] playerStartIDS = {R.id.Start00,R.id.Start01,R.id.Start02,R.id.Start03,R.id.Start10,R.id.Start11,R.id.Start12,
+    private int[] playerStartIDS = {R.id.Start00,R.id.Start01,R.id.Start02,R.id.Start03,R.id.Start10,R.id.Start11,R.id.Start12, //ID's of the starts
             R.id.Start13,R.id.Start20,R.id.Start21,R.id.Start22,R.id.Start23,R.id.Start30,R.id.Start31,R.id.Start32,R.id.Start33};
     private int[] playerHomeIDS = {R.id.Home00,R.id.Home01,R.id.Home02,R.id.Home03,R.id.Home10,R.id.Home11,R.id.Home12,
-            R.id.Home13,R.id.Home20,R.id.Home21,R.id.Home22,R.id.Home23,R.id.Home30,R.id.Home31,R.id.Home32,R.id.Home33};
+            R.id.Home13,R.id.Home20,R.id.Home21,R.id.Home22,R.id.Home23,R.id.Home30,R.id.Home31,R.id.Home32,R.id.Home33}; //ID's of the homes
 
     //didn't put in playerIdx bc playerNum is defined in Game Human Player
     // .... so i think we should follow the pig lead on this one.
@@ -96,23 +96,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
 
     @Override
-    public void receiveInfo(GameInfo info) {
-        if(info instanceof IllegalMoveInfo)
+    public void receiveInfo(GameInfo info) { //Receives updated state from Local Game
+        if(info instanceof IllegalMoveInfo) //If it's an illegal move, then tell the user
         {
             illegalMove.setText("Illegal Move.");
         }
 
 
-        if (info instanceof AggravationState || info instanceof IllegalMoveInfo) {
-            illegalMove.setText("");
-            gameStateInfo = (AggravationState) info;
-            Log.i("rollVal Receive Info", Integer.toString(gameStateInfo.getDieValue()));
-            int[] temp = gameStateInfo.getGameBoard();
+        if (info instanceof AggravationState || info instanceof IllegalMoveInfo) { //If it's illegal or if it's a normal thing, update the UI
+            illegalMove.setText(""); //no illegal move
+            gameStateInfo = (AggravationState) info; //holds game state copy
+            int[] temp = gameStateInfo.getGameBoard(); //temporary gameboard
             dieImageButton.setBackgroundColor(Color.WHITE);
             yourTurn.setTextColor(Color.WHITE);
 
 
-            if(gameStateInfo.getRoll() == true || gameStateInfo.getRoll() == false)
+            if(gameStateInfo.getRoll() == true || gameStateInfo.getRoll() == false) //If it is your turn to roll or not your turn to roll, you can make a newGame
             {
                 this.newGameButton.setEnabled(true);
             }
@@ -121,25 +120,27 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
                 if (temp[i] == -1) {
                     if (i == 5 || i == 19 || i == 33 || i == 47 || i == 56) {
-                        this.gameBoard[i].setBackgroundResource(R.mipmap.shortcut);
+                        this.gameBoard[i].setBackgroundResource(R.mipmap.shortcut); //makes shortcuts yellow
                         continue;
                     }
-                    this.gameBoard[i].setBackgroundResource(R.mipmap.gamesquare);
-                } else if (temp[i] == 0) {
-                    this.gameBoard[i].setBackgroundResource(R.mipmap.playerzeropiece);
-                } else if (temp[i] == 1) {
-                    this.gameBoard[i].setBackgroundResource(R.mipmap.playeronepiece);
-                } else if (temp[i] == 2) {
-                    this.gameBoard[i].setBackgroundResource(R.mipmap.playertwopiece);
-                } else if (temp[i] == 3) {
-                    this.gameBoard[i].setBackgroundResource(R.mipmap.playerthreepiece);
+
+                    //if the interger array index is -1
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.gamesquare); //black
+                } else if (temp[i] == 0) {//if the interger array index is 0
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.playerzeropiece);//player zero
+                } else if (temp[i] == 1) {//if the interger array index is 1
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.playeronepiece);//player one
+                } else if (temp[i] == 2) {//if the interger array index is 2
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.playertwopiece);//player two
+                } else if (temp[i] == 3) { //if the interger array index is 3
+                    this.gameBoard[i].setBackgroundResource(R.mipmap.playerthreepiece);//player three
                 }
             }
             int tempStart[][] = gameStateInfo.getStartArray(); //temporary array that holds the start array integers of the game state
             for (int i = 0; i < allPlayerNames.length; i++) { //this runs through and looks at the integers in the game state array and changes the image buttons to reflect them
                 for (int j = 0; j < 4; j++) {
                     if (tempStart[i][j] == -1) {
-                        this.playerStart[i][j].setBackgroundResource(R.mipmap.gamesquare);
+                        this.playerStart[i][j].setBackgroundResource(R.mipmap.gamesquare); //Does the same thing but for the start arrays
                     }
                     else if (tempStart[i][j] == 0) {
                         this.playerStart[i][j].setBackgroundResource(R.mipmap.playerzeropiece);
