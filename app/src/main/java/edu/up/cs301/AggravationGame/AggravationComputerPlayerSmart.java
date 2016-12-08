@@ -16,7 +16,7 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 public class AggravationComputerPlayerSmart extends GameComputerPlayer {
 
     private AggravationState gameStateInfo; //the copy of the game state
-    private int officialRoll = 0;
+    private int officialRoll = 0; //holds roll
 
 
     /* *
@@ -25,7 +25,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
     public AggravationComputerPlayerSmart(String name) {
         super(name);
     }
-
+    //holds index of the possible second piece to move
     private int previousMoveFrom = -9;
     /**
      * callback method--game's state has changed
