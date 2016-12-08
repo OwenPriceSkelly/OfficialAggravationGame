@@ -142,7 +142,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     if (tempStart[i][j] == -1) {
                         this.playerStart[i][j].setBackgroundResource(R.mipmap.gamesquare); //Does the same thing but for the start arrays
                     }
-                    else if (tempStart[i][j] == 0) {
+                    else if (tempStart[i][j] == 0) { //if int array is 0, that equals player zero piece...1=1, 2=2...etc
                         this.playerStart[i][j].setBackgroundResource(R.mipmap.playerzeropiece);
                     } else if (tempStart[i][j] == 1) {
                         this.playerStart[i][j].setBackgroundResource(R.mipmap.playeronepiece);
@@ -157,24 +157,26 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
             {
                 for (int j = 0; j < 4; j++) {
-                    if (tempHome[i][j] == -1) {
+                    if (tempHome[i][j] == -1) { //if integer array is -1, then its a basic game square
                         if(i == 0)
-                        {
+                        {   //0 indicates player zero, who is green, so home squares are set to green
                             this.playerHome[i][j].setBackgroundResource(R.mipmap.greensquarehome);
                         }
                         if(i == 1)
-                        {
+                        {   //1 indicates player one, who is pink, so home squares are set to pink
                             this.playerHome[i][j].setBackgroundResource(R.mipmap.pinksquarehome);
                         }
                         if(i == 2)
-                        {
+                        {   //2 indicates player two, who is red, so home squares are set to red
                             this.playerHome[i][j].setBackgroundResource(R.mipmap.redsquarehome);
                         }
                         if(i == 3)
-                        {
+                        {   //3 indicates player three, who is gray, so home squares are set to grey
                             this.playerHome[i][j].setBackgroundResource(R.mipmap.greysquarehome);
                         }
-                    } else if (tempHome[i][j] == 0) {
+                    }
+                    //However, if the integer array is not -1, then it must be occupied by a player's piece
+                    else if (tempHome[i][j] == 0) {
                         this.playerHome[i][j].setBackgroundResource(R.mipmap.playerzeropiece);
                     } else if (tempHome[i][j] == 1) {
                         this.playerHome[i][j].setBackgroundResource(R.mipmap.playeronepiece);
@@ -191,21 +193,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         {
             for (int i = 0; i < 4; i++)
             {
+                //If there are only three players, then make player three's start be blank
                 this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
             }
         }
-        if(allPlayerNames.length == 2)
+        else if(allPlayerNames.length == 2)
         {
             for (int i = 0; i < 4; i++)
-            {
+            {//If there are only two players, then make player three's and two's start blank
                 this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
                 this.playerStart[2][i].setBackgroundResource(R.mipmap.gamesquare);
             }
         }
-        if(allPlayerNames.length == 1)
+        else if(allPlayerNames.length == 1)
         {
             for (int i = 0; i < 4; i++)
-            {
+            {//If there is only one player, then make all but player zero's pieces blank
                 this.playerStart[3][i].setBackgroundResource(R.mipmap.gamesquare);
                 this.playerStart[2][i].setBackgroundResource(R.mipmap.gamesquare);
                 this.playerStart[1][i].setBackgroundResource(R.mipmap.gamesquare);
@@ -213,20 +216,19 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         }
 
 
-        int whoseTurn = gameStateInfo.getTurn();
+        int whoseTurn = gameStateInfo.getTurn(); //get the official turn
         if (whoseTurn == playerNum) {
-            if (gameStateInfo.getRoll()) {
+            if (gameStateInfo.getRoll()) { //True only if it is your turn to roll.
                 for (int i = 0; i < 57; i++) {
-                    this.gameBoard[i].setEnabled(false);
+                    this.gameBoard[i].setEnabled(false); //disable all buttons on the gameboard
                 }
-                for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+                for (int i = 0; i < 4; i++)//this runs through and sets start buttons to false since only the roll die should be enabled
                 {
                     for (int j = 0; j < 4; j++) {
                         this.playerStart[i][j].setEnabled(false);
                     }
                 }
-                for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
-                {
+                for (int i = 0; i < 4; i++)//this runs through and sets home buttons to false since only the roll die should be enabled
                     for (int j = 0; j < 4; j++) {
                         this.playerHome[i][j].setEnabled(false);
 
@@ -235,48 +237,40 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 }
                 this.dieImageButton.setEnabled(true);
 
-            } else {
+            } else { //if it isn't your turn...do the same thing as above, but don't enable the die button
 
                 this.dieImageButton.setEnabled(false);
                 for (int i = 0; i < 57; i++) {
                     this.gameBoard[i].setEnabled(false);
                 }
-                for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+                for (int i = 0; i < 4; i++)
                 {
                     for (int j = 0; j < 4; j++) {
                         this.playerStart[i][j].setEnabled(false);
                     }
                 }
-                for (int i = 0; i < 4; i++)//this runs through and looks at the integers in the game state's home array and changes the image buttons to reflect
+                for (int i = 0; i < 4; i++)
                 {
                     for (int j = 0; j < 4; j++) {
                         this.playerHome[i][j].setEnabled(false);
-
-
                     }
                 }
             }
-        }
 
 
+        //Always displayed whose turn it is.
         yourTurn.setText("PLAYER " + Integer.toString(whoseTurn) + "!");
 
-
+        //If it isn't your turn, this is indicated by the text next to the die
         if (whoseTurn != playerNum) {
             rollView.setText("Not Your Turn!");
         }
 
-
-
-        // else
-        // {
-        // flash(Color.RED,100);
-        //}
         if (gameStateInfo.getDieValue() == 0) {
-            dieImageButton.setImageResource(R.mipmap.zeroroll);
+            dieImageButton.setImageResource(R.mipmap.zeroroll); //if somehow the roll is zero
         }
         if (gameStateInfo.getDieValue() == 1) {
-            dieImageButton.setImageResource(R.mipmap.face1);
+            dieImageButton.setImageResource(R.mipmap.face1);//drawable.face1);
         }
         if (gameStateInfo.getDieValue() == 2) {
             dieImageButton.setImageResource(R.mipmap.dietwovalue);//drawable.face2);
@@ -294,15 +288,16 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             dieImageButton.setImageResource(R.mipmap.diesixvalue);//drawable.face6);
         }
 
-        if (gameStateInfo.getRoll() == true && whoseTurn == playerNum) {
-            rollView.setText("Your Turn! \nRoll!");
-            if(playerNum == 0) {
+        if (gameStateInfo.getRoll() == true && whoseTurn == playerNum)  //If it's your turn and you need to roll
+        {
+            rollView.setText("Your Turn! \nRoll!"); //Let's your know you need to roll
+            if(playerNum == 0) { //if you're player one, set background of die to green, if you're one, to pink..same for players two and three's colors
                 dieImageButton.setBackgroundColor(Color.GREEN);
                 yourTurn.setTextColor(Color.GREEN);
-                playSound();
+                playSound(); //player the "Yourturn" sound when it's your turn
             }
             if(playerNum == 1) {
-                int color = Color.rgb(255,192,203);
+                int color = Color.rgb(255,192,203); //pink
                 dieImageButton.setBackgroundColor(color);
                 yourTurn.setTextColor(color);
                 playSound();
@@ -317,34 +312,29 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 yourTurn.setTextColor(Color.GRAY);
                 playSound();
             }
-
+            //Sets die image to whatever picture corresponds to roll
             if (gameStateInfo.getDieValue() == 0) {dieImageButton.setImageResource(R.mipmap.zeroroll);}
             if (gameStateInfo.getDieValue() == 1) {dieImageButton.setImageResource(R.mipmap.greenface1);}
             if (gameStateInfo.getDieValue() == 2) {dieImageButton.setImageResource(R.mipmap.greenface2);}
             if (gameStateInfo.getDieValue() == 3) {dieImageButton.setImageResource(R.mipmap.greenface3);}
             if (gameStateInfo.getDieValue() == 4) {dieImageButton.setImageResource(R.mipmap.greenface4);}
             if (gameStateInfo.getDieValue() == 5) {dieImageButton.setImageResource(R.mipmap.greenface5);}
-            if (gameStateInfo.getDieValue() == 6) {dieImageButton.setImageResource(R.mipmap.greenface6);}}
-
-        if (whoseTurn == playerNum && gameStateInfo.getRoll() == false) {
-            rollView.setText("You Just Rolled! \n Move a Piece!");
+            if (gameStateInfo.getDieValue() == 6) {dieImageButton.setImageResource(R.mipmap.greenface6);}
         }
+        //If it's your turn and you rolled, then let's you know you need to move a piece
+        if (whoseTurn == playerNum && gameStateInfo.getRoll() == false){
+            rollView.setText("You Just Rolled! \n Move a Piece!");}
 
-
-        if (checkPieces) {
+        if (checkPieces){
             possibleMoveChecker(); //sends blank move if no moves are possible
-            checkPieces = false;
-        }
-    }//receiveInfo
+            checkPieces = false;}
+    }// End receiveInfo
 
 
     public int getPlayerNum()
     {
         return playerNum;
     }
-
-
-
     //variables for onClick
     boolean checkPieces = false;
     int markedButton = -1; //holds the most recently pressed player piece button
@@ -366,6 +356,10 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         {
             return;
         }
+        if(gameStateInfo.getTurn() != playerNum)
+        {
+            return;
+        }
 
         //holds values for the state of the game board arrays & die value
         int rollVal = gameStateInfo.getDieValue();
@@ -375,37 +369,35 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         String boardType = "board"; //default board type
 
         for (int i = 0; i < 57; i++) { //goes through all pieces & sets highlighted squares back to normal squares
-            if (gameBoardCopy[i] == -2) {
+            if (gameBoardCopy[i] == -2) { //highlighted squares have a value of -2 (white squares)
                 gameBoard[i].setBackgroundResource(R.mipmap.gamesquare);
                 if(i == 5 || i == 19 || i == 33 || i == 47 || i == 56) {
-                    gameBoard[i].setBackgroundResource(R.mipmap.shortcut);}
-                gameBoardCopy[i] = -1;}
-            else if(gameBoardCopy[i] == 10)
+                    gameBoard[i].setBackgroundResource(R.mipmap.shortcut);}//if it's a shortcut square that's white, needs to be yellow
+                gameBoardCopy[i] = -1;} //set their values to -1 again
+            else if(gameBoardCopy[i] == 10) //10 = an aggravated player zero piece
             {
                 gameBoard[i].setBackgroundResource(R.mipmap.playerzeropiece);
                 gameBoardCopy[i] = 0;
             }
-            else if(gameBoardCopy[i] == 11)
+            else if(gameBoardCopy[i] == 11)//11 = an aggravated player one piece
             {
                 gameBoard[i].setBackgroundResource(R.mipmap.playeronepiece);
                 gameBoardCopy[i] = 1;
             }
-            else if(gameBoardCopy[i] == 12)
+            else if(gameBoardCopy[i] == 12)//12 = an aggravated player two piece
             {
                 gameBoard[i].setBackgroundResource(R.mipmap.playertwopiece);
                 gameBoardCopy[i] = 2;
             }
-            else if(gameBoardCopy[i] == 13)
+            else if(gameBoardCopy[i] == 13)//13= an aggravated player three piece
             {
                 gameBoard[i].setBackgroundResource(R.mipmap.playerthreepiece);
                 gameBoardCopy[i] = 3;
             }
-
-
         }
 
         //sets home arrays previously highlighted to  correct piece squares
-        for (int i = 0; i < allPlayerNames.length; i++) {
+        for (int i = 0; i < allPlayerNames.length; i++) { //Does same thing as for loop above, but for the home arrays
             for (int j = 0; j < 4; j++) {
                 if (homeCopy[i][j] == -2) {
                     if (playerNum == 0) {
@@ -430,13 +422,13 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
 
 
-        if(button == newGameButton){ //option to start a new game
+        if(button == newGameButton){ //option to start a new game if enabled
             AggravationNewGameAction newGame = new AggravationNewGameAction(this);
-            game.sendAction(newGame);
+            game.sendAction(newGame); //send a new game action
             Log.i("New Game Button", " Clicked");
             return;}
 
-        if (button == dieImageButton) {
+        if (button == dieImageButton) { //roll die if clicked and enabled
             AggravationRollAction roll = new AggravationRollAction(this);
             game.sendAction(roll);
             checkPieces = true;
@@ -588,14 +580,23 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         if (board.equals("start")) {
             if (rollVal == 1 || rollVal == 6){ //if a one or a 6 & there are pieces to move from start array, enable space
                 if (enable) {
-                    if(gameStateInfo.getTurn() == playerNum) {
-                        this.gameBoard[playerNum * 14].setEnabled(true);
-                    }
+                    this.gameBoard[playerNum * 14].setEnabled(true);
+                    //APPEARS ALL THE TIME IN THE CODE:
+                    //IF THE BUTTON IS ENABLED, AND ITS INTERGER
+                    //VALUE IS -1 == GAME SQUARE
+                    //THEN SET IT TO -2, TO RECORD IT HAS BEEN
+                    //CHANGED, AND THEN SET IT TO BE A WHITE SQUARE
                     if(gameBoardCopy[playerNum*14] == -1) {
                         this.gameBoard[playerNum*14].setBackgroundResource(R.mipmap.whitesquare);
                         gameBoardCopy[playerNum*14] = -2;}
                     else
                     {
+                        //THIS FOR LOOP APPEARS MULTIPLE TIMES THROUGHOUT THE CODE
+                        //EVERYTIME IT RUNS THROUGH THE POSSIBLE ENABLED MOVES
+                        //IF THOSE POSSIBLE ENABLED MOVES ARE OTHER PLAYERS
+                        //IT SETS THAT IMAGE BUTTON TO BE AN "AGGRAVATED" PIECE
+                        //AND SETS THE COPY OF THE BOARD TO A NUMBER USED TO
+                        //LATER FIGURE OUT IF IT WAS CHANGED
                         for(int iter = 0; iter < 4;iter++)
                         {
                             if(gameBoardCopy[playerNum*14] == iter)
@@ -929,15 +930,14 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (homeCopy[playerNum][leftOver] != playerNum) {
                             int iterator = leftOver;
                             for (int j = 0; j < 4; j++){ //checks to make sure it's not leapfrogging a piece already there
-                                if (j < iterator){ //only the spaces before the possible move space
+                                if (j <= iterator){ //only the spaces before the possible move space
                                     if (homeCopy[playerNum][j] == playerNum) {
                                         canDoThis = false;}}}
                             if (!checkPieceOrder(currentPieceLocations, playerNum, i, topSpace) && gameBoardCopy[topSpace] == playerNum)  {
                                 canDoThis = false;}
                             if (canDoThis) {
                                 if (enable) {
-                                    if(gameStateInfo.getTurn() == playerNum) {
-                                        playerHome[playerNum][iterator].setEnabled(true);}
+                                    playerHome[playerNum][iterator].setEnabled(true);
                                     if (homeCopy[playerNum][iterator] == -1) {
                                         playerHome[playerNum][iterator].setBackgroundResource(R.mipmap.whitesquare);
                                         homeCopy[playerNum][iterator] = -2;} else
@@ -971,7 +971,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                     }}
                                 possibleMove = true;}}}}
 
-                //===================CASE: Shortcut move==========================
+                //===================CASE: Shortcut move==========================\\
                 if ((i + rollVal) == 6 || (i + rollVal) == 20 || (i + rollVal) == 34 || (i + rollVal) == 48){ //if the player can directly land on middle shortcut
                     if (gameBoardCopy[56] != playerNum)  {
                         if (checkPieceOrder(currentPieceLocations, playerNum, i, (i + rollVal -1)))  {
@@ -1012,7 +1012,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                     }}
                                 possibleMove = true;}}}}
 
-                //===================CASE: moving from a shortcut==========================
+                //===================CASE: moving from a shortcut==========================\\
                 if (i == 5 || i == 19 || i == 33 || i == 47){ //if the player is on a corner shortcut
                     int moveSpace;
                     int moveSpace2;
@@ -1980,8 +1980,10 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         myActivity = activity;
         // Load the layout resource for our GUI
         activity.setContentView(R.layout.pig_layout);
+        //Set up the sound for your turn
         yourTurnSound = MediaPlayer.create(myActivity,R.raw.song);
         //Listen for button presses
+        //Below are text views and listeners for buttons
         this.yourTurn = (TextView)activity.findViewById(R.id.yourTurn);
         this.rollView = (TextView)activity.findViewById(R.id.rollView);
         this.dieImageButton = (ImageButton)activity.findViewById(R.id.RollButton);
@@ -1991,8 +1993,8 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         Log.i("HERE","HERE");
         dieImageButton.setOnClickListener(this);
         Log.i("die image button", "created");
-        //Initialize the widget reference member variables
 
+        //Initialize the widget reference member variables
         for (int i = 0; i<57; i++) {
             this.gameBoard[i] = (ImageButton) activity.findViewById(gameBoardIDS[i]);
             this.gameBoard[i].setOnClickListener(this);
