@@ -1,11 +1,16 @@
 This is the log.txt file to hold resources used
 
+Date: Oct 3 - Dec 3
+Problem: Rules consultation
+Resource Used: official game rules: http://www.hasbro.com/common/instruct/Aggravation_(2002).pdf
+Solution: consulted rules to make sure our game and requirements doc were in line
 
-Nov 5
-Started with the PigGame program as the basis for all of the classes.
+Date: Nov 5
+Note: Started with the PigGame program as the basis for Aggravation Game. (resource used so citing here)
 
 November 8, 2016
-Used online images as our game pieces. The URL's of these images are below.
+Note: Used online images as our game pieces. The URL's of these images are below
+
 https://dev.opera.com/articles/raw-webgl-part-1-getting-started/
 Player 0
 
@@ -15,14 +20,57 @@ Player 1
 https://www.gowebbaby.com/use-color-psychology-give-business-edge/
 Player 2
 
-December 4,2016
-Dr. Nuxoll helped us to do a deep-copy of our game-state and basically helped us get network player set up
-in general.
+Date:Nov 14
+Problem: Every time we download project from github, we have to rename certain image resource files
+        Changes do not save.
 
-December 7,2016
-Looked up how to get sound in Android studio, so that there would be a sound associated
-when it became the player's turn.
-https://www.youtube.com/watch?v=V1ocJmXeQ28
+Resource Used: Vegdahl office hours
+
+Solution: Creating a new repository with correct image names (on Dec 7). New github repository, worked great!
+
+Date: Nov 15
+Problem: the 'Pig' game was our basis, and certain files were still named pig -- not sure how to change
+
+Resource Used:Vegdahl office hours
+
+Solution: Dr. Vegdahl showed us correct xml file location to change pig name (to name the whole game
+            Aggravaion not Pig)
+
+Date: Nov 22
+Problem: When initializing game, occasionally (~1/20 times) the gui images would not print and game GUI
+            would be blanked out with no images showing up
+Resource Used: google (not helpful) and Dr. Vegdahl via email and office hours
+Solution:Vegdahl made changes to game framework, sent these out and we added them to our project (THANK YOU)
+
+
+Date: Dec 3
+Problem: Issues with Network play -- GUI displayed on both screens, but updated piece locations on the
+         board did not appear for network player
+
+Resource Used: Class network play notes. Advice from Nuxoll in CS 371 lab
+
+Solution: Nuxoll advised deep copying each value of each array, instead of trying to copy the whole array by address
+
+
+Date: Dec 7
+Problem: Struggles creating new gitHub repository to change project over (due to issues described
+            on Nov 14 basis)
+
+Resource Used: googled 'github creating new repository android studio'. Tried things from https://www.londonappdeveloper.com/how-to-use-git-hub-with-android-studio/
+            and http://stackoverflow.com/questions/28292333/android-studio-how-to-push-to-new-repository
+            Most helpfully asked the lab 371 TA for help and successfully put added files into github online
+Solution: Added files to new github repository online
+
+
+Date: December 7
+Problem: Adding sound on a player's turn
+
+Resource Used: Looked up 'how to get sound in Android studio', https://www.youtube.com/watch?v=V1ocJmXeQ28
+
+Solution: Used in class "AggravationHumanPlayer" as shown by ding sound on your turn
+
+
+
 
 
 
