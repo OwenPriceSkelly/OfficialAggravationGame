@@ -919,21 +919,22 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     if ((i + rollVal) > overLine && (i + rollVal) < overLine+5 && i != 56 && i<= overLine) {
                         boolean canDoThis = true;
                         int prev = overLine;
-                        for (int z = prev; z > i; z--) {
+                        for (int z = prev; z > i; z--) { //checks leapfrogging in gameboard
                             if (gameBoardCopy[z] == playerNum) {
                                 canDoThis = false;
                                 break;
                             }
                         }
-                        //checkhere
-                        int leftOver = (i+rollVal) - overLine - 1;
+                        int leftOver = (i+rollVal) - overLine - 1; //1
                         if (homeCopy[playerNum][leftOver] != playerNum) {
                             int iterator = leftOver;
                             for (int j = 0; j < 4; j++){ //checks to make sure it's not leapfrogging a piece already there
                                 if (j <= iterator){ //only the spaces before the possible move space
                                     if (homeCopy[playerNum][j] == playerNum) {
                                         canDoThis = false;}}}
-                            if (!checkPieceOrder(currentPieceLocations, playerNum, i, topSpace) && gameBoardCopy[topSpace] == playerNum)  {
+                            //checks leapfrogging to get into the home array (using the topSpace as dummy value)
+                            if ((!checkPieceOrder(currentPieceLocations, playerNum, i, topSpace) && topSpace != i)
+                            || (topSpace!=i && gameBoardCopy[topSpace] == playerNum)){
                                 canDoThis = false;}
                             if (canDoThis) {
                                 if (enable) {
@@ -981,35 +982,21 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                                         this.gameBoard[56].setEnabled(true);} //enable middle
                                     if (gameBoardCopy[56] == -1) {
                                         this.gameBoard[56].setBackgroundResource(R.mipmap.whitesquare);
-                                        gameBoardCopy[56] = -2;} else
-                                    {
-                                        for(int iter = 0; iter < 4;iter++)
-                                        {
-                                            if(gameBoardCopy[56] == iter)
-                                            {
-                                                if(iter == 0&& iter != playerNum)
-                                                {
+                                        gameBoardCopy[56] = -2;} else {
+                                        for(int iter = 0; iter < 4;iter++) {
+                                            if(gameBoardCopy[56] == iter) {
+                                                if(iter == 0&& iter != playerNum) {
                                                     this.gameBoard[56].setBackgroundResource(R.mipmap.aggravate0);//greensquarehome);
-                                                    gameBoardCopy[56] = 10;
-                                                }
-                                                else if(iter == 1&& iter != playerNum)
-                                                {
+                                                    gameBoardCopy[56] = 10;}
+                                                else if(iter == 1&& iter != playerNum) {
                                                     this.gameBoard[56].setBackgroundResource(R.mipmap.aggravate1);//pinksquarehome);
-                                                    gameBoardCopy[56] = 11;
-                                                }
-                                                else if(iter == 2&& iter != playerNum)
-                                                {
+                                                    gameBoardCopy[56] = 11;}
+                                                else if(iter == 2&& iter != playerNum) {
                                                     this.gameBoard[56].setBackgroundResource(R.mipmap.aggravate2);//(R.mipmap.redsquarehome);
-                                                    gameBoardCopy[56] = 12;
-                                                }
-                                                else if(iter == 3&& iter != playerNum)
-                                                {
+                                                    gameBoardCopy[56] = 12;}
+                                                else if(iter == 3&& iter != playerNum) {
                                                     this.gameBoard[56].setBackgroundResource(R.mipmap.aggravate3);//greysquarehome);
-                                                    gameBoardCopy[56] = 13;
-                                                }
-                                            }
-                                        }
-                                    }}
+                                                    gameBoardCopy[56] = 13;}}}}}
                                 possibleMove = true;}}}}
 
                 //===================CASE: moving from a shortcut==========================\\
@@ -1907,7 +1894,10 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             return false;}
         for (int j = 0; j<4; j++) { //checks leapfrogging
             if (pieceLocNew[j]!= startMoveNew && pieceLocNew[j] > startMoveNew && pieceLocNew[j] <endMoveNew) {
-                return false;}}
+                return false;}
+            if (pieceLocations[j] == endMove) { //moving to space with piece (doublechecks)
+             return false;
+            }}
         return true;}
     /**
      * checkPieceOrderShortcut
