@@ -27,9 +27,6 @@ public class AggravationMovePieceAction extends GameAction implements Serializab
         this.newIdx=newIdx;
         this.type=type;
     }
-
-
-
 }
 
 

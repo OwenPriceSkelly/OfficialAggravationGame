@@ -152,7 +152,7 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                                 moveType = "Home";
                                 if (playerNum != 0)
                                 {
-                                    toMoveTo = toMoveTo - endOfTheLine - 1; //PROBLEM HERE
+                                    toMoveTo = toMoveTo - endOfTheLine - 1;
                                 }
                                 break;
                             }}

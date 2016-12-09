@@ -44,7 +44,9 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
 
     /**
      * This method is called when a new action arrives from a player
-     * if it ever works add a bunch of shit here to explain
+     * Checks to see if the action was to roll the die, move, or start a new game
+     * enforces the "logic" of the game based on the kind of action, and modifies the
+     * officialGameState if the action is valid.
      * @return true if the action was taken or false if the action was invalid/illegal.
      */
     @Override
@@ -132,16 +134,13 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                 if(fromOuterSpace){
                     //check for a leapfrog in the spaces leading up to the end
                     for(int i = oldIdx+1;i<=endOfTheLine;i++){
-                        if (boardCopy[i]==playerNum){
-                            return false;
-                        }
+                        if (boardCopy[i]==playerNum) return false;
+
                     }
                     //
                     //check the home array for leapfrogs
                     for(int i=0;i<=newIdx;i++){
-                        if (homeCopy[i]==playerNum){
-                            return false;
-                        }
+                        if (homeCopy[i]==playerNum) return false;
                     }
                     //empty oldIdx
                     boardCopy[oldIdx]=-1;
@@ -149,9 +148,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                 else{
                     //check for a leapfrog in the home array
                     for(int i = oldIdx+1;i<=newIdx;i++){
-                        if (homeCopy[i]==playerNum){
-                            return false;
-                        }
+                        if (homeCopy[i]==playerNum) return false;
                     }
                     homeCopy[oldIdx]=-1;
                 }
@@ -173,10 +170,8 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                 boolean skipNext = false;
                 if(oldIdx == 5 || oldIdx == 19 || oldIdx == 33 || oldIdx == 47 || newIdx == 56)
                 {
-                    if(newIdx != playerNum)
-                    {
-                        skipNext = true;
-                    }
+                    if(newIdx != playerNum) skipNext = true;
+
                 }
                 if(!skipNext) {
                     if (oldIdx < 56) {
@@ -215,26 +210,12 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                 boardCopy[newIdx]=playerNum;
             }
 
-                /* the 4 shortcut spaces are 5, 19, 33, and 47
-                * if oldIdx = any of these, then enable shortcut moves?
-                * a valid shortcut move is based exclusively on the space
-                * you can loop all the way around if you want, which means it doesn't have to be
-                * based on the player at all valid newIdx's:
-                * i from 0 to the die value - there are as many valid new indexes as the die value
-                * newIdx == oldIdx + (14*i) + value - i
-                * 14*i is b/c you move a full quarter of the 56 piece board jumping shortcut spot to shortcut spot
-                * value -i is b/c each jump from cut to cut is 1 less you can move after
-                * newIdx == oldIdx+value + 13*i
-                * - Owen
-                */
-
-            /* Call your move a "shortcut" move if you are moving IN "shortcut space"
+            /* Call a move a "shortcut" move if you are moving IN "shortcut space"
              * "Am I taking a shortcut?" is the key question here, so any moves
-             * TO the center, or FROM a regular shortcut space
-             * are moves you should label "Shortcut."
-             * Any moves to just a regular shortcut space should be labeled Board
-             * if this sounds unintuitive and backwards I get it but I have my reasons - Owen
-             * */
+             * TO the center (by exact count), or FROM a regular shortcut space
+             * are moves you should label "Shortcut" when you send them.
+             * Any moves TO one of the 4 regular shortcut spaces should be labeled Board
+             */
             else if (type.equalsIgnoreCase("Shortcut")) {
 
                 if (oldIdx == 56 && actualRoll != 1)
@@ -246,25 +227,25 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                 boolean canCutThere = false;
                 int lastShortcut = 0;
 
-                /*basically, if you're trying to move to the middle spot, it makes sure that
+                /*if you're trying to move to the middle spot, it makes sure that
                 * you land on a shortcut space 1 count before hitting the middle spot,
-                * so you see that it's landing on the center by an exact count, then makes sure neither that spot nor the center spot
-                * is the player's piece (leapfrog check), then it aggravates if someone's there - Owen */
+                * it's landing on the center by an exact count, then makes sure neither that spot nor the center spot
+                * is the player's piece (leapfrog check), then finally it aggravates if someone
+                * else is already there - Owen */
                 boolean skipNext = false;
                 if (newIdx == 56) {
                     //special case for center square move
                     //oneOff is the shortcut spot right before the middle, reached by exact count
                     int oneOff = oldIdx + actualRoll - 1;
                     Log.i("Oneoff = ", oneOff + "");
-                    //landing by exact count, and not overcrowding
 
+                    //landing by exact count, and not "overcrowding" yourself
                     if ((oneOff == 5 || oneOff == 19 || oneOff == 33 || oneOff == 47) && boardCopy[newIdx] != playerNum) {
                         Log.i("okay", playerNum + "");
                         Log.i("Getting in if statement", " hello");
+
                         //not leapfrogging the oneOff space
-                        if (boardCopy[oneOff] == playerNum && actualRoll != 1) {
-                            return false;
-                        }
+                        if (boardCopy[oneOff] == playerNum && actualRoll != 1) return false;
 
                         //aggravation copypasta
                         if (boardCopy[56] != -1) {
@@ -283,40 +264,25 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                     boardCopy[oldIdx] = -1; //switch values on the board
                     boardCopy[newIdx] = playerNum;
                     skipNext = true;
-
-
                 }
 
-                /*moving from any of the 4 possible shortcut spaces,
+                /* moving FROM any of the 4 possible shortcut spaces,
                 * check the given newIdx with every possible valid point you can move to
-                * you're allowed to loop around as many times as you want on the shortcut spaces, apparently,
-                * and if this works like it does in my head that should be totally fine - Owen
-                * changed to else-if because center square code should be handled before this*/
-                if (skipNext == false) {
+                * you're allowed to loop around the shortcuts again if you want to (according to Hasbro)
+                * doesn't mean we have to implement it in our version though
+                */
+                if (!skipNext) {
                     if (oldIdx == 5 || oldIdx == 19 || oldIdx == 33 || oldIdx == 47) {
                         for (int i = 0; i <= actualRoll; i++) {
 
                             //valid is a valid new index - if you aren't sitting on any other
                             // shortcut squares, there is a unique valid move per the value of the roll,
-                            // plus a move where you don't leave the shortcut spaces
-                            //yes I did mean 13 not 14 check my work the i distributes - Owen
+                            // plus the move where you don't leave the shortcut spaces
                             int valid = oldIdx + actualRoll + (13 * i);
 
                             //keep it on the board
                             //while loop since we want it to stay relative to the 56 square board
                             while (valid > 55) valid -= 56;
-
-                            //special leapfrog check, breaks the loop before validating
-                            //a newIdx if you have another piece on that shortcut space
-                            //don't need to keep it relative to the 56, since it would break before
-                            //i got greater than 3, if it was going to break
-                            //if(i>0 && i<3&& boardCopy[oldIdx+14*i]==playerNum) break;
-                            //Owen the above code breaks if the old index is 47 since you always get greater than 56.
-
-                            //oldIdx+14*i = the index of the furthest shortcut reached before
-                            //leaving shortcut space for the main board
-                            //so lastShortcut = oldIdx + 14*i = valid - actualRoll + i
-                            //since valid is decremented above, I put in terms of valid - Owen
 
                             //if the newIdx matches with a valid spot, you can take the
                             // short cut you asked for and break the loop without checking the rest
@@ -327,9 +293,6 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                             }
                         }
                     }
-
-                    //don't make a shortcut move if you aren't moving from a shortcut space
-                    //else return false;
 
                     //if you can, check for leapfrog and aggravations from the shortcut you left from
                     //ideally, since every move has such similar leapfrog/aggravation code, I would be able to
@@ -358,8 +321,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
 
                     } //else return false;
                     //if you don't match with any of the possible valid moves, then your index is 56, middle piece
-                    if(oldIdx == 56)
-                    {
+                    if(oldIdx == 56) {
                         if (boardCopy[newIdx] != -1) { //aggravating another piece
                             otherPlayerNum = boardCopy[newIdx];
                             otherStart = officialGameState.getStartArray(otherPlayerNum);
@@ -372,7 +334,6 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                                 }
                             }
                         }
-
                     }
                     boardCopy[oldIdx] = -1; //switch values
                     boardCopy[newIdx] = playerNum;
@@ -384,15 +345,13 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
 
             //(only)after any actual move is made, someone has to roll
             //increment the turn whenever the roll isn't a 6
-            if (actualRoll != 6)
-            {
-                if(officialGameState.getTurn() == playerNames.length-1){
-                    officialGameState.setTurn(0);} //back to player 0 if current player is the last in player array
-                else{
-                    officialGameState.setTurn(officialGameState.getTurn() + 1);}//changes official turn based on num players
+            if (actualRoll != 6) {
+                //back to player 0 if current player is the last in player array
+                if(officialGameState.getTurn() == playerNames.length-1) officialGameState.setTurn(0);
+
+                //changes official turn based on num players
+                else officialGameState.setTurn(officialGameState.getTurn() + 1);
             }
-
-
             officialGameState.setRoll(true);
             officialGameState.setGameBoard(boardCopy);}
 
@@ -436,7 +395,6 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
 
     /**
      * Check if the game is over
-     *
      * @return
      *        a message that tells who has won the game, or null if the
      *        game is not over
@@ -445,18 +403,17 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
     protected String checkIfGameOver() {
         int[] counts = new int[4];
         int[][] homeCopy = officialGameState.getHomeArray();
-        String winMessage= "";
-        for(int i=0;i<4;i++){ //runs through and makes sure all spots in home are full for a given player
-            for(int j=0;j<4;j++)
-                if (homeCopy[i][j]==i) counts[i]++;
-            if (counts[i]==4) {
-                winMessage = "Player " + i + " Wins!"; //if it is, then the i player won
-                return winMessage; //ends game
+        String winMessage=null;
+        for(int i=0;i<4;i++) { //runs through and makes sure all spots in home are full for a given player
+            for (int j = 0; j < 4; j++) {
+
+                if (homeCopy[i][j] == i) counts[i]++;
+                if (counts[i] == 4)
+                    winMessage = "Player " + i + " Wins!"; //if it is, then player i won
+                    //ends game
+                else counts[i] = 0;
             }
-            else counts[i] = 0;
         }
-
-        return null; //return null message
+        return winMessage; //returns null by default
     }
-
-}// class AggravationLocalGame
+}//class AggravationLocalGame
