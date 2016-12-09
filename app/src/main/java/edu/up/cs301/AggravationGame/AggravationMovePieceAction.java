@@ -16,10 +16,10 @@ import edu.up.cs301.game.actionMsg.GameAction;
 public class AggravationMovePieceAction extends GameAction implements Serializable {
 
     private static final long serialVersionUID = -5109179064390136954L;
-    int oldIdx;
-    int newIdx;
+    int oldIdx; //index where piece is moving from
+    int newIdx; //index where piece wants to move to
     String type;//Start, Board, or Home
-
+    //Local game looks at old index and new and makes sure it is a valid move
     public AggravationMovePieceAction(GamePlayer player, String type, int oldIdx, int newIdx)
     {
         super(player);

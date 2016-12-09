@@ -13,12 +13,12 @@ import edu.up.cs301.game.actionMsg.GameAction;
  * @version November 2016
  */
 public class AggravationRollAction extends GameAction implements Serializable {
-
+    //Allows a player to send a roll action...local game takes care of rolling, so
+    //nothing else is needed to be passed in
     private static final long serialVersionUID = -5109179067533136954L;
     public AggravationRollAction(GamePlayer player)
     {
         super(player);
-
     }
 
 }
