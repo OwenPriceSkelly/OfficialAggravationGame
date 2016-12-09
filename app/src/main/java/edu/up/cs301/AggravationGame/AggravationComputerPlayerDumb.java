@@ -36,35 +36,32 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
     @Override
     protected void receiveInfo(GameInfo info) {
         if (info instanceof AggravationState) {
-
+            //Smart AI has better comments on what all of these mean if you are confused
+            //Default values of array copies and other variables used in methods
             gameStateInfo = (AggravationState) info;
             officialRoll = gameStateInfo.getDieValue();
             int startCopy[] = gameStateInfo.getStartArray(this.playerNum);
             int boardCopy[] = gameStateInfo.getGameBoard();
             int homeCopy[] = gameStateInfo.getHomeArray(this.playerNum);
-            int startIdx = this.playerNum * 14;
+            int startIdx = this.playerNum * 14; //where player usually starts
             int toMoveFrom=-9;
             int toMoveTo=-9;
             String moveType ="Board";
 
 
             if(gameStateInfo.getTurn()==this.playerNum) {
-               sleep(500);
-                Log.i("my turn player", Integer.toString(this.playerNum));
-
                 //getRoll returns whether or there is a roll to be made - either the start of a turn or
                 //after rolling a 6 and making a valid move
                 if (gameStateInfo.getRoll()) {
                     AggravationRollAction rollAct = new AggravationRollAction(this);
                     game.sendAction(rollAct);
                     sleep(500);
-                    System.out.println("I rolled!");
                     return;
                 }
 
                 //don't have to roll, so move a piece
                 else{
-
+                    //Checks home arrays for a possible move...Smart computer player does the same thing with same code and is commented better.
                     if (homeCopy[3] != playerNum) {
                         if (officialRoll == 1 && homeCopy[2] == playerNum) {
                             AggravationMovePieceAction homeMove = new AggravationMovePieceAction(this, "Home", 2, 3);
@@ -98,9 +95,6 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                         }
                     }
 
-
-
-
                     /*This is where a start move comes from*/
                     if (officialRoll == 6 || officialRoll == 1) {
                     /*try to start whenever possible, so look through start array for a piece to move
@@ -111,23 +105,16 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                                         new AggravationMovePieceAction(this, "Start", j, startIdx);
                                 game.sendAction(startPiece);
                                 return;
-                            }
-                        }
-                    }
+                            }}}
 
                     //check to see if there even is a piece on the board the CPU can look to move
                     for (int i = 0; i < 56; i++) {
                         int j = i + startIdx;
-
                         if (j > 55) j -= 56;
-
                         if (boardCopy[j] == playerNum) {
-                            toMoveFrom = j;
+                            toMoveFrom = j; //index to move from - finds first one
                             break;
-                        }
-                    }
-
-                    Log.i("toMoveFrom is", " " + toMoveFrom);
+                        }}
 
                     //find a piece "in the way" of toMoveFrom and reset the loop around that piece
                     //moves the first "in the way" piece it can, so it can start all of its pieces as fast as possible
@@ -136,7 +123,6 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
 
 
                     if (toMoveFrom != -9) {//if toMoveFrom found a piece to move on the boardCopy[] / is not its default value
-
                         int j = 0;
                         int maybeMoveFrom = toMoveFrom;
                         //looks for pieces blocking the desired more, and moves the pieces in a "daisy chain"
@@ -144,39 +130,32 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                         while (j < officialRoll) {
                             maybeMoveFrom = maybeMoveFrom + 1; //"can I move from here? How about here? etc"
                             if (maybeMoveFrom > 55) maybeMoveFrom -= 56;
-                            Log.i("maybeMoveFrom =", " " + maybeMoveFrom);
                             if (boardCopy[maybeMoveFrom] == this.playerNum) {
-                                Log.i("There was a block", "");
                                 toMoveFrom = maybeMoveFrom;
                                 j = 0;
-                            } else j++;
-                        }
+                            } else j++;}
 
-                        Log.i("toMoveFrom is", " " + toMoveFrom);
-                        toMoveTo = toMoveFrom + officialRoll;
-                        int endOfTheLine = startIdx - 2;
+                        toMoveTo = toMoveFrom + officialRoll; //new index to move to
+                        int endOfTheLine = startIdx - 2; //where the AI cannot move over (-2 for player 0, must be 54)
                         if(playerNum !=0) {
-                            if (toMoveTo > 55) toMoveTo -= 56;
+                            if (toMoveTo > 55) toMoveTo -= 56; //reset position to keep in line with arrays
                         }
-                        if (playerNum == 0 && toMoveTo >54){
+                        if (playerNum == 0 && toMoveTo >54){ //reset position to keep in line with arrays
                             toMoveTo -=55;}
-                        if (this.playerNum == 0) endOfTheLine = 54;
-                        Log.i("endOfTheLine is", " " + endOfTheLine);
-                        Log.i("toMoveto", " " + toMoveTo);
-
+                        if (this.playerNum == 0) endOfTheLine = 54; //54...since -2 is out of bounds
 
                         //if the move from would roll across the end of the line, chance toMoveTo to reflect that
                         //since it is now a home move
-                        //if this works I'm never changing it because it fits my aesthetic perfectly
                         for (int i = toMoveFrom; i < toMoveFrom + officialRoll; i++) {
-                            if (i == endOfTheLine) {
+                            if (i == endOfTheLine)
+                            {
                                 moveType = "Home";
-                                if (playerNum != 0) {
+                                if (playerNum != 0)
+                                {
                                     toMoveTo = toMoveTo - endOfTheLine - 1; //PROBLEM HERE
                                 }
                                 break;
-                            }
-                        }
+                            }}
                         if (moveType.equalsIgnoreCase("Home")) {
                             if (toMoveTo > 3) moveType = "Skip";
                             else {
@@ -185,29 +164,9 @@ public class AggravationComputerPlayerDumb extends GameComputerPlayer {
                                 }
                             }
                         }
-                        //THIS IS WHERE THE PROBLEMS LIVE - Owen
-                        //if your move takes you over theEndOfTheLine, and from a point before/= to it,
-                        //you're making a move into your home array
-                        /*if (toMoveTo>endOfTheLine && toMoveFrom<=endOfTheLine) {
-                            toMoveTo=toMoveTo-endOfTheLine-1;//note to self: why -1? -Owen  }*/
-
-
-
-
-
-
-
-
-
-                        /*AggravationMovePieceAction movePieceGetOutTheWay;
-                        movePieceGetOutTheWay = new AggravationMovePieceAction(this, "Board", toMoveFrom, toMoveTo);
-                        game.sendAction(movePieceGetOutTheWay);*/
-                        Log.i("Action was sent?", "h");
                     }
-
                     //no pieces to move, so send a skip turn
                     if (toMoveFrom == -9) moveType = "Skip";
-
                     AggravationMovePieceAction movePieceGetOutTheWay;
                     movePieceGetOutTheWay = new AggravationMovePieceAction(this, moveType, toMoveFrom, toMoveTo);
                     game.sendAction(movePieceGetOutTheWay);

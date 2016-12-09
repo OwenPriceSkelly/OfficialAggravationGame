@@ -49,29 +49,29 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
      */
     @Override
     protected boolean makeMove(GameAction action) {
-
+        //Copies of all of the arrays
         int playerNum= officialGameState.getTurn();
         int boardCopy[] = officialGameState.getGameBoard();
         int startCopy[]= officialGameState.getStartArray(playerNum);
         int homeCopy[] = officialGameState.getHomeArray(playerNum);
 
-
+        //Roll action
         if(action instanceof AggravationRollAction) {
             if (officialGameState.getTurn() != playerNum) return false; //safety net
             Random dieValue = new Random();//dieValue outside of the conditionals
             int value = dieValue.nextInt(6) + 1;
-            officialGameState.setDieValue(value);
+            officialGameState.setDieValue(value); //set a new roll value
             actualRoll = value;
-            officialGameState.setRoll(false);
-            return true;
+            officialGameState.setRoll(false); //that player cannot roll anymore
+            return true; //send updated state
         }
 
 
         else if(action instanceof AggravationMovePieceAction) {
             Log.i("action is ", "type move piece");
-            int newIdx = ((AggravationMovePieceAction) action).newIdx;
-            int oldIdx=((AggravationMovePieceAction) action).oldIdx;
-            String type = ((AggravationMovePieceAction) action).type;
+            int newIdx = ((AggravationMovePieceAction) action).newIdx; //index to move to
+            int oldIdx=((AggravationMovePieceAction) action).oldIdx; //moving from
+            String type = ((AggravationMovePieceAction) action).type; //type of action sent in
             playerNum = officialGameState.getTurn();
 
             int endOfTheLine = playerNum*14 -2;//farthest any player should get around the board
@@ -280,7 +280,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                             }
                         }
                     }
-                    boardCopy[oldIdx] = -1;
+                    boardCopy[oldIdx] = -1; //switch values on the board
                     boardCopy[newIdx] = playerNum;
                     skipNext = true;
 
@@ -357,12 +357,10 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
 
 
                     } //else return false;
-                    //out with the old, in with the new
-
-                    //if you don't match with any of the possible valid moves
+                    //if you don't match with any of the possible valid moves, then your index is 56, middle piece
                     if(oldIdx == 56)
                     {
-                        if (boardCopy[newIdx] != -1) {
+                        if (boardCopy[newIdx] != -1) { //aggravating another piece
                             otherPlayerNum = boardCopy[newIdx];
                             otherStart = officialGameState.getStartArray(otherPlayerNum);
                             for (int i = 0; i < 4; i++) {
@@ -376,7 +374,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
                         }
 
                     }
-                    boardCopy[oldIdx] = -1;
+                    boardCopy[oldIdx] = -1; //switch values
                     boardCopy[newIdx] = playerNum;
                 }//shortcut
             }
@@ -384,17 +382,17 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
             /*Label a move "skip" */
             else if (type.equalsIgnoreCase("Skip")){}
 
-            //setStart and setGameBoard were redundant, being the same in every case so I moved them here
-            //makeMove doesn't set anything official before this point, it just modifies copies
-
             //(only)after any actual move is made, someone has to roll
             //increment the turn whenever the roll isn't a 6
-            if (actualRoll != 6) {
+            if (actualRoll != 6)
+            {
+                if(officialGameState.getTurn() == playerNames.length-1){
+                    officialGameState.setTurn(0);} //back to player 0 if current player is the last in player array
+                else{
+                    officialGameState.setTurn(officialGameState.getTurn() + 1);}//changes official turn based on num players
+            }
 
-                if(officialGameState.getTurn() == playerNames.length-1) {
-                    officialGameState.setTurn(0);}
-                else {
-                    officialGameState.setTurn(officialGameState.getTurn() + 1);}}
+
             officialGameState.setRoll(true);
             officialGameState.setGameBoard(boardCopy);}
 
@@ -423,24 +421,7 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
             officialGameState.setHomeArray(playerHome);
             officialGameState.setGameBoard(gameBoard);
         }
-
         return true;
-        /* Shortened this and moved it up for scope reasons - we had it setting roll to true outside the scope of
-        the roll, where it set it to false. So following through the code, we had set roll to
-        false after getting a roll, checked to see if it was a 6, then set it true either way and returned.
-        If I'm misunderstanding something feel free to change it back
-        if(actualRoll == 6)
-        {
-            officialGameState.setTurn(officialGameState.getTurn());
-            officialGameState.setRoll(true);
-            return true;
-        }
-        else
-        {
-            officialGameState.setTurn(officialGameState.getTurn() + 1);
-            officialGameState.setRoll(true);
-            return true;
-        }*/
     }//makeMove
 
     /**
@@ -465,17 +446,17 @@ public class AggravationLocalGame extends LocalGame implements Serializable {
         int[] counts = new int[4];
         int[][] homeCopy = officialGameState.getHomeArray();
         String winMessage= "";
-        for(int i=0;i<4;i++){
+        for(int i=0;i<4;i++){ //runs through and makes sure all spots in home are full for a given player
             for(int j=0;j<4;j++)
                 if (homeCopy[i][j]==i) counts[i]++;
             if (counts[i]==4) {
-                winMessage = "Player " + i + " Wins!";
-                return winMessage;
+                winMessage = "Player " + i + " Wins!"; //if it is, then the i player won
+                return winMessage; //ends game
             }
             else counts[i] = 0;
         }
 
-        return null;
+        return null; //return null message
     }
 
 }// class AggravationLocalGame

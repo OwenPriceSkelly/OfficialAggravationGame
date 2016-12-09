@@ -2,5 +2,29 @@ This is the log.txt file to hold resources used
 
 
 Nov 5
+Started with the PigGame program as the basis for all of the classes.
 
-Started with the PigGame as the basis
+November 8, 2016
+Used online images as our game pieces. The URL's of these images are below.
+https://dev.opera.com/articles/raw-webgl-part-1-getting-started/
+Player 0
+
+http://www.keywordsking.com/cmhvbWJ1cyBzaGFwZQ/
+Player 1
+
+https://www.gowebbaby.com/use-color-psychology-give-business-edge/
+Player 2
+
+December 4,2016
+Dr. Nuxoll helped us to do a deep-copy of our game-state and basically helped us get network player set up
+in general.
+
+December 7,2016
+Looked up how to get sound in Android studio, so that there would be a sound associated
+when it became the player's turn.
+https://www.youtube.com/watch?v=V1ocJmXeQ28
+
+
+
+
+
