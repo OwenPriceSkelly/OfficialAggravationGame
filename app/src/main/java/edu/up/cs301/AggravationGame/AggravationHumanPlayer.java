@@ -356,7 +356,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         {
             return;
         }
-        if(gameStateInfo.getTurn() != playerNum)
+        if(gameStateInfo.getTurn() != playerNum) //not players, turn, returns immediately
         {
             return;
         }
@@ -442,8 +442,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             //=========================Player clicking on board space to move a piece============================
             for (int k = 0; k < 57; k++) { //first checks to see if it is a click to move a piece  (clicking on a blank space != to the player number)
                 if (button == this.gameBoard[k] && gameBoardCopy[k] != playerNum) {
-                    Log.i("k ", Integer.toString(k));
-                    Log.i("marked Button", Integer.toString(markedButton));
                     if (k == playerNum*14) { //starting a piece
                         boardType = "Start";}
                     if (k == 56 || markedButton == 5 || markedButton ==19 || markedButton ==33 ||markedButton ==47) {
@@ -453,10 +451,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
                     //sends requested move action with board type, piece clicked, and "marked button" (place piece is moving from)
                     AggravationMovePieceAction move = new AggravationMovePieceAction(this, boardType, markedButton, k);
-                    Log.i("sending move board", Integer.toString(markedButton));
-                    Log.i("move is boardType", boardType);
-                    Log.i("from space", Integer.toString(markedButton));
-                    Log.i("to space ", Integer.toString(k));
                     game.sendAction(move);
                     return;}}
 
@@ -466,9 +460,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                     //sends move action for home
                     AggravationMovePieceAction move = new AggravationMovePieceAction(this, boardType, markedButton, l);
                     game.sendAction(move);
-                    Log.i("sent action", "home");
-                    Log.i("from space", Integer.toString(markedButton));
-                    Log.i("to space", Integer.toString(l));
                     return;}}
 
             //========================Player clicking on own piece===============================================
@@ -672,7 +663,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                 //===================CASE: moving from middle==========================
                 if (i == 56 )
                 { if (rollVal != 1){
-                    Log.i("56","no moves possible");
                     possibleMove = false;
                     return possibleMove;}
                     //if the player is in the middle space
@@ -1333,7 +1323,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
                         if (gameBoardCopy[moveSpace4] != playerNum) {
                             if (checkPieceOrderShortcut(currentPieceLocations, playerNum, i, moveSpace4)) {
                                 if (enable) {
-                                    Log.i("enablingMS4", Integer.toString(moveSpace4));
                                     if(gameStateInfo.getTurn() == playerNum) {
                                         this.gameBoard[moveSpace4].setEnabled(true);}
                                     if (gameBoardCopy[moveSpace4] == -1) {
@@ -1899,6 +1888,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
              return false;
             }}
         return true;}
+
     /**
      * checkPieceOrderShortcut
      * this helper method checks whether a possible move would move one player's piece ahead of one of his/her
@@ -1914,7 +1904,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
     public boolean checkPieceOrderShortcut(int []pieceLocations, int playerNum, int startMove, int endMove) {
         for (int i = 0; i<4; i++) { //checks to make sure you are not leapfrogging your own piece in a shortcut
             if (pieceLocations[i] != startMove && (pieceLocations[i] == 5 || pieceLocations[i] == 19 || pieceLocations[i] ==33 || pieceLocations[i] ==47)){
-                if (endMove> pieceLocations[i] && endMove < pieceLocations[i] +6){ //end piece location on straighaway after another piece
+                if (endMove> pieceLocations[i] && endMove < pieceLocations[i] +6){ //end piece location on straightaway after another piece
                     return false;}
                 if (pieceLocations[i] == 5 && (startMove ==33 ||startMove == 47) && endMove >=19 && endMove < 19+6) {return false;}
                 if (pieceLocations[i] == 5 &&  startMove == 47 && endMove>=33 && endMove <33+6) {return false;}
@@ -1945,11 +1935,12 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             if (pieceLocations[i] >46 && pieceLocations[i] <54){ //there is a piece on that straigtaway
                 if (pieceLocations[i] < endMove){return false;
                 }}}}
-        Log.i("pieceChecker","return true");
         return true;
     }
 
-
+    /*
+    playSound -- starts sound which indicates it is the player's turn
+    */
     public void playSound()
     {
         yourTurnSound.start();
@@ -1980,9 +1971,7 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
         this.newGameButton = (Button)activity.findViewById(R.id.newGameButton);
         this.illegalMove=(TextView) activity.findViewById(R.id.illegalMove);
         newGameButton.setOnClickListener(this);
-        Log.i("HERE","HERE");
         dieImageButton.setOnClickListener(this);
-        Log.i("die image button", "created");
 
         //Initialize the widget reference member variables
         for (int i = 0; i<57; i++) {
@@ -1996,7 +1985,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             {
                 this.playerStart[i][j] = (ImageButton) activity.findViewById(playerStartIDS[count]);
                 this.playerStart[i][j].setOnClickListener(this);
-                Log.i("count is", Integer.toString(count));
                 count++;
             }
         }
@@ -2008,7 +1996,6 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
             {
                 this.playerHome[i][j] = (ImageButton) activity.findViewById(playerHomeIDS[count2]);
                 this.playerHome[i][j].setOnClickListener(this);
-                Log.i("count2 is ", Integer.toString(count2));
                 count2++;
             }
         }

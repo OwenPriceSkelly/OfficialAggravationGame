@@ -294,7 +294,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                             }
                         }
                     }
-                    Log.i("toMoveFrom is", " " + toMoveFrom);
+
 
                     //If the computer can move into the middle, and it is less than half way across board, move into the middle, make sure its not occupied
                     //by its own piece
@@ -529,7 +529,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                             } else j++;
                         }
 
-                        Log.i("toMoveFrom is", " " + toMoveFrom);
+
                         toMoveTo = toMoveFrom + officialRoll;
                         int endOfTheLine = startIdx - 2; //Furthest part AI can get to on the board
                         if(playerNum !=0) { //If it is not player zero, then if it is trying to move over 55, subtract 56 from the move. 56-56 = 0 on board
@@ -538,8 +538,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                         if (playerNum == 0 && toMoveTo >54){ //If the player is zero, then they are moving into the home array...so can't go over 54
                             toMoveTo -=55;}
                         if (this.playerNum == 0) endOfTheLine = 54; //end of the line for 0 must be set to 54 since starting index - 2 = -2. = Array error
-                        Log.i("endOfTheLine is", " " + endOfTheLine);
-                        Log.i("toMoveto", " " + toMoveTo);
+
 
                         //if the move from would roll across the end of the line, chance toMoveTo to reflect that
                         //since it is now a home move
@@ -576,7 +575,7 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                                     if (breaks3 == 0) { //if the second piece can move...breaks3 is 0, since it changes to 1 if it would leapfrog
                                         if(boardCopy[prev] != playerNum)
                                         {
-                                            Log.i("Got into","Else breaks 3 " + previousMoveFrom);
+
                                             AggravationMovePieceAction movePieceGetOutTheWay;
                                             movePieceGetOutTheWay = new AggravationMovePieceAction(this, "board", previousMoveFrom, prev);
                                             game.sendAction(movePieceGetOutTheWay);
@@ -606,8 +605,6 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
                                                 }
                                                 if (breaks2 == 0) { //Only moves if the second piece doesn't leapfrog either
                                                     if(boardCopy[prev] != playerNum) {
-                                                        Log.i("Got into", "Else breaks 2 " + previousMoveFrom);
-
                                                         AggravationMovePieceAction movePieceGetOutTheWay;
                                                         movePieceGetOutTheWay = new AggravationMovePieceAction(this, "board", previousMoveFrom, prev);
                                                         game.sendAction(movePieceGetOutTheWay);
@@ -622,7 +619,6 @@ public class AggravationComputerPlayerSmart extends GameComputerPlayer {
 
                         }
                         previousMoveFrom = -9;
-                        Log.i("Move Type is", ""+moveType);
                         AggravationMovePieceAction movePieceGetOutTheWay;
                         movePieceGetOutTheWay = new AggravationMovePieceAction(this, moveType, toMoveFrom, toMoveTo);
                         game.sendAction(movePieceGetOutTheWay);
