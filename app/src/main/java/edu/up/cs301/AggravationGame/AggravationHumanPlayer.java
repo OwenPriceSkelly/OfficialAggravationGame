@@ -234,8 +234,9 @@ public class AggravationHumanPlayer extends GameHumanPlayer implements OnClickLi
 
 
                     }
-                }
                 this.dieImageButton.setEnabled(true);
+                }
+
 
             } else { //if it isn't your turn...do the same thing as above, but don't enable the die button
 

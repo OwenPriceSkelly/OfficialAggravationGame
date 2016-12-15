@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\shortcut.png",
-        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-xxhdpi\\shortcut.png"
-    },
-    {
         "merged": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gamesquare.png",
         "source": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-xxhdpi\\gamesquare.png"
+    },
+    {
+        "merged": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\shortcut.png",
+        "source": "C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\mipmap-xxhdpi\\shortcut.png"
     },
     {
         "merged": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\greensquarehome.png",

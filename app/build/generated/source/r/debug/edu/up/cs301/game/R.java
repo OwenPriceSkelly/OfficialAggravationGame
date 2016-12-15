@@ -227,7 +227,8 @@ public final class R {
         public static final int zeroroll=0x7f03001f;
     }
     public static final class raw {
-        public static final int song=0x7f050000;
+        public static final int log=0x7f050000;
+        public static final int song=0x7f050001;
     }
     public static final class string {
         public static final int add_player=0x7f090000;

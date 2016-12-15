@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 87
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/color.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 124
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/color.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 162
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/color.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 213
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 267
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 309
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 364
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 415
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -163,7 +163,7 @@
                     "endOffset": 465
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 515
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -201,7 +201,7 @@
                     "endOffset": 564
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -220,7 +220,7 @@
                     "endOffset": 614
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -239,7 +239,7 @@
                     "endOffset": 686
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -258,7 +258,7 @@
                     "endOffset": 737
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -277,7 +277,7 @@
                     "endOffset": 814
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -296,7 +296,7 @@
                     "endOffset": 854
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -315,7 +315,7 @@
                     "endOffset": 907
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -334,7 +334,7 @@
                     "endOffset": 956
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -353,7 +353,7 @@
                     "endOffset": 1007
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -372,7 +372,7 @@
                     "endOffset": 1052
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -391,7 +391,7 @@
                     "endOffset": 1104
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -410,7 +410,7 @@
                     "endOffset": 1156
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -429,7 +429,7 @@
                     "endOffset": 1207
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -448,7 +448,7 @@
                     "endOffset": 1263
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -467,7 +467,7 @@
                     "endOffset": 1333
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -486,7 +486,7 @@
                     "endOffset": 1423
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -505,7 +505,7 @@
                     "endOffset": 1485
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -524,7 +524,7 @@
                     "endOffset": 1540
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 89,
@@ -543,7 +543,7 @@
                     "endOffset": 1615
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -562,7 +562,7 @@
                     "endOffset": 1673
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/app/src/main/res/values/styles.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -575,7 +575,7 @@
         ]
     },
     {
-        "outputFile": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -586,7 +586,7 @@
                     "endOffset": 87
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -605,7 +605,7 @@
                     "endOffset": 124
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -624,7 +624,7 @@
                     "endOffset": 162
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -643,7 +643,7 @@
                     "endOffset": 213
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -662,7 +662,7 @@
                     "endOffset": 267
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -681,7 +681,7 @@
                     "endOffset": 309
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -700,7 +700,7 @@
                     "endOffset": 364
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -719,7 +719,7 @@
                     "endOffset": 415
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -738,7 +738,7 @@
                     "endOffset": 465
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -757,7 +757,7 @@
                     "endOffset": 515
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -776,7 +776,7 @@
                     "endOffset": 564
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -795,7 +795,7 @@
                     "endOffset": 614
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -814,7 +814,7 @@
                     "endOffset": 686
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -833,7 +833,7 @@
                     "endOffset": 737
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -852,7 +852,7 @@
                     "endOffset": 814
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -871,7 +871,7 @@
                     "endOffset": 854
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -890,7 +890,7 @@
                     "endOffset": 907
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -909,7 +909,7 @@
                     "endOffset": 956
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -928,7 +928,7 @@
                     "endOffset": 1007
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -947,7 +947,7 @@
                     "endOffset": 1052
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -966,7 +966,7 @@
                     "endOffset": 1104
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -985,7 +985,7 @@
                     "endOffset": 1156
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1004,7 +1004,7 @@
                     "endOffset": 1207
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -1023,7 +1023,7 @@
                     "endOffset": 1263
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -1042,7 +1042,7 @@
                     "endOffset": 1333
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1061,7 +1061,7 @@
                     "endOffset": 1423
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1080,7 +1080,7 @@
                     "endOffset": 1485
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -1099,7 +1099,7 @@
                     "endOffset": 1540
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 89,
@@ -1118,7 +1118,7 @@
                     "endOffset": 1615
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1137,7 +1137,7 @@
                     "endOffset": 1673
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1150,7 +1150,7 @@
         ]
     },
     {
-        "outputFile": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -1161,7 +1161,7 @@
                     "endOffset": 87
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1180,7 +1180,7 @@
                     "endOffset": 124
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1199,7 +1199,7 @@
                     "endOffset": 162
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1218,7 +1218,7 @@
                     "endOffset": 213
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -1237,7 +1237,7 @@
                     "endOffset": 267
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1256,7 +1256,7 @@
                     "endOffset": 309
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1275,7 +1275,7 @@
                     "endOffset": 364
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1294,7 +1294,7 @@
                     "endOffset": 415
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1313,7 +1313,7 @@
                     "endOffset": 465
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1332,7 +1332,7 @@
                     "endOffset": 515
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -1351,7 +1351,7 @@
                     "endOffset": 564
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1370,7 +1370,7 @@
                     "endOffset": 614
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -1389,7 +1389,7 @@
                     "endOffset": 686
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1408,7 +1408,7 @@
                     "endOffset": 737
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -1427,7 +1427,7 @@
                     "endOffset": 814
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -1446,7 +1446,7 @@
                     "endOffset": 854
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -1465,7 +1465,7 @@
                     "endOffset": 907
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1484,7 +1484,7 @@
                     "endOffset": 956
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -1503,7 +1503,7 @@
                     "endOffset": 1007
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1522,7 +1522,7 @@
                     "endOffset": 1052
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -1541,7 +1541,7 @@
                     "endOffset": 1104
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -1560,7 +1560,7 @@
                     "endOffset": 1156
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1579,7 +1579,7 @@
                     "endOffset": 1207
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -1598,7 +1598,7 @@
                     "endOffset": 1263
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -1617,7 +1617,7 @@
                     "endOffset": 1333
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1636,7 +1636,7 @@
                     "endOffset": 1423
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1655,7 +1655,7 @@
                     "endOffset": 1485
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -1674,7 +1674,7 @@
                     "endOffset": 1540
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 89,
@@ -1693,7 +1693,7 @@
                     "endOffset": 1615
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1712,7 +1712,582 @@
                     "endOffset": 1673
                 },
                 "from": {
-                    "file": "/Users/OwenPrice/AndroidStudioProjects/OfficialAggravationGame/C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\ripple19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 19,
+                        "endColumn": 58,
+                        "endOffset": 73
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 36,
+                    "endOffset": 87
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 36,
+                        "endOffset": 89
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 92,
+                    "endColumn": 36,
+                    "endOffset": 124
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 95,
+                        "endColumn": 36,
+                        "endOffset": 127
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 129,
+                    "endColumn": 37,
+                    "endOffset": 162
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 133,
+                        "endColumn": 37,
+                        "endOffset": 166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 167,
+                    "endColumn": 50,
+                    "endOffset": 213
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 314,
+                        "endColumn": 50,
+                        "endOffset": 360
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 218,
+                    "endColumn": 53,
+                    "endOffset": 267
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 53,
+                        "endOffset": 106
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 272,
+                    "endColumn": 41,
+                    "endOffset": 309
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 168,
+                        "endColumn": 41,
+                        "endOffset": 205
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 314,
+                    "endColumn": 54,
+                    "endOffset": 364
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 112,
+                        "endColumn": 54,
+                        "endOffset": 162
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 369,
+                    "endColumn": 50,
+                    "endOffset": 415
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 262,
+                        "endColumn": 50,
+                        "endOffset": 308
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 420,
+                    "endColumn": 49,
+                    "endOffset": 465
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 211,
+                        "endColumn": 49,
+                        "endOffset": 256
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 470,
+                    "endColumn": 49,
+                    "endOffset": 515
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 539,
+                        "endColumn": 49,
+                        "endOffset": 584
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 520,
+                    "endColumn": 48,
+                    "endOffset": 564
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 19,
+                        "endColumn": 48,
+                        "endOffset": 63
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 569,
+                    "endColumn": 49,
+                    "endOffset": 614
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 322,
+                        "endColumn": 49,
+                        "endOffset": 367
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 619,
+                    "endColumn": 71,
+                    "endOffset": 686
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 884,
+                        "endColumn": 71,
+                        "endOffset": 951
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 691,
+                    "endColumn": 50,
+                    "endOffset": 737
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 957,
+                        "endColumn": 50,
+                        "endOffset": 1003
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 742,
+                    "endColumn": 76,
+                    "endOffset": 814
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1009,
+                        "endColumn": 76,
+                        "endOffset": 1081
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 819,
+                    "endColumn": 39,
+                    "endOffset": 854
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 696,
+                        "endColumn": 39,
+                        "endOffset": 731
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 859,
+                    "endColumn": 52,
+                    "endOffset": 907
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 69,
+                        "endColumn": 52,
+                        "endOffset": 117
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 912,
+                    "endColumn": 48,
+                    "endOffset": 956
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1087,
+                        "endColumn": 48,
+                        "endOffset": 1131
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 961,
+                    "endColumn": 50,
+                    "endOffset": 1007
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 123,
+                        "endColumn": 50,
+                        "endOffset": 169
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1012,
+                    "endColumn": 44,
+                    "endOffset": 1052
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 373,
+                        "endColumn": 44,
+                        "endOffset": 413
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1057,
+                    "endColumn": 51,
+                    "endOffset": 1104
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 590,
+                        "endColumn": 51,
+                        "endOffset": 637
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1109,
+                    "endColumn": 51,
+                    "endOffset": 1156
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 643,
+                        "endColumn": 51,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1161,
+                    "endColumn": 50,
+                    "endOffset": 1207
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1137,
+                        "endColumn": 50,
+                        "endOffset": 1183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1212,
+                    "endColumn": 55,
+                    "endOffset": 1263
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 482,
+                        "endColumn": 55,
+                        "endOffset": 533
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1268,
+                    "endColumn": 69,
+                    "endOffset": 1333
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 251,
+                        "endColumn": 69,
+                        "endOffset": 316
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 1338,
+                    "endColumn": 89,
+                    "endOffset": 1423
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 737,
+                        "endColumn": 89,
+                        "endOffset": 822
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1428,
+                    "endColumn": 61,
+                    "endOffset": 1485
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 419,
+                        "endColumn": 61,
+                        "endOffset": 476
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1490,
+                    "endColumn": 54,
+                    "endOffset": 1540
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 89,
+                        "startOffset": 822,
+                        "endColumn": 139,
+                        "endOffset": 872
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 1545,
+                    "endColumn": 74,
+                    "endOffset": 1615
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 175,
+                        "endColumn": 74,
+                        "endOffset": 245
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 1620,
+                    "endColumn": 57,
+                    "endOffset": 1673
+                },
+                "from": {
+                    "file": "C:\\Users\\OwenPrice\\AndroidStudioProjects\\OfficialAggravationGame\\C:\\Users\\petersoe19\\AndroidStudioProjects\\OfficialAggravationGame\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
